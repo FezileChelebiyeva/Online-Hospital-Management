@@ -15,7 +15,7 @@ const ROUTES = [
         element: <HomePage />,
       },
       {
-        path: "about",
+        path: "/about",
         element: <AboutPage />,
       },
       {
