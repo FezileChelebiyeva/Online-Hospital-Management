@@ -15,25 +15,27 @@ import icon5 from "../../../assets/images/icon5.png";
 import about_image from "../../../assets/images/about-2.png";
 import image2 from "../../../assets/images/development.svg";
 import { Collapse, theme } from "antd";
-import { CaretRightOutlined } from "@ant-design/icons";
+import { UpOutlined } from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
 import "./index.scss";
+import DoctorsCard from "../../../components/site/card-doctors";
 const HomePage = () => {
   const [video, setVideo] = useState(false);
   const [active, setActive] = useState(false);
   const onChange = (key) => {
-    setActive(!active);
+    key == "" ? setActive(false) : setActive(true);
   };
   const { token } = theme.useToken();
   const panelStyle = {
     marginBottom: 24,
     background: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
-    // border: "none",
-    margin: "10px"
+    marginBottom: "0",
+    marginTop: "10px",
   };
+
   return (
     <div id="home-sections">
       <Helmet>
@@ -238,6 +240,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <DoctorsCard/>
       <section id="question-answer">
         <div className="container">
           <div className="question-answer">
@@ -246,10 +249,16 @@ const HomePage = () => {
             </div>
             <div className="accordion">
               <Collapse
+                bordered={false}
                 expandIcon={({ isActive }) => (
-                  <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                  <UpOutlined
+                    className={`antd-icon ${active && "blue"}`}
+                    rotate={isActive ? 360 : 180}
+                  />
                 )}
-                style={panelStyle}
+                style={{
+                  background: token.colorBgContainer,
+                }}
                 defaultActiveKey={["1"]}
                 onChange={onChange}
                 accordion
@@ -258,6 +267,7 @@ const HomePage = () => {
                   className={active ? "blue" : ".ant-collapse-header-text"}
                   header="How does it work ?"
                   key="1"
+                  style={panelStyle}
                 >
                   <p>
                     There are many variations of passages of Lorem Ipsum
@@ -269,6 +279,7 @@ const HomePage = () => {
                   className={active ? "blue" : null}
                   header="Do I need a designer to use Doctris ?"
                   key="2"
+                  style={panelStyle}
                 >
                   <p>
                     There are many variations of passages of Lorem Ipsum
@@ -280,6 +291,7 @@ const HomePage = () => {
                   className={active ? "blue" : null}
                   header="What do I need to do to start selling ?"
                   key="3"
+                  style={panelStyle}
                 >
                   <p>
                     There are many variations of passages of Lorem Ipsum
@@ -291,6 +303,7 @@ const HomePage = () => {
                   className={active ? "blue" : null}
                   header="What happens when I receive an order ?"
                   key="4"
+                  style={panelStyle}
                 >
                   <p>
                     There are many variations of passages of Lorem Ipsum
@@ -300,6 +313,25 @@ const HomePage = () => {
                 </Panel>
               </Collapse>
             </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div className="container">
+          <div className="contact">
+            <h1>Have Question ? Get in touch!</h1>
+            <div className="head-title">
+              <p>
+                Great doctor if you need your family member to get effective
+                immediate assistance, emergency treatment or a simple
+                consultation.
+              </p>
+            </div>
+              <div className="btn">
+                <button>
+                  <i className="fa-solid fa-phone"></i> Contact us
+                </button>
+              </div>
           </div>
         </div>
       </section>

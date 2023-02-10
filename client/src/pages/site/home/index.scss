@@ -133,6 +133,7 @@
             background-color: transparent;
             color: #396cf0;
             font-size: 15px;
+            cursor: pointer;
             .fa-solid {
               font-size: 14px;
               margin-left: 4px;
@@ -268,7 +269,6 @@
         rgba(99, 113, 133, 0.325)
       ),
       url("../../../assets/images/background2.jpg");
-    // background-repeat: no-repeat;
     background-position: center;
     .our-work {
       padding: 80px 0;
@@ -342,9 +342,33 @@
       }
       .accordion {
         .ant-collapse {
+          margin-top: 40px;
+          position: relative;
+          .antd-icon {
+            color: #000;
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            flex-direction: column;
+            width: 1em;
+            height: 0.8em;
+            &.blue {
+              color: #305ccc;
+              font-weight: 900;
+              position: absolute;
+              right: 20px;
+              flex-direction: column;
+              width: 1em;
+              height: 0.8em;
+            }
+          }
           .ant-collapse-item {
-            width: 480px;
+            width: 540px;
+            background-color: #f8f9fa !important;
+            border-radius: 5px !important;
+            border: 1px solid #e9ecef !important;
             .ant-collapse-header {
+              padding: 16px 0;
               .ant-collapse-header-text {
                 color: #000;
                 font-weight: 600;
@@ -357,6 +381,62 @@
                 }
               }
             }
+          }
+        }
+        .ant-collapse-content-box {
+          padding: 16px 20px;
+          background-color: #fff !important;
+        }
+      }
+    }
+  }
+  #contact {
+    padding-bottom: 100px;
+    .contact {
+      h1 {
+        text-align: center;
+        letter-spacing: 0.5px;
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+      .head-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          width: 600px;
+          text-align: center;
+          margin-top: 25px;
+          color: #8492a6;
+          line-height: 1.6;
+          font-size: 15px;
+        }
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        button {
+          padding: 10px 20px;
+          outline: 0;
+          border: 0;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          background-color: #396cf0;
+          color: #fff;
+          font-size: 15px;
+          -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+          border-radius: 5px;
+          cursor: pointer;
+          .fa-solid {
+            color: #fff;
+            font-size: 13px;
+            margin-right: 4px;
+          }
+          &:hover {
+            background-color: #305ccc;
           }
         }
       }
