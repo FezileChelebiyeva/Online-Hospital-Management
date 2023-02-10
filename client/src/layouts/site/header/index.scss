@@ -3,7 +3,6 @@
   position: absolute;
   z-index: 2;
   width: 100%;
-  // transition: all 0.3s;
   .header {
     display: flex;
     justify-content: space-between;
@@ -111,7 +110,6 @@
     }
   }
 }
-
 
 #fixed-header {
   padding: 20px;
@@ -121,7 +119,6 @@
   position: fixed;
   z-index: 4;
   top: 0;
-  // transition: all 0.3s;
   .header {
     display: flex;
     justify-content: space-between;
@@ -230,11 +227,9 @@
   }
 }
 
-
 .ant-dropdown {
-  position: absolute;
-  top: 70px !important;
   .ant-dropdown-menu {
+    margin-top: 22px;
     box-shadow: 0px 0px 3px 0px rgb(219, 219, 219);
     border-radius: 5px;
     padding: 15px 35px 15px 5px;

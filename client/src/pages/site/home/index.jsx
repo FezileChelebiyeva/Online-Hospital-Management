@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import image from "../../../assets/images/background.png";
 import logo1 from "../../../assets/images/logo1.png";
@@ -12,8 +12,28 @@ import icon2 from "../../../assets/images/icon2.png";
 import icon3 from "../../../assets/images/icon3.png";
 import icon4 from "../../../assets/images/icon4.png";
 import icon5 from "../../../assets/images/icon5.png";
+import about_image from "../../../assets/images/about-2.png";
+import image2 from "../../../assets/images/development.svg";
+import { Collapse, theme } from "antd";
+import { CaretRightOutlined } from "@ant-design/icons";
+
+const { Panel } = Collapse;
+
 import "./index.scss";
 const HomePage = () => {
+  const [video, setVideo] = useState(false);
+  const [active, setActive] = useState(false);
+  const onChange = (key) => {
+    setActive(!active);
+  };
+  const { token } = theme.useToken();
+  const panelStyle = {
+    marginBottom: 24,
+    background: token.colorFillAlter,
+    borderRadius: token.borderRadiusLG,
+    // border: "none",
+    margin: "10px"
+  };
   return (
     <div id="home-sections">
       <Helmet>
@@ -122,6 +142,163 @@ const HomePage = () => {
                   Find here <i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div className="container">
+          <div className="about">
+            <div className="text">
+              <div className="head">About Doctris</div>
+              <h1>
+                Good Services And Better <br /> Health By Our Specialists
+              </h1>
+              <p>
+                Great doctor if you need your family member to get effective
+                immediate assistance, emergency treatment or a simple
+                consultation.
+              </p>
+              <p>
+                The most well-known dummy text is the 'Lorem Ipsum', which is
+                said to have originated in the 16th century. Lorem Ipsum is
+                composed in a pseudo-Latin language which more or less
+                corresponds to 'proper' Latin. It contains a series of real
+                Latin words.
+              </p>
+              <button>Read More</button>
+            </div>
+            <div className="video">
+              <div className="img">
+                <img src={about_image} alt="" />
+                <div className="play-video">
+                  <a onClick={() => setVideo(true)}>
+                    <i className="fa-solid fa-play"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {video && (
+          <div onClick={() => setVideo(false)} className="youtube-video">
+            <div onClick={() => setVideo(false)} className="close">
+              x
+            </div>
+            <iframe
+              width="700"
+              height="360"
+              src="https://www.youtube.com/embed/cj_9aZmXbSE?playlist=cj_9aZmXbSE&loop=1"
+            ></iframe>
+          </div>
+        )}
+      </section>
+      <section id="our-work">
+        <div className="container">
+          <div className="our-work">
+            <div className="cards">
+              <div className="card">
+                <div className="icon">
+                  <i className="fa-solid fa-briefcase"></i>
+                </div>
+                <div className="text">
+                  <h4>Our Mission</h4>
+                  <p>
+                    The most well-known dummy text is the 'Lorem Ipsum', which
+                    is said to have originated in the 16th century.
+                  </p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="icon">
+                  <i className="fa-sharp fa-solid fa-mattress-pillow"></i>
+                </div>
+
+                <div className="text">
+                  <h4>Our Vision</h4>
+                  <p>
+                    The most well-known dummy text is the 'Lorem Ipsum', which
+                    is said to have originated in the 16th century.
+                  </p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="icon">
+                  <i className="fa-brands fa-solid fa-flipboard"></i>
+                </div>
+                <div className="text">
+                  <h4>Who We Are ?</h4>
+                  <p>
+                    The most well-known dummy text is the 'Lorem Ipsum', which
+                    is said to have originated in the 16th century.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="question-answer">
+        <div className="container">
+          <div className="question-answer">
+            <div className="img">
+              <img src={image2} alt="" />
+            </div>
+            <div className="accordion">
+              <Collapse
+                expandIcon={({ isActive }) => (
+                  <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                )}
+                style={panelStyle}
+                defaultActiveKey={["1"]}
+                onChange={onChange}
+                accordion
+              >
+                <Panel
+                  className={active ? "blue" : ".ant-collapse-header-text"}
+                  header="How does it work ?"
+                  key="1"
+                >
+                  <p>
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form.
+                  </p>
+                </Panel>
+                <Panel
+                  className={active ? "blue" : null}
+                  header="Do I need a designer to use Doctris ?"
+                  key="2"
+                >
+                  <p>
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form.
+                  </p>
+                </Panel>
+                <Panel
+                  className={active ? "blue" : null}
+                  header="What do I need to do to start selling ?"
+                  key="3"
+                >
+                  <p>
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form.
+                  </p>
+                </Panel>
+                <Panel
+                  className={active ? "blue" : null}
+                  header="What happens when I receive an order ?"
+                  key="4"
+                >
+                  <p>
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in some
+                    form.
+                  </p>
+                </Panel>
+              </Collapse>
             </div>
           </div>
         </div>
