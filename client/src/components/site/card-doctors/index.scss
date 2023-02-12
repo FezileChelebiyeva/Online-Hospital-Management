@@ -1,3 +1,145 @@
-#our-specialists{
-    padding: 80px 0;
+#our-specialists {
+  padding-top: 80px;
+  .our-specialists {
+    .cards-head {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .head {
+        background-color: rgba(57, 108, 240, 0.1);
+        border: 1px solid rgba(57, 108, 240, 0.1);
+        border-radius: 50rem;
+        color: #396cf0;
+        font-size: 11px;
+        display: inline-block;
+        letter-spacing: 0.5px;
+        padding: 4px 10px;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    h1 {
+      margin-top: 20px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    .head-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        width: 600px;
+        text-align: center;
+        margin-top: 25px;
+        color: #8492a6;
+        line-height: 1.6;
+        font-size: 15px;
+      }
+    }
+    .cards-doctor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      margin-top: 60px;
+      .card {
+        width: 23.6%;
+        box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        .image {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 100%;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+        .about-doctor {
+          padding: 20px;
+
+          h4 {
+            a {
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 1.2;
+              color: black;
+            }
+          }
+          .job {
+            color: #8492a6;
+            font-size: 13.5px;
+            margin-top: 10px;
+          }
+          .star {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            .star-icon {
+              .fa-sharp {
+                color: #f1b561;
+                margin-right: 8px;
+                font-size: 11px;
+              }
+            }
+            .star-count {
+              font-size: 15px;
+              color: #8492a6;
+            }
+          }
+          .about-work {
+            margin-top: 10px;
+            .icon {
+              color: #396cf0;
+              font-size: 12px;
+            }
+            span {
+              font-size: 13.5px;
+              color: #8492a6;
+              padding-left: 8px;
+            }
+          }
+          .card-icons {
+            margin-top: 20px;
+            display: flex;
+            column-gap: 5px;
+            .circle {
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              background-color: #396cf01a;
+              background-color: rgba(57, 108, 240, 0.1);
+              border: 1px solid rgba(57, 108, 240, 0.1);
+              -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+              transition: all 0.4s;
+              .fa-brands {
+                color: #396cf0;
+                font-size: 13px;
+                transition: all 0.4s;
+              }
+              &:hover {
+                background-color: #396cf0;
+                .fa-brands {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

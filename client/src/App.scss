@@ -1,7 +1,188 @@
-.App{
-    .container{
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 0 10%;
+.App {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 10%;
+  }
+}
+.DarkMode {
+  background-color: #1c2836;
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 10%;
+  }
+  #header {
+    .header {
+      .navbar {
+        nav {
+          ul {
+            li {
+              a {
+                color: #fff;
+                .menu-arrow {
+                  border: solid #fff;
+                  border-radius: 0.5px;
+                  border-width: 0 2px 2px 0;
+                  padding: 2px;
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  -webkit-transition: all 0.5s;
+                  transition: all 0.5s;
+                  margin-left: 10px;
+                  position: absolute;
+                  top: 5px;
+                }
+                &.active {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 2px;
+                    margin-left: 10px;
+                    position: absolute;
+                    top: 5px;
+                  }
+                }
+                &:hover {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0px 2px 2px 0px;
+                    padding: 2px;
+                    -webkit-transform: rotate(225deg);
+                    transform: rotate(225deg);
+                    position: absolute;
+                    top: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+    .background {
+      background-color: #0000008a;
+      .search-now {
+        background-color: #1c2836;
+        h1 {
+          color: #fff;
+        }
+        .search {
+          .input-control {
+            border: 1px solid #39495c9a;
+            input {
+              background-color: #1c2836;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    #settings {
+      .background-setting {
+        background-color: #0000008a;
+      }
+      .settings {
+        background-color: #1c2836;
+        .head {
+          border-bottom: 1px solid #39495c9a;
+        }
+        h4 {
+          color: #fff;
+        }
+      }
+    }
+  }
+  #fixed-header {
+    background-color: #1c2836;
+    .header {
+      .navbar {
+        nav {
+          ul {
+            li {
+              a {
+                color: #fff;
+                .menu-arrow {
+                  border: solid #fff;
+                  border-radius: 0.5px;
+                  border-width: 0 2px 2px 0;
+                  padding: 2px;
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  -webkit-transition: all 0.5s;
+                  transition: all 0.5s;
+                  margin-left: 10px;
+                  position: absolute;
+                  top: 5px;
+                }
+                &.active {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 2px;
+                    margin-left: 10px;
+                    position: absolute;
+                    top: 5px;
+                  }
+                }
+                &:hover {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0px 2px 2px 0px;
+                    padding: 2px;
+                    -webkit-transform: rotate(225deg);
+                    transform: rotate(225deg);
+                    position: absolute;
+                    top: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .background {
+      background-color: #0000008a;
+      .search-now {
+        background-color: #1c2836;
+        h1 {
+          color: #fff;
+        }
+        .search {
+          .input-control {
+            border: 1px solid #39495c9a;
+            input {
+              background-color: #1c2836;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    #settings {
+      .background-setting {
+        background-color: #0000008a;
+      }
+      .settings {
+        background-color: #1c2836;
+        .head {
+          border-bottom: 1px solid #39495c9a;
+        }
+        h4 {
+          color: #fff;
+        }
+      }
+    }
+  }
 }

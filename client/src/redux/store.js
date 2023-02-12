@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import getDataReducer from "./slice/dataSlice";
+import darkModeReducer from "./slice/darkMode";
+import getDataReducer from "./slice/doctorsDataSlice";
 
 export const store = configureStore({
   reducer: {
     doctors: getDataReducer,
+    darkMode: darkModeReducer,
   },
 });

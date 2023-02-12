@@ -3,11 +3,20 @@ import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
 import logo_dark from "../../../assets/images/logo-dark.png";
 import logo_light from "../../../assets/images/logo-light.png";
+import darkmode from "../../../assets/images/darkmodeimage.png";
+import adminimage from "../../../assets/images/adminimage.png";
 import { Menu, Dropdown } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { darkModeState } from "../../../redux/slice/darkMode";
 
 const Header = () => {
   const [blog, setBlog] = useState(false);
   const [navbar, setNavbar] = useState(true);
+  const [search, setSearch] = useState(false);
+  const [settings, setSettings] = useState(false);
+
+  const darkMode = useSelector((state) => state.darkMode);
+  const dispatch = useDispatch();
   window.addEventListener("scroll", () => {
     window.scrollY > 60 ? setNavbar(false) : setNavbar(true);
   });
@@ -17,7 +26,11 @@ const Header = () => {
         <div className="header">
           <div className="navbar">
             <div className="logo">
-              <img src={logo_dark} alt="" />
+              {darkMode.value ? (
+                <img src={logo_dark} alt="" />
+              ) : (
+                <img src={logo_light} alt="" />
+              )}
             </div>
             <nav>
               <ul>
@@ -186,10 +199,10 @@ const Header = () => {
             </nav>
           </div>
           <div className="settings-profil">
-            <div className="setting-search">
+            <div onClick={() => setSettings(true)} className="setting-search">
               <i className="fa-solid fa-gear"></i>
             </div>
-            <div className="setting-search">
+            <div onClick={() => setSearch(true)} className="setting-search">
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
             <div className="user">
@@ -197,8 +210,71 @@ const Header = () => {
             </div>
           </div>
         </div>
-       
       </div>
+      {search && (
+        <div className="background">
+          <div className="search-now">
+            <div className="container">
+              <h1>Search now.....</h1>
+              <div className="search">
+                <div className="input-control">
+                  <input type="text" placeholder="Search..." />
+                  <button>Search</button>
+                </div>
+              </div>
+            </div>
+            <div
+              onClick={() => setSearch(false)}
+              className="close-search"
+            ></div>
+          </div>
+        </div>
+      )}
+      {settings && (
+        <div id="settings">
+          <div
+            onClick={() => setSettings(false)}
+            className="background-setting"
+          ></div>
+          <div className="settings">
+            <div className="head">
+              <div className="logo">
+                {darkMode.value ? (
+                  <img src={logo_dark} alt="" />
+                ) : (
+                  <img src={logo_light} alt="" />
+                )}
+              </div>
+              <div
+                onClick={() => setSettings(false)}
+                className="close-settings"
+              >
+                x
+              </div>
+            </div>
+            <div className="img">
+              <img
+                onClick={() => {
+                  dispatch(darkModeState(!darkMode.value));
+                }}
+                src={darkmode}
+                alt=""
+              />
+            </div>
+            <h4
+              onClick={() => {
+                dispatch(darkModeState(!darkMode.value));
+              }}
+            >
+              {darkMode.value ? " Dark Version" : "Light Version"}
+            </h4>
+            <div className="img">
+              <img src={adminimage} alt="" />
+            </div>
+            <h4>Admin Dashboard</h4>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

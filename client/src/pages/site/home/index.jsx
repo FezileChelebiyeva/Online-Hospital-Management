@@ -16,14 +16,16 @@ import about_image from "../../../assets/images/about-2.png";
 import image2 from "../../../assets/images/development.svg";
 import { Collapse, theme } from "antd";
 import { UpOutlined } from "@ant-design/icons";
+import "./index.scss";
+import DoctorsCard from "../../../components/site/card-doctors";
+import { useSelector } from "react-redux";
 
 const { Panel } = Collapse;
 
-import "./index.scss";
-import DoctorsCard from "../../../components/site/card-doctors";
 const HomePage = () => {
   const [video, setVideo] = useState(false);
   const [active, setActive] = useState(false);
+  const darkMode = useSelector((state) => state.darkMode);
   const onChange = (key) => {
     key == "" ? setActive(false) : setActive(true);
   };
@@ -109,7 +111,7 @@ const HomePage = () => {
                 <h4>Doctors</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
-                  Find here <i class="fa-solid fa-arrow-right"></i>
+                  Find here <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
               <div className="card">
@@ -117,7 +119,7 @@ const HomePage = () => {
                 <h4>Clinics</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
-                  Find here <i class="fa-solid fa-arrow-right"></i>
+                  Find here <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
               <div className="card">
@@ -125,7 +127,7 @@ const HomePage = () => {
                 <h4>Labs</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
-                  Find here <i class="fa-solid fa-arrow-right"></i>
+                  Find here <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
               <div className="card">
@@ -133,7 +135,7 @@ const HomePage = () => {
                 <h4>Emergency</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
-                  Find here <i class="fa-solid fa-arrow-right"></i>
+                  Find here <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
               <div className="card">
@@ -141,7 +143,7 @@ const HomePage = () => {
                 <h4>Insurance</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
-                  Find here <i class="fa-solid fa-arrow-right"></i>
+                  Find here <i className="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
             </div>
@@ -240,7 +242,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <DoctorsCard/>
+      <DoctorsCard />
       <section id="question-answer">
         <div className="container">
           <div className="question-answer">
@@ -327,11 +329,11 @@ const HomePage = () => {
                 consultation.
               </p>
             </div>
-              <div className="btn">
-                <button>
-                  <i className="fa-solid fa-phone"></i> Contact us
-                </button>
-              </div>
+            <div className="btn">
+              <button>
+                <i className="fa-solid fa-phone"></i> Contact us
+              </button>
+            </div>
           </div>
         </div>
       </section>
