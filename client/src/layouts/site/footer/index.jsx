@@ -10,7 +10,9 @@ const Footer = () => {
           <div className="top">
             <div className="about">
               <div className="logo">
-                <img src={logo} alt="" />
+                <Link to={"/"}>
+                  <img src={logo} alt="" />
+                </Link>
                 <p>
                   Great doctor if you need your family member to get effective
                   immediate assistance, emergency treatment or a simple

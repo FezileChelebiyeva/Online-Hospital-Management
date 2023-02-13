@@ -25,11 +25,16 @@ import departmentsIcon9 from "../../../assets/images/departments-icon9.png";
 import departmentsIcon10 from "../../../assets/images/departments-icon10.png";
 import departmentsIcon11 from "../../../assets/images/departments-icon11.png";
 import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 const DepartmentsPage = () => {
   const darkMode = useSelector((state) => state.darkMode);
 
   return (
     <div id="departments-page">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Doctris - Departments</title>
+      </Helmet>
       <div id="departments-head">
         <div className="container">
           <div className="departments-head">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import notFoundImg from "../../../assets/images/error.svg";
 import "./index.scss";
@@ -6,6 +7,10 @@ const NotFoundPage = () => {
   const navigate = useNavigate();
   return (
     <div id="not-found">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>404 - Not Found</title>
+      </Helmet>
       <div className="container">
         <div className="not-found">
           <div className="img">

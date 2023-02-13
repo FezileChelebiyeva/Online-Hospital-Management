@@ -1,5 +1,6 @@
 import { RightOutlined } from "@ant-design/icons";
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
@@ -13,6 +14,10 @@ const DoctorsTeam = () => {
   }, []);
   return (
     <section id="doctors-team">
+        <Helmet>
+        <meta charSet="utf-8" />
+        <title>Doctris - Doctors Team</title>
+      </Helmet>
       <div className="doctors-team">
         <div className="doctors">
           <div className="container">

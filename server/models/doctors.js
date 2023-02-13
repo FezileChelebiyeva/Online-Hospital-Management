@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const { Schema } = mongoose;
 
 const doctorsSchema = new Schema(
@@ -17,5 +16,7 @@ const doctorsSchema = new Schema(
 );
 
 const Doctors = mongoose.model("doctors", doctorsSchema);
+
+// Doctors = module.exports;
 
 export default Doctors;

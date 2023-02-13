@@ -2,10 +2,15 @@ import AdminRoot from "../components/admin/admin-root";
 import MainRoot from "../components/site/main-root";
 import DashBoard from "../pages/admin/dashboard";
 import AboutPage from "../pages/site/about";
+import BlogsPage from "../pages/site/blogs";
+import ContactPage from "../pages/site/contact";
 import DepartmentsPage from "../pages/site/departments";
 import DoctorsTeam from "../pages/site/doctors-team";
+import FaqsPage from "../pages/site/faqs";
 import HomePage from "../pages/site/home";
 import NotFoundPage from "../pages/site/not-found-page";
+import PrivacyPolicy from "../pages/site/privacy-policy";
+import TermsPolicy from "../pages/site/terms-policy";
 
 const ROUTES = [
   {
@@ -27,6 +32,26 @@ const ROUTES = [
       {
         path: "/departments",
         element: <DepartmentsPage />,
+      },
+      {
+        path: "/faqs",
+        element: <FaqsPage />,
+      },
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+      },
+      {
+        path: "/terms-policy",
+        element: <TermsPolicy />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "*",

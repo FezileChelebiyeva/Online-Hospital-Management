@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import doctorsRoutes from "./routes/doctors.js";
+import patientsRoutes from "./routes/patients.js";
 const app = express();
 
 app.use(cors());
@@ -12,9 +13,13 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 dotenv.config();
 
-app.use("/doctors", doctorsRoutes);
+app.use("doctors", doctorsRoutes);
+app.use("patients", patientsRoutes);
+
 const PORT = process.env.PORT || 8000;
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
+
+mongoose.set("strictQuery", true);
 
 mongoose
   .connect(DB, {

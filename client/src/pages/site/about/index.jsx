@@ -20,6 +20,7 @@ import departmentsIcon6 from "../../../assets/images/departments-icon6.png";
 import departmentsIcon7 from "../../../assets/images/departments-icon7.png";
 import departmentsIcon8 from "../../../assets/images/departments-icon8.png";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
+import {Helmet} from 'react-helmet'
 import "./index.scss";
 const AboutPage = () => {
   const [video, setVideo] = useState(false);
@@ -33,6 +34,10 @@ const AboutPage = () => {
   }, []);
   return (
     <div id="about-page">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Doctris - About Us</title>
+      </Helmet>
       <div id="about-us">
         <div className="container">
           <div className="about-us">

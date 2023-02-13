@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo_dark from "../../../assets/images/logo-dark.png";
 import logo_light from "../../../assets/images/logo-light.png";
 import darkmode from "../../../assets/images/darkmodeimage.png";
@@ -14,7 +14,7 @@ const Header = () => {
   const [navbar, setNavbar] = useState(true);
   const [search, setSearch] = useState(false);
   const [settings, setSettings] = useState(false);
-
+  const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode);
   const dispatch = useDispatch();
   window.addEventListener("scroll", () => {
@@ -27,9 +27,13 @@ const Header = () => {
           <div className="navbar">
             <div className="logo">
               {darkMode.value ? (
-                <img src={logo_dark} alt="" />
+                <Link to={"/"}>
+                  <img src={logo_dark} alt="" />
+                </Link>
               ) : (
-                <img src={logo_light} alt="" />
+                <Link to={"/"}>
+                  <img src={logo_light} alt="" />
+                </Link>
               )}
             </div>
             <nav>
@@ -38,27 +42,7 @@ const Header = () => {
                   <NavLink to={"/"}>HOME</NavLink>
                 </li>
                 <li>
-                  <Dropdown
-                    overlay={
-                      <Menu>
-                        <Menu.Item key="0">
-                          <NavLink to={"/dashboard"}>DASHBOARD</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="1">
-                          <NavLink to={"/doctors-team"}>DOCTORS TEAM</NavLink>
-                        </Menu.Item>
-                      </Menu>
-                    }
-                    trigger={["hover"]}
-                  >
-                    <NavLink
-                      className="ant-dropdown-link"
-                      onClick={(e) => e.preventDefault()}
-                      to={"/doctors"}
-                    >
-                      DOCTORS <span className="menu-arrow"></span>
-                    </NavLink>
-                  </Dropdown>
+                  <NavLink to={"/doctors-team"}>DOCTORS</NavLink>
                 </li>
                 <li>
                   <Dropdown
@@ -111,9 +95,6 @@ const Header = () => {
                         <Menu.Item key="4">
                           <NavLink to={"/pharmacy-checkout"}>CHECKOUT</NavLink>
                         </Menu.Item>
-                        <Menu.Item key="5">
-                          <NavLink to={"/pharmacy-account"}>ACCOUNT</NavLink>
-                        </Menu.Item>
                       </Menu>
                     }
                     trigger={["hover"]}
@@ -146,7 +127,7 @@ const Header = () => {
                             onMouseEnter={() => setBlog(true)}
                           >
                             BLOGS
-                             {/* <span className="blog-arrow"></span> */}
+                            {/* <span className="blog-arrow"></span> */}
                             {/* {blog && (
                               <ul
                                 className="blog-item"
@@ -265,7 +246,11 @@ const Header = () => {
               {darkMode.value ? " Dark Version" : "Light Version"}
             </h4>
             <div className="img">
-              <img src={adminimage} alt="" />
+              <img
+                onClick={() => navigate("/admin/")}
+                src={adminimage}
+                alt=""
+              />
             </div>
             <h4>Admin Dashboard</h4>
           </div>

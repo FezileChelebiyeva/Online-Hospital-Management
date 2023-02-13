@@ -1,16 +1,15 @@
 import Doctors from "../models/doctors.js";
 
-//GET ALL
 export const getDoctorsData = async (req, res) => {
   try {
     const doctors = await Doctors.find();
     res.status(200).json(doctors);
+    console.log("get");
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-//GET BY ID
 export const getDoctorsDataById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -23,7 +22,6 @@ export const getDoctorsDataById = async (req, res) => {
   }
 };
 
-//POST
 export const createNewDoctorInfo = async (req, res) => {
   console.log(req);
   const newDoctor = new Doctors(req.body);
@@ -35,7 +33,6 @@ export const createNewDoctorInfo = async (req, res) => {
   }
 };
 
-//DELETE BY ID
 export const deleteDoctorInfo = async (req, res) => {
   const { id } = req.params;
   try {
@@ -49,7 +46,6 @@ export const deleteDoctorInfo = async (req, res) => {
   }
 };
 
-//UPDATE
 export const updateDoctorsData = async (req, res) => {
   console.log(req);
   const { id } = req.params;
