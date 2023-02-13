@@ -2,6 +2,8 @@ import AdminRoot from "../components/admin/admin-root";
 import MainRoot from "../components/site/main-root";
 import DashBoard from "../pages/admin/dashboard";
 import AboutPage from "../pages/site/about";
+import DepartmentsPage from "../pages/site/departments";
+import DoctorsTeam from "../pages/site/doctors-team";
 import HomePage from "../pages/site/home";
 import NotFoundPage from "../pages/site/not-found-page";
 
@@ -17,6 +19,14 @@ const ROUTES = [
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/doctors-team",
+        element: <DoctorsTeam />,
+      },
+      {
+        path: "/departments",
+        element: <DepartmentsPage />,
       },
       {
         path: "*",

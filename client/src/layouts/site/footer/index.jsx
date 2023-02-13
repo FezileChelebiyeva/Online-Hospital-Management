@@ -34,7 +34,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/team"}>
+                  <Link to={"/doctors-team"}>
                     {" "}
                     <span className="menu-arrow"></span>Team
                   </Link>

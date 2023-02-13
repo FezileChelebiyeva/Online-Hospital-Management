@@ -42,15 +42,10 @@ const Header = () => {
                     overlay={
                       <Menu>
                         <Menu.Item key="0">
-                          <NavLink to={"/doctor-team-one"}>DOCTORS ONE</NavLink>
+                          <NavLink to={"/dashboard"}>DASHBOARD</NavLink>
                         </Menu.Item>
                         <Menu.Item key="1">
-                          <NavLink to={"/doctor-team-two"}>DOCTORS TWO</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                          <NavLink to={"/doctor-team-three"}>
-                            DOCTORS THREE
-                          </NavLink>
+                          <NavLink to={"/doctors-team"}>DOCTORS TEAM</NavLink>
                         </Menu.Item>
                       </Menu>
                     }
@@ -103,11 +98,11 @@ const Header = () => {
                         <Menu.Item key="1">
                           <NavLink to={"/pharmacy-shop"}>SHOP</NavLink>
                         </Menu.Item>
-                        <Menu.Item key="2">
+                        {/* <Menu.Item key="2">
                           <NavLink to={"/pharmacy-product-detail"}>
                             MEDICINE DETAIL
                           </NavLink>
-                        </Menu.Item>
+                        </Menu.Item> */}
                         <Menu.Item key="3">
                           <NavLink to={"/pharmacy-shop-cart"}>
                             SHOP CART
@@ -150,8 +145,9 @@ const Header = () => {
                             to={"/blogs"}
                             onMouseEnter={() => setBlog(true)}
                           >
-                            BLOGS <span className="blog-arrow"></span>
-                            {blog && (
+                            BLOGS
+                             {/* <span className="blog-arrow"></span> */}
+                            {/* {blog && (
                               <ul
                                 className="blog-item"
                                 onMouseLeave={() => setBlog(false)}
@@ -165,7 +161,7 @@ const Header = () => {
                                   </NavLink>
                                 </li>
                               </ul>
-                            )}
+                            )} */}
                           </NavLink>
                         </Menu.Item>
                         <Menu.Item key="4">

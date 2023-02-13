@@ -44,7 +44,7 @@
             color: #fff;
             cursor: pointer;
             transition: all 0.5s;
-            .fa-solid{
+            .fa-solid {
               margin-right: 8px;
             }
             &:hover {
@@ -368,9 +368,9 @@
           }
           .ant-collapse-item {
             width: 540px;
-            background-color: #f8f9fa !important;
+            background-color: #f8f9fa;
             border-radius: 5px !important;
-            border: 1px solid #e9ecef !important;
+            border: 1px solid #e9ecef;
             .ant-collapse-header {
               padding: 16px 0;
               .ant-collapse-header-text {
@@ -389,7 +389,8 @@
         }
         .ant-collapse-content-box {
           padding: 16px 20px;
-          background-color: #fff !important;
+          background-color: #fff;
+          color: #8492a6;
         }
       }
     }

@@ -100,6 +100,7 @@
   }
   #fixed-header {
     background-color: #1c2836;
+    box-shadow: 0px 0px 3px 0px #2e4157;
     .header {
       .navbar {
         nav {
@@ -185,4 +186,227 @@
       }
     }
   }
+  #search-doctors {
+    .search-doctors {
+      .search {
+        h1 {
+          color: #fff;
+        }
+        .input-control {
+          border: 1px solid #293546e7 !important;
+          input {
+            background-color: #1c2836;
+          }
+        }
+      }
+    }
+  }
+  #logos {
+    background-color: #1f2d3d !important;
+  }
+  #categories {
+    padding: 80px 0;
+    .categories {
+      h1 {
+        color: #fff;
+      }
+      .cards {
+        .card {
+          box-shadow: 0px 0px 3px 0px #293546e7 !important;
+          h4 {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  #about {
+    .about {
+      h1 {
+        color: #fff;
+      }
+      p {
+        color: #9bacc4 !important;
+      }
+    }
+    .video {
+      .img {
+        .play-video {
+          a {
+            background-color: #1c2836 !important;
+          }
+        }
+      }
+    }
+  }
+  #our-work {
+    .our-work {
+      .cards {
+        .card {
+          background-color: #1c2836 !important;
+          .text {
+            h4 {
+              color: #fff;
+            }
+            p {
+              color: #9bacc4 !important;
+            }
+          }
+          &:hover {
+            background-color: #305ccc !important;
+          }
+        }
+      }
+    }
+  }
+  #our-specialists {
+    .our-specialists {
+      h1 {
+        color: #fff;
+      }
+      .head-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          color: #9bacc4 !important;
+        }
+      }
+      .cards-doctor {
+        .card {
+          box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+          .about-doctor {
+            h4 {
+              a {
+                color: #fff;
+              }
+            }
+            .job {
+              color: #9bacc4 !important;
+            }
+            .star {
+              .star-count {
+                color: #9bacc4 !important;
+              }
+            }
+            .about-work {
+              span {
+                color: #9bacc4 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #question-answer {
+    .question-answer {
+      .accordion {
+        .ant-collapse {
+          background-color: #1c2836 !important;
+          .antd-icon {
+            color: #fff !important;
+            &.blue {
+              color: #305ccc !important;
+            }
+          }
+          .ant-collapse-item {
+            background-color: #1f2d3d !important;
+            border: 1px solid #2e4157 !important;
+            .ant-collapse-header {
+              .ant-collapse-header-text {
+                color: #fff !important;
+              }
+            }
+            &.blue {
+              .ant-collapse-header {
+                .ant-collapse-header-text {
+                  color: #305ccc !important;
+                }
+              }
+            }
+          }
+        }
+        .ant-collapse-content-box {
+          background-color: #1c2836 !important;
+          color: #9bacc4 !important;
+        }
+      }
+    }
+  }
+  #contact {
+    .contact {
+      h1 {
+        color: #fff;
+      }
+      .head-title {
+        p {
+          color: #9bacc4 !important;
+        }
+      }
+    }
+  }
+  #footer {
+    background-color: #212f40;
+  }
+  #doctors-team {
+    .doctors-team {
+      background-color: #1F2D3D;
+      .doctors {
+        .header-team {
+          .head {
+            h1 {
+              color: #fff;
+            }
+            p {
+              color: #9bacc4 !important;
+            }
+          }
+          .links {
+            display: flex;
+            justify-content: center;
+            column-gap: 15px;
+            margin-top: 40px;
+            span {
+              a {
+                color: #fff;
+              }
+              .antd-icon {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .card-doctors-team {
+      background-color: #1c2836;
+      .cards {
+        .card {
+          box-shadow: 0 0 2px 0px rgba(230, 227, 227, 0.15);
+          .about-doctor {
+            h4 {
+              a {
+                color: #fff;
+              }
+            }
+            .job {
+              color: #9bacc4 !important;
+            }
+            .star {
+              .star-count {
+                color: #9bacc4 !important;
+              }
+            }
+            .about-work {
+              span {
+                color: #9bacc4 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
 }

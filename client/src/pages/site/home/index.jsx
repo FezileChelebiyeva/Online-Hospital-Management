@@ -12,6 +12,11 @@ import icon2 from "../../../assets/images/icon2.png";
 import icon3 from "../../../assets/images/icon3.png";
 import icon4 from "../../../assets/images/icon4.png";
 import icon5 from "../../../assets/images/icon5.png";
+import darkicon1 from "../../../assets/images/dark-icon1.png";
+import darkicon2 from "../../../assets/images/dark-icon2.png";
+import darkicon3 from "../../../assets/images/dark-icon3.png";
+import darkicon4 from "../../../assets/images/dark-icon4.png";
+import darkicon5 from "../../../assets/images/dark-icon5.png";
 import about_image from "../../../assets/images/about-2.png";
 import image2 from "../../../assets/images/development.svg";
 import { Collapse, theme } from "antd";
@@ -107,7 +112,11 @@ const HomePage = () => {
             </div>
             <div className="cards">
               <div className="card">
-                <img src={icon1} alt="" />
+                {darkMode.value ? (
+                  <img src={icon1} alt="" />
+                ) : (
+                  <img src={darkicon1} alt="" />
+                )}
                 <h4>Doctors</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
@@ -115,7 +124,11 @@ const HomePage = () => {
                 </button>
               </div>
               <div className="card">
-                <img src={icon2} alt="" />
+                {darkMode.value ? (
+                  <img src={icon2} alt="" />
+                ) : (
+                  <img src={darkicon2} alt="" />
+                )}
                 <h4>Clinics</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
@@ -123,7 +136,11 @@ const HomePage = () => {
                 </button>
               </div>
               <div className="card">
-                <img src={icon3} alt="" />
+                {darkMode.value ? (
+                  <img src={icon3} alt="" />
+                ) : (
+                  <img src={darkicon3} alt="" />
+                )}
                 <h4>Labs</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
@@ -131,7 +148,11 @@ const HomePage = () => {
                 </button>
               </div>
               <div className="card">
-                <img src={icon4} alt="" />
+                {darkMode.value ? (
+                  <img src={icon4} alt="" />
+                ) : (
+                  <img src={darkicon4} alt="" />
+                )}
                 <h4>Emergency</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
@@ -139,7 +160,11 @@ const HomePage = () => {
                 </button>
               </div>
               <div className="card">
-                <img src={icon5} alt="" />
+                {darkMode.value ? (
+                  <img src={icon5} alt="" />
+                ) : (
+                  <img src={darkicon5} alt="" />
+                )}
                 <h4>Insurance</h4>
                 <p>Due to its wide spread use as filler text</p>
                 <button>
@@ -217,7 +242,6 @@ const HomePage = () => {
                 <div className="icon">
                   <i className="fa-sharp fa-solid fa-mattress-pillow"></i>
                 </div>
-
                 <div className="text">
                   <h4>Our Vision</h4>
                   <p>

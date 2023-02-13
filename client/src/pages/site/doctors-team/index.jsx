@@ -1,33 +1,48 @@
+import { RightOutlined } from "@ant-design/icons";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-// import { uid } from "uid";
+import { Link, NavLink } from "react-router-dom";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
-const DoctorsCard = () => {
+const DoctorsTeam = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
 
   useEffect(() => {
     dispatch(getData());
   }, []);
-
   return (
-    <section id="our-specialists">
-      <div className="container">
-        <div className="our-specialists">
-          <div className="cards-head">
-            <div className="head">Find Doctors</div>
+    <section id="doctors-team">
+      <div className="doctors-team">
+        <div className="doctors">
+          <div className="container">
+            <div className="header-team">
+              <div className="head">
+                <h1>Doctors team</h1>
+                <div className="about">
+                  <p>
+                    Great doctor if you need your family member to get effective
+                    immediate assistance, emergency treatment or a simple
+                    consultation.
+                  </p>
+                </div>
+                <div className="links">
+                  <span>
+                    <NavLink to={"/"}>DOCTRIS</NavLink>
+                    <RightOutlined className="antd-icon" />
+                  </span>
+                  <span>
+                    <NavLink to={"/doctors-team"}>DOCTORS TEAM</NavLink>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1>Find Your Specialists</h1>
-          <div className="head-title">
-            <p>
-              Great doctor if you need your family member to get effective
-              immediate assistance, emergency treatment or a simple
-              consultation.
-            </p>
-          </div>
-          <div className="cards-doctor">
+        </div>
+      </div>
+      <div className="card-doctors-team">
+        <div className="container">
+          <div className="cards">
             {doctors.data?.map((element) => {
               return (
                 <div key={element._id} className="card">
@@ -42,7 +57,7 @@ const DoctorsCard = () => {
                     <div className="star">
                       <div className="star-icon">
                         {new Array(element.star).fill(
-                            <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
                         )}
                       </div>
                       <div className="star-count">{element.star} Star</div>
@@ -84,4 +99,4 @@ const DoctorsCard = () => {
   );
 };
 
-export default DoctorsCard;
+export default DoctorsTeam;
