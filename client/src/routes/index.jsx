@@ -10,6 +10,8 @@ import FaqsPage from "../pages/site/faqs";
 import HomePage from "../pages/site/home";
 import NotFoundPage from "../pages/site/not-found-page";
 import PrivacyPolicy from "../pages/site/privacy-policy";
+import LoginPage from "../pages/site/sign-in";
+import SignupPage from "../pages/site/sign-up";
 import TermsPolicy from "../pages/site/terms-policy";
 
 const ROUTES = [
@@ -54,6 +56,14 @@ const ROUTES = [
         element: <ContactPage />,
       },
       {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/signup",
+        element: <SignupPage />,
+      },
+      {
         path: "*",
         element: <NotFoundPage />,
       },
@@ -77,14 +87,6 @@ const ROUTES = [
       // },
     ],
   },
-  // {
-  //   path: "/login",
-  //   element: <LoginPage />,
-  // },
-  // {
-  //   path: "/signup",
-  //   element: <SignupPage />,
-  // },
 ];
 
 export default ROUTES;

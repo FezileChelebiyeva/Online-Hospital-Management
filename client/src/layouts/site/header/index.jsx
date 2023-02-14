@@ -13,6 +13,7 @@ const Header = () => {
   const [blog, setBlog] = useState(false);
   const [navbar, setNavbar] = useState(true);
   const [search, setSearch] = useState(false);
+  const [user, setUser] = useState(false);
   const [settings, setSettings] = useState(false);
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode);
@@ -82,11 +83,6 @@ const Header = () => {
                         <Menu.Item key="1">
                           <NavLink to={"/pharmacy-shop"}>SHOP</NavLink>
                         </Menu.Item>
-                        {/* <Menu.Item key="2">
-                          <NavLink to={"/pharmacy-product-detail"}>
-                            MEDICINE DETAIL
-                          </NavLink>
-                        </Menu.Item> */}
                         <Menu.Item key="3">
                           <NavLink to={"/pharmacy-shop-cart"}>
                             SHOP CART
@@ -182,8 +178,28 @@ const Header = () => {
             <div onClick={() => setSearch(true)} className="setting-search">
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div className="user">
-              <i className="fa-solid fa-user"></i>
+            <div className="user-setting">
+              <div onClick={() => setUser(!user)} className="user">
+                <i className="fa-solid fa-user"></i>
+              </div>
+              {user && (
+                <div className="user-profile">
+                  <ul>
+                    <li className="first-child">
+                      <NavLink to={"/login"}>
+                        <i className="fa-solid fa-right-to-bracket"></i>
+                        LOGIN
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to={"/signup"}>
+                        <i className="fa-solid fa-right-to-bracket"></i>
+                        SIGN UP
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>

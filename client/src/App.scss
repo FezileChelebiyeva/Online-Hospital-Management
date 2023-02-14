@@ -64,6 +64,19 @@
           }
         }
       }
+      .settings-profil {
+        .user {
+          border: 1px solid #293546e7;
+          box-shadow: 0px 0px 5px 0px #293546e7;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid #2c3e53;
+          }
+          .fa-solid {
+            color: #fff;
+          }
+        }
+      }
     }
     .background {
       background-color: #0000008a;
@@ -149,6 +162,19 @@
                 }
               }
             }
+          }
+        }
+      }
+      .settings-profil {
+        .user {
+          border: 1px solid #293546e7;
+          box-shadow: 0px 0px 5px 0px #293546e7;
+          cursor: pointer;
+          &:hover {
+            border: 1px solid #2c3e53;
+          }
+          .fa-solid {
+            color: #fff;
           }
         }
       }
@@ -351,7 +377,7 @@
   }
   #doctors-team {
     .doctors-team {
-      background-color: #1F2D3D;
+      background-color: #1f2d3d;
       .doctors {
         .header-team {
           .head {
@@ -408,5 +434,4 @@
       }
     }
   }
-  
 }

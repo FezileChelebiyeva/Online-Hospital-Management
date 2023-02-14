@@ -4,14 +4,43 @@ const { Schema } = mongoose;
 
 const patientsSchema = new Schema(
   {
-    image: { type: String, required: true },
-    name: { type: String, required: true },
-    location: { type: String, required: true },
-    password: {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
       type: String,
       required: true,
     },
     email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    doctor: {
+      type: String,
+      required: true,
+    },
+    job: {
+      type: String,
+      required: true,
+    },
+    birthday: {
+      type: String,
+      required: true,
+    },
+    gender: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    phone: {
       type: String,
       required: true,
     },
