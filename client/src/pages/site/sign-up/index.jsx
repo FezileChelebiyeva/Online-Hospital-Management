@@ -6,14 +6,13 @@ import "./index.scss";
 import { patientsSchema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
-import { getPatientsData } from "../../../redux/slice/patientsDataSlice";
+import { postPatientsData } from "../../../redux/slice/patientsDataSlice";
 const SignupPage = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
 
   useEffect(() => {
     dispatch(getData());
-    dispatch(getPatientsData());
   }, []);
 
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
@@ -26,14 +25,14 @@ const SignupPage = () => {
         doctor: "",
         job: "",
         birthday: "",
-        gender: "",
+        // gender: "",
         address: "",
         phone: "",
       },
       validationSchema: patientsSchema,
       onSubmit: (values) => {
         console.log(values);
-        dispatch(getPatientsData(values))
+        dispatch(postPatientsData(values));
       },
     });
 
@@ -219,7 +218,7 @@ const SignupPage = () => {
                 <div className="input-control">
                   <p>
                     <label htmlFor="address" className="m-2">
-                    Address
+                      Address
                       <span className="required">*</span>
                     </label>
                   </p>
@@ -244,7 +243,7 @@ const SignupPage = () => {
                   )}
                 </div>
               </div>
-              <div className="input-checkbox">
+              {/* <div className="input-checkbox">
                 <div className="chechbox">
                   <label htmlFor="man">Man</label>
                   <input
@@ -275,8 +274,8 @@ const SignupPage = () => {
                   >
                     {errors.gender}
                   </div>
-                )}
-              </div>
+                )} 
+              </div> */}
               <div className="for-select">
                 <div className="select">
                   <select

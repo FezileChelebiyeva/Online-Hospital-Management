@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import { patientsSchema } from "./schema";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { getPatientsData } from "../../../redux/slice/patientsDataSlice";
 const LoginPage = () => {
+  const dispatch = useDispatch();
+  const patients = useSelector((state) => state.patients);
+  const navigate = useNavigate();
+  useEffect(() => {
+    dispatch(getPatientsData(""));
+  }, []);
+
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -12,8 +21,16 @@ const LoginPage = () => {
         password: "",
       },
       validationSchema: patientsSchema,
-      onSubmit: (values) => {},
+      onSubmit: (values) => {
+        // let checkPatients = patients.data.some(
+        //   (element) =>
+        //     element.email == values.email && element.password == values.password
+        // );
+        // checkPatients ? navigate("/") : alert("not found");
+        dispatch(getPatientsData(values)) ? navigate("/") : alert("not found")
+      },
     });
+
   return (
     <div id="login-page">
       <Helmet>

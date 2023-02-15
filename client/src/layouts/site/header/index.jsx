@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo_dark from "../../../assets/images/logo-dark.png";
@@ -8,6 +8,7 @@ import adminimage from "../../../assets/images/adminimage.png";
 import { Menu, Dropdown } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { darkModeState } from "../../../redux/slice/darkMode";
+import { getPatientsData } from "../../../redux/slice/patientsDataSlice";
 
 const Header = () => {
   const [blog, setBlog] = useState(false);
@@ -18,9 +19,14 @@ const Header = () => {
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode);
   const dispatch = useDispatch();
+  const patients = useSelector((state) => state.patients);
+  useEffect(() => {
+    dispatch(getPatientsData(""));
+  }, []);
   window.addEventListener("scroll", () => {
     window.scrollY > 60 ? setNavbar(false) : setNavbar(true);
   });
+
   return (
     <div id={navbar ? "header" : "fixed-header"}>
       <div className="container">
@@ -184,20 +190,33 @@ const Header = () => {
               </div>
               {user && (
                 <div className="user-profile">
-                  <ul>
-                    <li className="first-child">
-                      <NavLink to={"/login"}>
-                        <i className="fa-solid fa-right-to-bracket"></i>
-                        LOGIN
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to={"/signup"}>
-                        <i className="fa-solid fa-right-to-bracket"></i>
-                        SIGN UP
-                      </NavLink>
-                    </li>
-                  </ul>
+                  {dispatch(getPatientsData("")) ? (
+                    <ul>
+                      <li className="first-child">
+                        <NavLink to={"/login"}>
+                          <i className="fa-solid fa-right-to-bracket"></i>
+                          LOGIN
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink to={"/signup"}>
+                          <i className="fa-solid fa-right-to-bracket"></i>
+                          SIGN UP
+                        </NavLink>
+                      </li>
+                    </ul>
+                  ) : (
+                    // patients.data.map((element) => {
+                    //   return (
+                    //     <div className="patients">
+                    //       <h4>
+                    //         {element.firstName}, {element.lastName}
+                    //       </h4>
+                    //     </div>
+                    //   );
+                    // })
+                    <p>lsm</p>
+                  )}
                 </div>
               )}
             </div>

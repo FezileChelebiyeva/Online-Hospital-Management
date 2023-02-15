@@ -25,9 +25,10 @@ export const getPatientsDataById = async (req, res) => {
 export const createNewPatientInfo = async (req, res) => {
   console.log(req);
   const newPatient = new Patients(req.body);
+  console.log("post");
   try {
     await newPatient.save();
-    res.status(201).send(newPatient).json({ message: "Added New Patient" });
+    res.status(201).json(newPatient);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
