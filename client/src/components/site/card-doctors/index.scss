@@ -73,6 +73,10 @@
               font-size: 18px;
               line-height: 1.2;
               color: black;
+              transition: all 0.4s;
+              &:hover {
+                color: #396cf0;
+              }
             }
           }
           .job {

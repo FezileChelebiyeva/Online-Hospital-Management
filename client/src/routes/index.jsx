@@ -5,6 +5,7 @@ import AboutPage from "../pages/site/about";
 import BlogsPage from "../pages/site/blogs";
 import ContactPage from "../pages/site/contact";
 import DepartmentsPage from "../pages/site/departments";
+import DoctorDetailsPage from "../pages/site/details-page";
 import DoctorsTeam from "../pages/site/doctors-team";
 import FaqsPage from "../pages/site/faqs";
 import HomePage from "../pages/site/home";
@@ -26,6 +27,10 @@ const ROUTES = [
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/details-doctor/:id",
+        element: <DoctorDetailsPage />,
       },
       {
         path: "/doctors-team",

@@ -36,13 +36,15 @@ const DoctorsCard = () => {
                   </div>{" "}
                   <div className="about-doctor">
                     <h4>
-                      <Link>{element.doctorName}</Link>
+                      <Link to={`/details-doctor/${element._id}`}>
+                        {element.doctorName}
+                      </Link>
                     </h4>
                     <p className="job">{element.doctorJob}</p>
                     <div className="star">
                       <div className="star-icon">
                         {new Array(element.star).fill(
-                            <i className="fa-sharp fa-solid fa-star"></i>
+                          <i className="fa-sharp fa-solid fa-star"></i>
                         )}
                       </div>
                       <div className="star-count">{element.star} Star</div>

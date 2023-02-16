@@ -124,28 +124,9 @@ const Header = () => {
                           <NavLink to={"/faqs"}>FAQS</NavLink>
                         </Menu.Item>
                         <Menu.Item key="3">
-                          <NavLink
-                            to={"/blogs"}
-                            onMouseEnter={() => setBlog(true)}
-                          >
+                          {/* <NavLink to={"/blogs"}>
                             BLOGS
-                            {/* <span className="blog-arrow"></span> */}
-                            {/* {blog && (
-                              <ul
-                                className="blog-item"
-                                onMouseLeave={() => setBlog(false)}
-                              >
-                                <li>
-                                  <NavLink to={"/blogs"}>BLOGS</NavLink>
-                                </li>
-                                <li>
-                                  <NavLink to={"/blog-detail"}>
-                                    BLOG DETAILS
-                                  </NavLink>
-                                </li>
-                              </ul>
-                            )} */}
-                          </NavLink>
+                          </NavLink> */}
                         </Menu.Item>
                         <Menu.Item key="4">
                           <NavLink to={"/terms-policy"}>TERMS & POLICY</NavLink>

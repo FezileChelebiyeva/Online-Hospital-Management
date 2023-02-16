@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import image from "../../../assets/images/background.png";
 import logo1 from "../../../assets/images/logo1.png";
@@ -23,14 +23,21 @@ import { Collapse, theme } from "antd";
 import { UpOutlined } from "@ant-design/icons";
 import "./index.scss";
 import DoctorsCard from "../../../components/site/card-doctors";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { getData } from "../../../redux/slice/doctorsDataSlice";
 
 const { Panel } = Collapse;
 
 const HomePage = () => {
+  const darkMode = useSelector((state) => state.darkMode);
+  const doctors = useSelector((state) => state.doctors);
+  const dispatch = useDispatch();
   const [video, setVideo] = useState(false);
   const [active, setActive] = useState(false);
-  const darkMode = useSelector((state) => state.darkMode);
+  const [search, setSearch] = useState(false);
+  const [input, setInput] = useState("");
+  const [filtredProducts, setFiltredProducts] = useState(doctors.data);
   const onChange = (key) => {
     key == "" ? setActive(false) : setActive(true);
   };
@@ -42,7 +49,21 @@ const HomePage = () => {
     marginBottom: "0",
     marginTop: "10px",
   };
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
 
+  const handleSearch = (e) => {
+    setInput(e.target.value);
+    e.target.value ? setSearch(true) : setSearch(false);
+    setFiltredProducts(
+      doctors.data?.filter((elem) =>
+        elem.doctorName
+          .toLocaleLowerCase()
+          .includes(e.target.value.toLocaleLowerCase())
+      )
+    );
+  };
   return (
     <div id="home-sections">
       <Helmet>
@@ -59,14 +80,50 @@ const HomePage = () => {
                 assistance, emergency treatment or a simple consultation.
               </p>
               <div className="input-control">
-                <input type="text" placeholder="Doctor name..." />
+                <input
+                  value={input}
+                  onChange={(e) => handleSearch(e)}
+                  type="text"
+                  placeholder="Doctor name..."
+                />
                 <button>
                   <i className="fa-solid fa-magnifying-glass"></i>Search
                 </button>
               </div>
-              <div className="note">
-                <span className="name">Note: </span>Please search best doctors
-                here,
+              <div className="doctors-card">
+                <div className="note">
+                  <span className="name">Note: </span>Please search best doctors
+                  here,
+                </div>
+                {search && (
+                  <div id="doctors">
+                    <div className="doctors">
+                      <ul>
+                        {filtredProducts?.map((element) => {
+                          return (
+                            <li key={element._id}>
+                              <div className="img">
+                                <img src={element.image} alt="" />
+                              </div>
+                              <div className="name">
+                                <Link
+                                  onClick={() => {
+                                    setInput("");
+                                    setSearch(false);
+                                  }}
+                                  to={`/details-doctor/${element._id}`}
+                                >
+                                  {element.doctorName}
+                                </Link>
+                                <p>{element.doctorJob}</p>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="image">

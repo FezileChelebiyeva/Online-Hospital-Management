@@ -1,0 +1,67 @@
+#details-page {
+  #details-head {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    width: 100%;
+    .header {
+      display: flex;
+      justify-content: center;
+      margin: 130px 0;
+      .head {
+        h1 {
+          text-align: center;
+          letter-spacing: 0.5px;
+          font-size: 28px;
+          line-height: 1.5;
+          font-weight: 600;
+          color: #212529;
+        }
+        p {
+          text-align: center;
+          color: #8492a6;
+          max-width: 600px;
+          font-size: 15px;
+          line-height: 1.6;
+          margin-top: 20px;
+        }
+        .links {
+          display: flex;
+          justify-content: center;
+          column-gap: 15px;
+          margin-top: 40px;
+          span {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            a {
+              color: #212529;
+              font-size: 12px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              transition: all 0.5s;
+              &.active {
+                color: #396cf0;
+              }
+              &:hover {
+                color: #396cf0;
+              }
+            }
+            .antd-icon {
+              font-size: 8px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  #doctor-details{
+    .doctor-details{
+        .img{
+            img{
+                border-radius: 50%;
+            }
+        }
+    }
+  }
+}
