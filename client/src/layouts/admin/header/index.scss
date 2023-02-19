@@ -1,0 +1,124 @@
+#admin-header {
+  width: 100%;
+  position: fixed;
+  z-index: 6;
+  background-color: #fff;
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .nav {
+      width: 20%;
+      border-right: 1px solid #e9ecef;
+      border-bottom: 1px solid #e9ecef;
+      padding: 20px 0;
+    }
+    .header-body {
+      width: 80%;
+      border-bottom: 1px solid #e9ecef;
+      padding: 15px 0;
+      display: flex;
+      column-gap: 8px;
+      align-items: center;
+      .settings {
+        .setting-search {
+          width: 36px;
+          height: 36px;
+          background-color: rgba(126, 152, 216, 0.1);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.4s;
+          .fa-solid {
+            color: #305ccc;
+            font-size: 14px;
+          }
+          &:hover {
+            background-color: #305ccc;
+            .fa-solid {
+              color: #fff;
+            }
+          }
+        }
+      }
+      .btn {
+        button {
+          padding: 8px 10px;
+          outline: 0;
+          cursor: pointer;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          -webkit-transition: all 0.4s;
+          transition: all 0.4s;
+          border-radius: 5px;
+          background-color: rgba(126, 152, 216, 0.1);
+          border: 1px solid rgba(57, 108, 240, 0.1);
+          color: #305ccc;
+          -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+          box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+          .fa-solid {
+            margin-right: 8px;
+            font-size: 12px;
+          }
+          &:hover {
+            background-color: #305cccb0;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  #settings {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 7;
+    display: flex;
+    .background-setting {
+      background-color: #21252998;
+      width: 75%;
+      height: 100vh;
+    }
+    .settings {
+      width: 25%;
+      height: 100vh;
+      background-color: #fff;
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #eeecec;
+        .close-settings {
+          font-size: 26px;
+          color: #c9c9c9;
+          cursor: pointer;
+        }
+      }
+      .img {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        img {
+          width: 240px;
+          border-radius: 10px;
+          box-shadow: 0 5px 13px rgba(60, 72, 88, 0.2);
+          cursor: pointer;
+        }
+      }
+      h4 {
+        margin-top: 15px;
+        color: #212529;
+        font-weight: 400;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}

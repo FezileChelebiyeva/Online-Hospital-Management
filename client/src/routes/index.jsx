@@ -14,6 +14,7 @@ import PrivacyPolicy from "../pages/site/privacy-policy";
 import LoginPage from "../pages/site/sign-in";
 import SignupPage from "../pages/site/sign-up";
 import TermsPolicy from "../pages/site/terms-policy";
+import WishListPage from "../pages/site/wishlist";
 
 const ROUTES = [
   {
@@ -67,6 +68,10 @@ const ROUTES = [
       {
         path: "/signup",
         element: <SignupPage />,
+      },
+      {
+        path: "/wishlist",
+        element: <WishListPage />,
       },
       {
         path: "*",

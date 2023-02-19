@@ -1,9 +1,97 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import "./index.scss";
+import logo_dark from "../../../assets/images/logo-dark.png";
+import logo_light from "../../../assets/images/logo-light.png";
+import homepage from "../../../assets/images/darkmodeimage.png";
+import darkdash from "../../../assets/images/dark-dash.png";
 const AdminHeader = () => {
-  return (
-    <div>AdminHeader</div>
-  )
-}
+  const darkMode = useSelector((state) => state.darkMode);
+  const navigate = useNavigate();
+  const [settings, setSettings] = useState(false);
 
-export default AdminHeader
+  return (
+    <div id="admin-header">
+      <div className="header">
+        <div className="nav">
+          <div className="logo">
+            {darkMode.value ? (
+              <Link to={"/admin/"}>
+                <img src={logo_dark} alt="" />
+              </Link>
+            ) : (
+              <Link to={"/"}>
+                <img src={logo_light} alt="" />
+              </Link>
+            )}
+          </div>
+        </div>
+        <div className="header-body">
+          <div className="settings">
+            <div onClick={() => setSettings(true)} className="setting-search">
+              <i className="fa-solid fa-gear"></i>
+            </div>
+          </div>
+          <div className="btn">
+            <button onClick={() => navigate("/")}>
+              <i className="fa-solid fa-right-to-bracket"></i>
+              GO TO SITE
+            </button>
+          </div>
+        </div>
+      </div>
+      {settings && (
+        <div id="settings">
+          <div
+            onClick={() => setSettings(false)}
+            className="background-setting"
+          ></div>
+          <div className="settings">
+            <div className="head">
+              <div className="logo">
+                {darkMode.value ? (
+                  <img src={logo_dark} alt="" />
+                ) : (
+                  <img src={logo_light} alt="" />
+                )}
+              </div>
+              <div
+                onClick={() => setSettings(false)}
+                className="close-settings"
+              >
+                x
+              </div>
+            </div>
+            <div className="img">
+              <img
+                onClick={() => {
+                  dispatch(darkModeState(!darkMode.value));
+                }}
+                src={darkdash}
+                alt=""
+              />
+            </div>
+            <h4
+              onClick={() => {
+                dispatch(darkModeState(!darkMode.value));
+              }}
+            >
+              {darkMode.value ? " Dark Version" : "Light Version"}
+            </h4>
+            <div className="img">
+              <img
+                onClick={() => navigate("/")}
+                src={homepage}
+                alt=""
+              />
+            </div>
+            <h4>HOME PAGE</h4>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AdminHeader;

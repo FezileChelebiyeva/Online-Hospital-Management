@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { RightOutlined } from "@ant-design/icons";
-import "./index.scss"
+import "./index.scss";
+import { useDispatch } from "react-redux";
+import { addToWishlist } from "../../../redux/slice/addRemoveWishlist";
 const DoctorDetailsPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [doctor, setDoctor] = useState({});
   const getDataByName = async () => {
     const response = await axios.get(`http://localhost:8080/doctors/${id}`);
@@ -18,7 +22,7 @@ const DoctorDetailsPage = () => {
   return (
     <div id="details-page">
       <Helmet>
-        <title>{id}</title>
+        <title>{`Doctris - ${doctor.doctorName}`}</title>
         <meta name="description" content="test on react-helmet" />
         <meta name="theme-color" content="#ccc" />
       </Helmet>
@@ -47,14 +51,48 @@ const DoctorDetailsPage = () => {
           </div>
         </div>
       </div>
-      
+
       <div id="doctor-details">
         <div className="container">
-            <div className="doctor-details">
-                <div className="img">
-                    <img src={doctor.image} alt="" />
-                </div>
+          <div className="doctor-details">
+            <div className="img">
+              <img src={doctor.image} alt="" />
             </div>
+            <div className="about-doctor">
+              <div className="about">
+                <h3>{doctor.doctorName}</h3>
+              </div>
+              <div className="star">
+                <div className="star-icon">
+                  {new Array(doctor.star).fill(
+                    <i className="fa-sharp fa-solid fa-star"></i>
+                  )}
+                </div>
+              </div>
+              <div className="about">
+                <span>Job: </span>
+                <p>{doctor.doctorJob}</p>
+              </div>
+              <div className="about">
+                <span>Location: </span>
+                <p>{doctor.location}</p>
+              </div>
+              <div className="about">
+                <span>Appointment Price: </span>
+                <p>{doctor.money}.00 $</p>
+              </div>
+              <div className="about">
+                <span>Working Hours: </span>
+                <p>{doctor.hour}</p>
+              </div>
+              <div className="btn">
+                <button onClick={() => navigate("/")}>Go Back Home</button>
+                <button onClick={() => dispatch(addToWishlist(doctor))}>
+                  Add To Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

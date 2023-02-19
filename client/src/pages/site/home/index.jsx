@@ -26,6 +26,7 @@ import DoctorsCard from "../../../components/site/card-doctors";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
+import favicon from "../../../assets/images/favicon.png";
 
 const { Panel } = Collapse;
 
@@ -68,6 +69,11 @@ const HomePage = () => {
     <div id="home-sections">
       <Helmet>
         <meta charSet="utf-8" />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={favicon}
+        />
         <title>Doctris - Doctor Appointment Booking System</title>
       </Helmet>
       <section id="search-doctors">

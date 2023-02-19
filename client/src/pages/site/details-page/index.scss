@@ -55,13 +55,87 @@
       }
     }
   }
-  #doctor-details{
-    .doctor-details{
-        .img{
-            img{
-                border-radius: 50%;
-            }
+  #doctor-details {
+    padding: 60px 0;
+    .doctor-details {
+      display: flex;
+      column-gap: 80px;
+      align-items: center;
+      width: 100%;
+      .img {
+        width: 50%;
+        img {
+          border-radius: 50%;
+          width: 400px;
         }
+      }
+      .about-doctor {
+        width: 50%;
+        .about {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin-top: 15px;
+          h3 {
+            color: #396cf0;
+            letter-spacing: 0.5px;
+            font-size: 28px;
+            line-height: 1.5;
+            font-weight: 600;
+          }
+          span {
+            width: 35%;
+            font-weight: 700;
+            color: #212529;
+            letter-spacing: 0.5px;
+          }
+          p {
+            width: 65%;
+            color: #8492a6;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+
+          }
+        }
+        .btn {
+          display: flex;
+          align-items: center;
+          column-gap: 30px;
+          margin-top: 30px;
+          // width: 100%;
+          button {
+            padding: 10px 20px;
+            outline: 0;
+            // width: 50%;
+            cursor: pointer;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            -webkit-transition: all 0.4s;
+            transition: all 0.4s;
+            border-radius: 5px;
+            background-color: rgba(57, 108, 240, 0.1);
+            border: 1px solid rgba(57, 108, 240, 0.1);
+            color: #396cf0;
+            -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+            box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+            font-size: 15px;
+            &:hover {
+              background-color: #305ccc;
+              color: #fff;
+            }
+          }
+        }
+        .star {
+          margin-bottom: 25px;
+          .star-icon {
+            .fa-sharp {
+              color: #f1b561;
+              margin-right: 8px;
+              font-size: 11px;
+            }
+          }
+        }
+      }
     }
   }
 }

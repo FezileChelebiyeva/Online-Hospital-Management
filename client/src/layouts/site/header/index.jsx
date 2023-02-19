@@ -124,9 +124,9 @@ const Header = () => {
                           <NavLink to={"/faqs"}>FAQS</NavLink>
                         </Menu.Item>
                         <Menu.Item key="3">
-                          {/* <NavLink to={"/blogs"}>
-                            BLOGS
-                          </NavLink> */}
+                          <NavLink to={"/wishlist"}>
+                            WISHLIST
+                          </NavLink>
                         </Menu.Item>
                         <Menu.Item key="4">
                           <NavLink to={"/terms-policy"}>TERMS & POLICY</NavLink>
