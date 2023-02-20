@@ -169,10 +169,9 @@ const Header = () => {
               <div onClick={() => setUser(!user)} className="user">
                 <i className="fa-solid fa-user"></i>
               </div>
-              {user && (
-                <div className="user-profile">
-                  {dispatch(getPatientsData("")) ? (
-                    <ul>
+              
+                <div style={{display: "none"}} className="user-profile">
+                    <ul >
                       <li className="first-child">
                         <NavLink to={"/login"}>
                           <i className="fa-solid fa-right-to-bracket"></i>
@@ -186,20 +185,7 @@ const Header = () => {
                         </NavLink>
                       </li>
                     </ul>
-                  ) : (
-                    // patients.data.map((element) => {
-                    //   return (
-                    //     <div className="patients">
-                    //       <h4>
-                    //         {element.firstName}, {element.lastName}
-                    //       </h4>
-                    //     </div>
-                    //   );
-                    // })
-                    <p>lsm</p>
-                  )}
                 </div>
-              )}
             </div>
           </div>
         </div>

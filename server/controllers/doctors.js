@@ -1,6 +1,6 @@
-import Doctors from "../models/doctors.js";
-
-export const getDoctorsData = async (req, res) => {
+const Doctors = require("../models/doctors.js");
+const bcrypt = require("bcrypt");
+module.exports.getDoctorsData = async (req, res) => {
   try {
     const doctors = await Doctors.find();
     res.status(200).json(doctors);
@@ -10,7 +10,7 @@ export const getDoctorsData = async (req, res) => {
   }
 };
 
-export const getDoctorsDataById = async (req, res) => {
+module.exports.getDoctorsDataById = async (req, res) => {
   const { id } = req.params;
   try {
     const doctors = await Doctors.findById(id);
@@ -22,7 +22,7 @@ export const getDoctorsDataById = async (req, res) => {
   }
 };
 
-export const createNewDoctorInfo = async (req, res) => {
+module.exports.createNewDoctorInfo = async (req, res) => {
   console.log(req);
   const newDoctor = new Doctors(req.body);
   try {
@@ -33,7 +33,7 @@ export const createNewDoctorInfo = async (req, res) => {
   }
 };
 
-export const deleteDoctorInfo = async (req, res) => {
+module.exports.deleteDoctorInfo = async (req, res) => {
   const { id } = req.params;
   try {
     const deletedDoctor = await Doctors.findByIdAndDelete(id);
@@ -46,7 +46,7 @@ export const deleteDoctorInfo = async (req, res) => {
   }
 };
 
-export const updateDoctorsData = async (req, res) => {
+module.exports.updateDoctorsData = async (req, res) => {
   console.log(req);
   const { id } = req.params;
   try {

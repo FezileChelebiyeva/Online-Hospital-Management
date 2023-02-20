@@ -1,20 +1,22 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import cors from "cors";
-import dotenv from "dotenv";
-import doctorsRoutes from "./routes/doctors.js";
-import patientsRoutes from "./routes/patients.js";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const useRouter = require("./routes/doctors.js");
 const app = express();
 
-app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.json());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors({credentials: true, origin: "http://127.0.2.1:5173"}));
 dotenv.config();
 
-app.use("/doctors", doctorsRoutes);
-app.use("/patients", patientsRoutes);
+useRouter(app)
+
 
 const PORT = process.env.PORT || 8000;
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
@@ -35,4 +37,5 @@ mongoose
   .catch((err) => {
     console.log("error");
     console.log(err);
+    process.exit()
   });

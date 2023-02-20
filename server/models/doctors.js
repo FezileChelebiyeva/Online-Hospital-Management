@@ -1,22 +1,29 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const Joi = require("joi");
+const { options } = require("joi");
+const joigoose = require("joigoose")((mongoose, { convert: false }));
+
+const joiDoctorsSchema = Joi.object({
+  image: Joi.string().required("this input is required"),
+  doctorJob: Joi.string()
+    .required("this input is required")
+    .regex(/^([A-Za-z]*)$/, "job can only contain letters."),
+  doctorName: Joi.string()
+    .required("this input is required")
+    .min(10)
+    .regex(/^([A-Za-z]*)$/, "name can only contain letters."),
+  star: Joi.number().required("this input is required"),
+  location: Joi.string().required("this input is required"),
+  hour: Joi.string().required("this input is required"),
+  money: Joi.string().required("this input is required"),
+});
+
 const { Schema } = mongoose;
 
-const doctorsSchema = new Schema(
-  {
-    image: { type: String, required: true },
-    doctorJob: { type: String, required: true },
-    doctorName: { type: String, required: true },
-    star: { type: Number, required: true },
-    location: { type: String, required: true },
-    hour: { type: String, required: true },
-    money: { type: Number, required: true },
-    team: { type: String, required: true },
-  },
-  { timestamps: true }
-);
+const doctorsSchema = new Schema(joigoose.convert(joiDoctorsSchema, options));
+
 
 const Doctors = mongoose.model("doctors", doctorsSchema);
 
-// Doctors = module.exports;
-
-export default Doctors;
+module.exports = Doctors;

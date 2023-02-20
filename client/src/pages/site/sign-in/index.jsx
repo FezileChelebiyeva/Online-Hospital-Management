@@ -28,6 +28,7 @@ const LoginPage = () => {
         // );
         // checkPatients ? navigate("/") : alert("not found");
         dispatch(getPatientsData(values)) ? navigate("/") : alert("not found")
+        console.log(values);
       },
     });
 
