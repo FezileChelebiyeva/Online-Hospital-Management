@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import favicon from "../../../assets/images/favicon.png";
+import AdminNavbar from "../../../components/admin/navbar";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DashBoard = () => {
@@ -21,21 +22,7 @@ const DashBoard = () => {
         <meta name="theme-color" content="#ccc" />
       </Helmet>
       <div className="dashboard">
-        <div className="navbar">
-          <nav>
-            <ul>
-              <li>
-                <NavLink>Doctors</NavLink>
-              </li>
-              <li>
-                <NavLink>Patients</NavLink>
-              </li>
-              <li>
-                <NavLink>Add Doctor</NavLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <AdminNavbar/>
         <div className="body-admin">
           <div className="doctors">
             <h1>Doctors</h1>

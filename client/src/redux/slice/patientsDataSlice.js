@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const getPatientsData = createAsyncThunk(
-  "getPatientData",
+  "getPatientsData",
   async (values) => {
     const response = await axios.get("http://localhost:8080/patients");
     if (values) {
@@ -22,7 +22,7 @@ export const getPatientsData = createAsyncThunk(
 );
 
 export const postPatientsData = createAsyncThunk(
-  "postPatientData",
+  "postPatientsData",
   async (values) => {
     await axios.post("http://localhost:8080/patients", values);
   }

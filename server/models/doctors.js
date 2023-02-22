@@ -11,7 +11,6 @@ const joiDoctorsSchema = Joi.object({
     .regex(/^([A-Za-z]*)$/, "job can only contain letters."),
   doctorName: Joi.string()
     .required("this input is required")
-    .min(10)
     .regex(/^([A-Za-z]*)$/, "name can only contain letters."),
   star: Joi.number().required("this input is required"),
   location: Joi.string().required("this input is required"),

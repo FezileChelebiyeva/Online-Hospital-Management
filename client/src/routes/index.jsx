@@ -1,6 +1,11 @@
 import AdminRoot from "../components/admin/admin-root";
 import MainRoot from "../components/site/main-root";
+import AddDoctor from "../pages/admin/add-doctor";
+import AddPatient from "../pages/admin/add-patient";
 import DashBoard from "../pages/admin/dashboard";
+import DoctorsList from "../pages/admin/doctors-lists";
+import PatientsList from "../pages/admin/patients-list";
+import SignInForAdmin from "../pages/sign-in-admin";
 import AboutPage from "../pages/site/about";
 import BlogsPage from "../pages/site/blogs";
 import ContactPage from "../pages/site/contact";
@@ -87,15 +92,27 @@ const ROUTES = [
         path: "/admin/",
         element: <DashBoard />,
       },
-      // {
-      //   path: "users",
-      //   element: <UsersListPage />,
-      // },
-      // {
-      //   path: "products",
-      //   element: <ProductsListPage />,
-      // },
+      {
+        path: "doctors-list",
+        element: <DoctorsList />,
+      },
+      {
+        path: "patients-list",
+        element: <PatientsList />,
+      },
+      {
+        path: "add-doctor",
+        element: <AddDoctor />,
+      },
+      {
+        path: "add-patient",
+        element: <AddPatient />,
+      },
     ],
+  },
+  {
+    path: "/sign-in-admin/",
+    element: <SignInForAdmin />,
   },
 ];
 

@@ -61,6 +61,9 @@ const HomePage = () => {
       doctors.data?.filter((elem) =>
         elem.doctorName
           .toLocaleLowerCase()
+          .includes(e.target.value.toLocaleLowerCase()) ||
+          elem.doctorJob
+          .toLocaleLowerCase()
           .includes(e.target.value.toLocaleLowerCase())
       )
     );

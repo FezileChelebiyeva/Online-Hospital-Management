@@ -153,7 +153,7 @@ const Header = () => {
                   </Dropdown>
                 </li>
                 <li>
-                  <NavLink to={"/admin/"}>ADMIN</NavLink>
+                  <NavLink target={'_blank'} to={"/sign-in-admin/"}>ADMIN</NavLink>
                 </li>
               </ul>
             </nav>

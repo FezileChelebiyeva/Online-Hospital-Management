@@ -12,7 +12,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({credentials: true, origin: "http://127.0.2.1:5173"}));
+app.use(cors());
 dotenv.config();
 
 useRouter(app)
