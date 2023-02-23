@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import "./index.scss";
 import logo_dark from "../../../assets/images/logo-dark.png";
 import logo_light from "../../../assets/images/logo-light.png";
@@ -14,22 +14,14 @@ const AdminHeader = () => {
   return (
     <div id="admin-header">
       <div className="header">
-        <div className="nav">
-          <div className="logo">
-            {darkMode.value ? (
-              <Link to={"/admin/"}>
-                <img src={logo_dark} alt="" />
-              </Link>
-            ) : (
-              <Link to={"/"}>
-                <img src={logo_light} alt="" />
-              </Link>
-            )}
-          </div>
-        </div>
         <div className="header-body">
+          <div className="menu-item">
+            <div className="menu">
+              <i className="fa-solid fa-bars"></i>{" "}
+            </div>
+          </div>
           <div className="settings">
-            <div onClick={() => setSettings(true)} className="setting-search">
+            <div onClick={() => setSettings(true)} className="setting">
               <i className="fa-solid fa-gear"></i>
             </div>
           </div>
@@ -80,11 +72,7 @@ const AdminHeader = () => {
               {darkMode.value ? " Dark Version" : "Light Version"}
             </h4>
             <div className="img">
-              <img
-                onClick={() => navigate("/")}
-                src={homepage}
-                alt=""
-              />
+              <img onClick={() => navigate("/")} src={homepage} alt="" />
             </div>
             <h4>HOME PAGE</h4>
           </div>

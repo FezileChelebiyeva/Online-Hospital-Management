@@ -7,12 +7,7 @@ import AdminNavbar from "../../../components/admin/navbar";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DashBoard = () => {
-  const dispatch = useDispatch();
-  const doctors = useSelector((state) => state.doctors);
 
-  useEffect(() => {
-    dispatch(getData());
-  }, []);
   return (
     <div id="admin-page">
       <Helmet>
@@ -22,43 +17,8 @@ const DashBoard = () => {
         <meta name="theme-color" content="#ccc" />
       </Helmet>
       <div className="dashboard">
-        <AdminNavbar/>
-        <div className="body-admin">
-          <div className="doctors">
-            <h1>Doctors</h1>
-            <div className="cards-doctor">
-              {doctors.data?.map((element) => {
-                return (
-                  <div key={element._id} className="card">
-                    <div className="image">
-                      <img src={element.image} alt="" />
-                      <div className="card-icons">
-                        <div className="circle">
-                          <i className="fa-brands fa-facebook-f"></i>
-                        </div>
-                        <div className="circle">
-                          <i className="fa-brands fa-linkedin-in"></i>
-                        </div>
-                        <div className="circle">
-                          <i className="fa-brands fa-github"></i>
-                        </div>
-                        <div className="circle">
-                          <i className="fa-brands fa-twitter"></i>
-                        </div>
-                      </div>
-                    </div>{" "}
-                    <div className="about-doctor">
-                      <h4>
-                        <Link>{element.doctorName}</Link>
-                      </h4>
-                      <p className="job">{element.doctorJob}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        <AdminNavbar />
+        <div className="body-admin"></div>
       </div>
     </div>
   );

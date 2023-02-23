@@ -2,11 +2,28 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UpOutlined } from "@ant-design/icons";
 import "./index.scss";
+import { useSelector } from "react-redux";
+import logo_dark from "../../../assets/images/logo-dark.png";
+import logo_light from "../../../assets/images/logo-light.png";
 const AdminNavbar = () => {
   const [doctor, setDoctor] = useState(false);
   const [patient, setPatient] = useState(false);
+  const darkMode = useSelector((state) => state.darkMode);
   return (
     <div className="admin-navbar">
+      <div className="nav">
+        <div className="logo">
+          {darkMode.value ? (
+            <Link to={"/admin/"}>
+              <img src={logo_dark} alt="" />
+            </Link>
+          ) : (
+            <Link to={"/admin/"}>
+              <img src={logo_light} alt="" />
+            </Link>
+          )}
+        </div>
+      </div>
       <nav>
         <ul>
           <li className="nav-menu">
@@ -44,7 +61,7 @@ const AdminNavbar = () => {
               <div className="icon">
                 <i className="fa-solid fa-hospital-user"></i>
               </div>
-              Patients 
+              Patients
             </Link>
             {patient && (
               <ul>

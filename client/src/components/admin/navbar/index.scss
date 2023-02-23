@@ -1,9 +1,13 @@
 .admin-navbar {
-  width: 22%;
+  width: 20%;
   height: 100%;
   border-right: 1px solid #e9ecef;
   position: fixed;
-  // overflow: scroll;
+  top: 0;
+  .nav {
+    width: 100%;
+    padding: 20px 40px;
+  }
   nav {
     padding: 30px 40px;
     ul {

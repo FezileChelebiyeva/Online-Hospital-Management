@@ -1,27 +1,22 @@
 #admin-header {
   width: 100%;
+  border-bottom: 1px solid #e9ecef;
   position: fixed;
   z-index: 6;
-  background-color: #fff;
   .header {
     display: flex;
     align-items: center;
     width: 100%;
-    .nav {
-      width: 22.4%;
-      border-right: 1px solid #e9ecef;
-      border-bottom: 1px solid #e9ecef;
-      padding: 20px 40px;
-    }
     .header-body {
       width: 80%;
-      border-bottom: 1px solid #e9ecef;
+      background-color: #fff;
       padding: 15px 0;
       display: flex;
       column-gap: 8px;
       align-items: center;
+      margin-left: 275px;
       .settings {
-        .setting-search {
+        .setting {
           width: 36px;
           height: 36px;
           background-color: rgba(126, 152, 216, 0.1);
@@ -40,6 +35,23 @@
             .fa-solid {
               color: #fff;
             }
+          }
+        }
+      }
+      .menu-item {
+        .menu {
+          width: 36px;
+          height: 36px;
+          background-color: #305ccc;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.4s;
+          .fa-solid {
+            color: #fff;
+            font-size: 12px;
           }
         }
       }

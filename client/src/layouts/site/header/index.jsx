@@ -249,7 +249,7 @@ const Header = () => {
             </h4>
             <div className="img">
               <img
-                onClick={() => navigate("/admin/")}
+                onClick={() => navigate("/sign-in-admin/")}
                 src={adminimage}
                 alt=""
               />

@@ -315,7 +315,7 @@ const SignupPage = () => {
                     value={values.job}
                   >
                     <option selected value="">
-                      Doctor's job
+                      Departments
                     </option>
                     {doctors.data?.map((element) => {
                       if (values.doctor === element.doctorName) {
