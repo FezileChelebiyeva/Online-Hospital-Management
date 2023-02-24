@@ -14,11 +14,11 @@ const AdminNavbar = () => {
       <div className="nav">
         <div className="logo">
           {darkMode.value ? (
-            <Link to={"/admin/"}>
+            <Link to={"/admin"}>
               <img src={logo_dark} alt="" />
             </Link>
           ) : (
-            <Link to={"/admin/"}>
+            <Link to={"/admin"}>
               <img src={logo_light} alt="" />
             </Link>
           )}
@@ -27,7 +27,7 @@ const AdminNavbar = () => {
       <nav>
         <ul>
           <li className="nav-menu">
-            <NavLink to={"/admin/"}>
+            <NavLink to={"/admin"}>
               <div className="icon">
                 <i className="fa-solid fa-gauge"></i>
               </div>
@@ -44,12 +44,12 @@ const AdminNavbar = () => {
             {doctor && (
               <ul>
                 <li className="menu-item">
-                  <NavLink to={"doctors-list"}>
+                  <NavLink to={"/admin/doctors-list"}>
                     <i className="fa-solid fa-caret-right"></i> Doctors
                   </NavLink>
                 </li>
                 <li className="menu-item">
-                  <NavLink to={"add-doctor"}>
+                  <NavLink to={"/admin/add-doctor"}>
                     <i className="fa-solid fa-caret-right"></i> Add Doctor
                   </NavLink>
                 </li>
@@ -66,12 +66,12 @@ const AdminNavbar = () => {
             {patient && (
               <ul>
                 <li className="menu-item">
-                  <NavLink to={"patients-list"}>
+                  <NavLink to={"/admin/patients-list"}>
                     <i className="fa-solid fa-caret-right"></i> Patients
                   </NavLink>
                 </li>
                 <li className="menu-item">
-                  <NavLink to={"add-patient"}>
+                  <NavLink to={"/admin/add-patient"}>
                     <i className="fa-solid fa-caret-right"></i> Add Patient
                   </NavLink>
                 </li>

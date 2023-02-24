@@ -85,11 +85,11 @@ const ROUTES = [
     ],
   },
   {
-    path: "/admin/",
+    path: "/admin",
     element: <AdminRoot />,
     children: [
       {
-        path: "/admin/",
+        path: "/admin",
         element: <DashBoard />,
       },
       {

@@ -18,14 +18,14 @@ const SignInForAdmin = () => {
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
-        email: "",
-        password: "",
+        name: "",
+        adminPassword: "",
       },
       validationSchema: adminSchema,
       onSubmit: (values) => {
-        values.email === "admin@gmail.com" &&
-        values.password === "doctrisadmin001"
-          ? navigate("/admin/")
+        values.name === "admin" &&
+        values.adminPassword === "doctrisadmin001"
+          ? navigate("/admin")
           : setAlert(true);
         resetForm();
       },
@@ -50,20 +50,20 @@ const SignInForAdmin = () => {
             <form onSubmit={handleSubmit}>
               <div className="input-control">
                 <p>
-                  <label htmlFor="username" className="m-2">
-                    Your Email
+                  <label htmlFor="name" className="m-2">
+                    Name
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="name"
+                  name="name"
+                  type="text"
                   onChange={handleChange}
-                  value={values.email}
-                  placeholder="Email"
+                  value={values.name}
+                  placeholder="Name"
                 />
-                {errors.email && touched.email && (
+                {errors.name && touched.name && (
                   <div
                     style={{
                       color: "red",
@@ -71,26 +71,26 @@ const SignInForAdmin = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.email}
+                    {errors.name}
                   </div>
                 )}
               </div>
               <div className="input-control">
                 <p>
-                  <label htmlFor="password" className="m-2">
+                  <label htmlFor="adminPassword" className="m-2">
                     Password
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="password"
-                  name="password"
+                  id="adminPassword"
+                  name="adminPassword"
                   type="password"
                   onChange={handleChange}
-                  value={values.password}
+                  value={values.adminPassword}
                   placeholder="Password"
                 />
-                {errors.password && touched.password && (
+                {errors.adminPassword && touched.adminPassword && (
                   <div
                     style={{
                       color: "red",
@@ -98,7 +98,7 @@ const SignInForAdmin = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.password}
+                    {errors.adminPassword}
                   </div>
                 )}
               </div>

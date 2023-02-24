@@ -288,7 +288,7 @@ const AboutPage = () => {
                     </div>{" "}
                     <div className="about-doctor">
                       <h4>
-                        <Link>{element.doctorName}</Link>
+                        <Link>{`${element.firstName} ${element.lastName}`}</Link>
                       </h4>
                       <p className="job">{element.doctorJob}</p>
                     </div>

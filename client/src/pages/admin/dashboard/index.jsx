@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
 import favicon from "../../../assets/images/favicon.png";
 import AdminNavbar from "../../../components/admin/navbar";
-import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DashBoard = () => {
 
@@ -18,7 +15,9 @@ const DashBoard = () => {
       </Helmet>
       <div className="dashboard">
         <AdminNavbar />
-        <div className="body-admin"></div>
+        <div className="body-admin">
+          <h1>This is admin panel</h1>
+        </div>
       </div>
     </div>
   );

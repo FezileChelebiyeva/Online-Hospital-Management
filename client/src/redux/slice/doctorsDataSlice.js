@@ -8,7 +8,6 @@ const initialState = {
 
 export const getData = createAsyncThunk("getData", async (value) => {
   const response = await axios.get("http://localhost:8080/doctors");
-  console.log(response.data);
   return response.data;
 });
 
@@ -18,6 +17,12 @@ export const postData = createAsyncThunk("postData", async (values) => {
 
 export const deleteData = createAsyncThunk("deleteData", async (id) => {
   await axios.delete(`http://localhost:8080/doctors/${id}`);
+});
+
+
+export const updateData = createAsyncThunk("updateData", async (obj) => {
+  await axios.put(`http://localhost:8080/doctors/${obj.id}`, obj);
+  console.log(obj);
 });
 
 export const getDataSlice = createSlice({

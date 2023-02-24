@@ -9,13 +9,20 @@ const joiDoctorsSchema = Joi.object({
   doctorJob: Joi.string()
     .required("this input is required")
     .regex(/^([A-Za-z]*)$/, "job can only contain letters."),
-  doctorName: Joi.string()
+  firstName: Joi.string()
+    .required("this input is required")
+    .regex(/^([A-Za-z]*)$/, "name can only contain letters."),
+  lastName: Joi.string()
     .required("this input is required")
     .regex(/^([A-Za-z]*)$/, "name can only contain letters."),
   star: Joi.number().required("this input is required"),
   location: Joi.string().required("this input is required"),
   hour: Joi.string().required("this input is required"),
   money: Joi.string().required("this input is required"),
+  email: Joi.string().required("this input is required").email(),
+  password: Joi.string().required("this input is required"),
+  gender: Joi.string().required("this input is required"),
+  phone: Joi.string().required("this input is required"),
 });
 
 const { Schema } = mongoose;

@@ -4,7 +4,10 @@ import "./index.scss";
 import { Helmet } from "react-helmet";
 import { useFormik } from "formik";
 import { doctorsSchema } from "./schema";
+import { useDispatch } from "react-redux";
+import { postData } from "../../../redux/slice/doctorsDataSlice";
 const AddDoctor = () => {
+  const dispatch = useDispatch();
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -14,13 +17,18 @@ const AddDoctor = () => {
         password: "",
         gender: "",
         doctorJob: "",
-        address: "",
+        location: "",
         phone: "",
-        appointment: "",
+        money: "",
+        hour: "",
+        star: "",
+        image: "",
       },
       validationSchema: doctorsSchema,
       onSubmit: (values) => {
         console.log(values);
+        dispatch(postData(values));
+        resetForm();
       },
     });
   return (
@@ -149,14 +157,14 @@ const AddDoctor = () => {
                     </label>
                   </p>
                   <input
-                    id="appointment"
-                    name="appointment"
+                    id="money"
+                    name="money"
                     type="number"
                     onChange={handleChange}
-                    value={values.appointment}
+                    value={values.money}
                     placeholder="Appointment Price"
                   />
-                  {errors.appointment && touched.appointment && (
+                  {errors.money && touched.money && (
                     <div
                       style={{
                         color: "red",
@@ -164,7 +172,37 @@ const AddDoctor = () => {
                         margin: "5px 0 5px 3px",
                       }}
                     >
-                      {errors.appointment}
+                      {errors.money}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="point" className="m-2">
+                      Point
+                    </label>
+                  </p>
+                  <select
+                    id="star"
+                    name="star"
+                    onChange={handleChange}
+                    value={values.star}
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  {errors.star && touched.star && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.star}
                     </div>
                   )}
                 </div>
@@ -229,14 +267,14 @@ const AddDoctor = () => {
                     </label>
                   </p>
                   <input
-                    id="address"
-                    name="address"
+                    id="location"
+                    name="location"
                     type="text"
                     onChange={handleChange}
-                    value={values.address}
+                    value={values.location}
                     placeholder="Address"
                   />
-                  {errors.address && touched.address && (
+                  {errors.location && touched.location && (
                     <div
                       style={{
                         color: "red",
@@ -244,7 +282,7 @@ const AddDoctor = () => {
                         margin: "5px 0 5px 3px",
                       }}
                     >
-                      {errors.address}
+                      {errors.location}
                     </div>
                   )}
                 </div>
@@ -268,6 +306,7 @@ const AddDoctor = () => {
                     <option value="Gastrologist">Gastrologist</option>
                     <option value="Urologist">Urologist</option>
                     <option value="Neurologist">Neurologist</option>
+                    <option value="Nutritionists">Nutritionists</option>
                   </select>
                   {errors.doctorJob && touched.doctorJob && (
                     <div
@@ -284,7 +323,7 @@ const AddDoctor = () => {
                 <div className="input-control">
                   <p>
                     <label htmlFor="Hour" className="m-2">
-                    Working Hours
+                      Working Hours
                     </label>
                   </p>
                   <input
@@ -304,6 +343,32 @@ const AddDoctor = () => {
                       }}
                     >
                       {errors.hour}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="image" className="m-2">
+                      Image
+                    </label>
+                  </p>
+                  <input
+                    id="image"
+                    name="image"
+                    type="text"
+                    onChange={handleChange}
+                    value={values.image}
+                    placeholder="Image"
+                  />
+                  {errors.image && touched.image && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.image}
                     </div>
                   )}
                 </div>

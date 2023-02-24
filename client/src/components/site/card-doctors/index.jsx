@@ -37,7 +37,7 @@ const DoctorsCard = () => {
                   <div className="about-doctor">
                     <h4>
                       <Link to={`/details-doctor/${element._id}`}>
-                        {element.doctorName}
+                        {`${element.firstName} ${element.lastName}`}
                       </Link>
                     </h4>
                     <p className="job">{element.doctorJob}</p>
