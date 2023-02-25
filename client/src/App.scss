@@ -66,11 +66,11 @@
       }
       .settings-profil {
         .user {
-          border: 1px solid #293546e7;
-          box-shadow: 0px 0px 5px 0px #293546e7;
+          border: 1px solid #3e4c61e7 !important;
+          box-shadow: 0px 0px 5px 0px #4a5f7ce7 !important;
           cursor: pointer;
           &:hover {
-            border: 1px solid #2c3e53;
+            border: 1px solid #485768 !important;
           }
           .fa-solid {
             color: #fff;
@@ -167,11 +167,11 @@
       }
       .settings-profil {
         .user {
-          border: 1px solid #293546e7;
-          box-shadow: 0px 0px 5px 0px #293546e7;
+          border: 1px solid #3e4c61e7 !important;
+          box-shadow: 0px 0px 5px 0px #4a5f7ce7 !important;
           cursor: pointer;
           &:hover {
-            border: 1px solid #2c3e53;
+            border: 1px solid #485768 !important;
           }
           .fa-solid {
             color: #fff;
@@ -372,6 +372,307 @@
       }
     }
   }
+  #wishlist-page {
+    .wishlist-page {
+      background-color: #1f2d3d;
+      .wishlist-head {
+        .header-team {
+          .head {
+            h1 {
+              color: #fff;
+            }
+          }
+          .links {
+            span {
+              a {
+                color: #fff;
+              }
+              .antd-icon {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .fav-doctors {
+      background-color: #1c2836;
+      .cards {
+        .card {
+          box-shadow: 0 0 2px 0px rgba(230, 227, 227, 0.15);
+          .about-doctor {
+            h4 {
+              a {
+                color: #fff;
+              }
+            }
+            .job {
+              color: #9bacc4 !important;
+            }
+            .star {
+              .star-count {
+                color: #9bacc4 !important;
+              }
+            }
+            .about-work {
+              span {
+                color: #9bacc4 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #about-page {
+    #about-with-video {
+      .about-with-video {
+        h1 {
+          color: #fff;
+        }
+      }
+    }
+    #departments {
+      .departments {
+        h1 {
+          color: #fff;
+        }
+      }
+      .about-depatrtments {
+        .card {
+          h4 {
+            color: #fff;
+          }
+        }
+      }
+    }
+    #doctors {
+      .doctors {
+        h1 {
+          color: #fff;
+        }
+        .cards-doctor {
+          .card {
+            .about-doctor {
+              h4 {
+                a {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #departments-page {
+    #departments {
+      .departments {
+        .card {
+          h4 {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  #faqs-page {
+    #category {
+      h1 {
+        color: #fff;
+      }
+      .cards {
+        .card {
+          h4 {
+            color: #fff;
+          }
+        }
+      }
+    }
+    #questions {
+      .questions {
+        h1 {
+          color: #fff;
+        }
+        .accordion {
+          .ant-collapse {
+            background-color: #1c2836 !important;
+            .antd-icon {
+              color: #fff !important;
+              &.blue {
+                color: #305ccc !important;
+              }
+            }
+            .ant-collapse-item {
+              background-color: #1f2d3d !important;
+              border: 1px solid #2e4157 !important;
+              .ant-collapse-header {
+                .ant-collapse-header-text {
+                  color: #fff !important;
+                }
+              }
+              &.blue {
+                .ant-collapse-header {
+                  .ant-collapse-header-text {
+                    color: #305ccc !important;
+                  }
+                }
+              }
+            }
+          }
+          .ant-collapse-content-box {
+            background-color: #1c2836 !important;
+            color: #9bacc4 !important;
+          }
+        }
+      }
+    }
+    #still-questions {
+      .still-questions {
+        h1 {
+          color: #fff;
+        }
+        .contact {
+          .card {
+            h4 {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  #terms-policy-page {
+    #terms-policy {
+      background-color: #1f2d3d;
+      .terms-policy {
+        .head {
+          h1 {
+            color: #fff;
+          }
+          .links {
+            span {
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    #introduction {
+      .introduction-body {
+        .introduction {
+          box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+
+          h3 {
+            color: #fff;
+          }
+          p {
+            color: #9bacc4 !important;
+          }
+          .accordion {
+            .ant-collapse {
+              background-color: #1c2836 !important;
+              .antd-icon {
+                color: #fff !important;
+                &.blue {
+                  color: #305ccc !important;
+                }
+              }
+              .ant-collapse-item {
+                background-color: #1f2d3d !important;
+                border: 1px solid #2e4157 !important;
+                .ant-collapse-header {
+                  .ant-collapse-header-text {
+                    color: #fff !important;
+                  }
+                }
+                &.blue {
+                  .ant-collapse-header {
+                    .ant-collapse-header-text {
+                      color: #305ccc !important;
+                    }
+                  }
+                }
+              }
+            }
+            .ant-collapse-content-box {
+              background-color: #1c2836 !important;
+              color: #9bacc4 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  #privacy-policy-page {
+    #privacy-policy {
+      background-color: #1f2d3d;
+      .privacy-policy {
+        .head {
+          h1 {
+            color: #fff;
+          }
+          .links {
+            span {
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    #overview {
+      .overview {
+        .text {
+          box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+          h3 {
+            color: #fff;
+          }
+          p {
+            color: #9bacc4 !important;
+          }
+        }
+      }
+    }
+  }
+  #contact-page {
+    #contact-us {
+      .contact-us {
+        .contact {
+          form {
+            box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+            h3 {
+              color: #fff;
+            }
+            .input-control {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &::placeholder {
+                  color: rgba(243, 243, 243, 0.795);
+                }
+              }
+              textarea {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &::placeholder {
+                  color: rgba(243, 243, 243, 0.795);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   #footer {
     background-color: #212f40;
   }
@@ -427,6 +728,188 @@
             .about-work {
               span {
                 color: #9bacc4 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #admin-header {
+    border-bottom: 1px solid #343f4ee7;
+    .header {
+      .header-body {
+        background-color: #1c2836;
+      }
+    }
+    #settings {
+      .background-setting {
+        background-color: #0000008a;
+      }
+      .settings {
+        background-color: #1c2836;
+        .head {
+          border-bottom: 1px solid #39495c9a;
+        }
+        h4 {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .admin-navbar {
+    border-right: 1px solid #343f4ee7;
+    background-color: #1c2836;
+    nav {
+      ul {
+        .nav-menu {
+          .icon {
+            .fa-solid {
+              color: #9bacc4;
+            }
+          }
+          a {
+            color: #9bacc4;
+          }
+        }
+      }
+    }
+  }
+  #admin-page {
+    background-color: #1f2d3d;
+    .dashboard {
+      .body-admin {
+        h1 {
+          color: #fff;
+        }
+      }
+    }
+  }
+  #doctors-list {
+    .doctors {
+      h1 {
+        color: #fff;
+      }
+      .links {
+        a {
+          color: #fff;
+        }
+      }
+      .antd-icon {
+        color: #fff;
+      }
+      .doctors-list {
+        .doctor {
+          .card {
+            box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+            .about-doctor {
+              h4 {
+                a {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #update-doctor {
+      form {
+        box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+        background-color: #1c2836;
+        .close {
+          color: #fff;
+        }
+        .form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 30px;
+          .left,
+          .right {
+            width: 50%;
+            .input-control {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                color: #fff;
+              }
+              select {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                color: #fff;
+                &:optional {
+                  background-color: #1c2836;
+                }
+              }
+            }
+            .input-image {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #add-doctor {
+    .add-doctor {
+      form {
+        box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+        background-color: #1c2836;
+        .form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 30px;
+          .left,
+          .right {
+            width: 50%;
+            .input-control {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &::placeholder {
+                  color: rgba(243, 243, 243, 0.795);
+                }
+              }
+              select {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &:optional {
+                  color: rgba(243, 243, 243, 0.795);
+                  background-color: #1c2836;
+                }
+              }
+            }
+            .input-image {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                color: #fff;
               }
             }
           }

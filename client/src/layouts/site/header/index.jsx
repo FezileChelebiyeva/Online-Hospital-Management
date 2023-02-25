@@ -11,6 +11,7 @@ import { darkModeState } from "../../../redux/slice/darkMode";
 import { getPatientsData } from "../../../redux/slice/patientsDataSlice";
 
 const Header = () => {
+  const dispatch = useDispatch()
   const [blog, setBlog] = useState(false);
   const [navbar, setNavbar] = useState(true);
   const [search, setSearch] = useState(false);
@@ -18,7 +19,6 @@ const Header = () => {
   const [settings, setSettings] = useState(false);
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode);
-  const dispatch = useDispatch();
   const patients = useSelector((state) => state.patients);
   useEffect(() => {
     dispatch(getPatientsData(""));
@@ -79,7 +79,7 @@ const Header = () => {
                     </NavLink>
                   </Dropdown>
                 </li>
-                <li>
+                {/* <li>
                   <Dropdown
                     overlay={
                       <Menu>
@@ -109,7 +109,7 @@ const Header = () => {
                       PHARMACY <span className="menu-arrow"></span>
                     </NavLink>
                   </Dropdown>
-                </li>
+                </li> */}
                 <li onMouseLeave={() => setBlog(false)}>
                   <Dropdown
                     overlay={

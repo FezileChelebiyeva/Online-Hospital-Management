@@ -1,0 +1,176 @@
+#contact-page {
+  #contact-head {
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(60, 72, 88, 0.7),
+        rgba(60, 72, 88, 0.7)
+      ),
+      url("../../../assets/images/contact-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    .contact-head {
+      display: flex;
+      justify-content: center;
+      .head {
+        h1 {
+          text-align: center;
+          letter-spacing: 0.5px;
+          font-size: 28px;
+          line-height: 1.5;
+          font-weight: 600;
+          color: #fff;
+        }
+        p {
+          text-align: center;
+          color: #ffffff80;
+          max-width: 600px;
+          font-size: 15px;
+          line-height: 1.6;
+          margin-top: 20px;
+        }
+      }
+      .links-about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .links {
+          width: 180px;
+          padding: 8px 5px;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          column-gap: 15px;
+          margin-top: 40px;
+          background-color: #fff;
+          span {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            a {
+              color: #212529;
+              font-size: 12px;
+              font-weight: 500;
+              letter-spacing: 1px;
+              transition: all 0.5s;
+              &.active {
+                color: #396cf0;
+              }
+              &:hover {
+                color: #396cf0;
+              }
+            }
+            .antd-icon {
+              font-size: 8px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  #contact-us {
+    padding: 80px 0;
+    .contact-us {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .img {
+        width: 50%;
+        img {
+          width: 425px;
+        }
+      }
+      .contact {
+        width: 50%;
+        .row {
+          display: flex;
+          align-items: center;
+          column-gap: 20px;
+        }
+        form {
+          box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);
+          padding: 20px;
+          h3{
+            color: #212529;
+            font-weight: 600;
+          }
+          .input-control {
+            margin-top: 20px;
+            p {
+              margin: 8px 0;
+              label {
+                font-size: 14px;
+                .required {
+                  color: #f0735a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  margin: 2px 5px;
+                }
+              }
+            }
+            input {
+              height: 20px;
+              border: 1px solid #d9d9d9;
+              width: 100%;
+              padding: 18px 11px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+
+              &:hover {
+                border: 1px solid #396cf0;
+              }
+              &:focus {
+                border: 1px solid #396cf0;
+              }
+              &::placeholder {
+                color: rgba(0, 0, 0, 0.28);
+              }
+            }
+            textarea {
+              height: 110px;
+              border: 1px solid #d9d9d9;
+              width: 100%;
+              padding: 10px 11px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+              &:hover {
+                border: 1px solid #396cf0;
+              }
+              &:focus {
+                border: 1px solid #396cf0;
+              }
+              &::placeholder {
+                color: rgba(0, 0, 0, 0.28);
+              }
+            }
+          }
+          button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            outline: 0;
+            border: 0;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            background-color: #396cf0;
+            color: #fff;
+            font-size: 15px;
+            -webkit-transition: all 0.4s;
+            transition: all 0.4s;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+              background-color: #305ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

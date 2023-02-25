@@ -41,7 +41,7 @@ const DoctorsList = () => {
       },
       validationSchema: doctorsSchema,
       onSubmit: (values) => {
-        dispatch(updateData(values));
+        dispatch(updateData(values)).then(() => dispatch(getData("")));
       },
     });
   const handleEdit = async (id) => {
@@ -63,7 +63,6 @@ const DoctorsList = () => {
         values.image = element.image;
       }
     });
-    resetForm();
   };
   return (
     <div id="doctors-list">

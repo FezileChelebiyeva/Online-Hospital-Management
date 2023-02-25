@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import {  useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import logo_dark from "../../../assets/images/logo-dark.png";
 import logo_light from "../../../assets/images/logo-light.png";
 import homepage from "../../../assets/images/darkmodeimage.png";
 import darkdash from "../../../assets/images/dark-dash.png";
+import { darkModeState } from "../../../redux/slice/darkMode";
 const AdminHeader = () => {
   const darkMode = useSelector((state) => state.darkMode);
   const navigate = useNavigate();
   const [settings, setSettings] = useState(false);
-
+  const dispatch = useDispatch();
   return (
     <div id="admin-header">
       <div className="header">

@@ -18,7 +18,7 @@ dotenv.config();
 useRouter(app);
 
 const PORT = process.env.PORT || 8000;
-// const HOST = "192.168.2.12";
+// const HOST = "192.168.0.103";
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
 
 mongoose.set("strictQuery", true);

@@ -17,7 +17,6 @@
       text-align: center;
       column-gap: 15px;
       margin-top: 10px;
-      background-color: #fff;
       span {
         display: flex;
         align-items: center;
@@ -55,7 +54,6 @@
           box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
           border-radius: 5px;
           transition: all 0.5s;
-          padding: 5px 0;
           .image {
             display: flex;
             justify-content: center;
@@ -102,7 +100,7 @@
             }
           }
           .about-doctor {
-            padding: 25px;
+            padding: 30px;
             -webkit-transition: all 0.5s;
             transition: all 0.5s;
             border-bottom-left-radius: 5px;
@@ -153,14 +151,14 @@
             width: 45%;
             cursor: pointer;
             font-size: 15px;
-            letter-spacing: 0.5px;
             -webkit-transition: all 0.4s;
             transition: all 0.4s;
             border-radius: 5px;
-            background-color: rgba(223, 35, 35, 0.342);
+            background-color: rgba(219, 33, 33, 0.5);
             border: 1px solid rgba(240, 93, 57, 0.1);
-            color: #23459c;
-            box-shadow: 0 3px 5px 0 rgba(235, 75, 75, 0.3);
+            color: #330202;
+            font-weight: 600;
+            box-shadow: 0 1px 3px 0 rgba(235, 75, 75, 0.3);
             font-size: 15px;
             &:hover {
               background-color: #d41010e1;
@@ -172,18 +170,17 @@
             outline: 0;
             width: 45%;
             cursor: pointer;
-            font-size: 15px;
-            letter-spacing: 0.5px;
             -webkit-transition: all 0.4s;
             transition: all 0.4s;
             border-radius: 5px;
-            background-color: rgba(32, 173, 72, 0.596);
-            border: 1px solid rgba(57, 108, 240, 0.1);
-            color: #396cf0;
-            box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+            background-color: rgba(32, 173, 72, 0.493);
+            border: 1px solid rgba(57, 240, 139, 0.1);
+            color: #01290e;
+            box-shadow: 0 1px 3px 0 rgba(145, 247, 199, 0.253);
+            font-weight: 600;
             font-size: 15px;
             &:hover {
-              background-color: #138d42e1;
+              background-color: #085726e1;
               color: #fff;
             }
           }
