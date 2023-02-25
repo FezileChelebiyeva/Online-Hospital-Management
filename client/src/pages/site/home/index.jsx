@@ -58,13 +58,14 @@ const HomePage = () => {
     setInput(e.target.value);
     e.target.value ? setSearch(true) : setSearch(false);
     setFiltredProducts(
-      doctors.data?.filter((elem) =>
-        elem.doctorName
-          .toLocaleLowerCase()
-          .includes(e.target.value.toLocaleLowerCase()) ||
+      doctors.data?.filter(
+        (elem) =>
+          `${elem.firstName} ${elem.lastName}`
+            .toLocaleLowerCase()
+            .includes(e.target.value.toLocaleLowerCase()) ||
           elem.doctorJob
-          .toLocaleLowerCase()
-          .includes(e.target.value.toLocaleLowerCase())
+            .toLocaleLowerCase()
+            .includes(e.target.value.toLocaleLowerCase())
       )
     );
   };
@@ -72,11 +73,7 @@ const HomePage = () => {
     <div id="home-sections">
       <Helmet>
         <meta charSet="utf-8" />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href={favicon}
-        />
+        <link rel="icon" type="image/svg+xml" href={favicon} />
         <title>Doctris - Doctor Appointment Booking System</title>
       </Helmet>
       <section id="search-doctors">
@@ -122,7 +119,7 @@ const HomePage = () => {
                                   }}
                                   to={`/details-doctor/${element._id}`}
                                 >
-                                  {element.doctorName}
+                                  {`${element.firstName} ${element.lastName}`}
                                 </Link>
                                 <p>{element.doctorJob}</p>
                               </div>

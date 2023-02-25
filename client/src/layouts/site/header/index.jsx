@@ -124,19 +124,14 @@ const Header = () => {
                           <NavLink to={"/faqs"}>FAQS</NavLink>
                         </Menu.Item>
                         <Menu.Item key="3">
-                          <NavLink to={"/wishlist"}>
-                            WISHLIST
-                          </NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="4">
                           <NavLink to={"/terms-policy"}>TERMS & POLICY</NavLink>
                         </Menu.Item>
-                        <Menu.Item key="5">
+                        <Menu.Item key="4">
                           <NavLink to={"/privacy-policy"}>
                             PRIVACY POLICY
                           </NavLink>
                         </Menu.Item>
-                        <Menu.Item key="6">
+                        <Menu.Item key="5">
                           <NavLink to={"/contact"}>CONTACT</NavLink>
                         </Menu.Item>
                       </Menu>
@@ -153,7 +148,12 @@ const Header = () => {
                   </Dropdown>
                 </li>
                 <li>
-                  <NavLink target={'_blank'} to={"/sign-in-admin/"}>ADMIN</NavLink>
+                  <NavLink to={"/wishlist"}>WISHLIST</NavLink>
+                </li>
+                <li>
+                  <NavLink target={"_blank"} to={"/sign-in-admin/"}>
+                    ADMIN
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -169,23 +169,23 @@ const Header = () => {
               <div onClick={() => setUser(!user)} className="user">
                 <i className="fa-solid fa-user"></i>
               </div>
-              
-                <div style={{display: "none"}} className="user-profile">
-                    <ul >
-                      <li className="first-child">
-                        <NavLink to={"/login"}>
-                          <i className="fa-solid fa-right-to-bracket"></i>
-                          LOGIN
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink to={"/signup"}>
-                          <i className="fa-solid fa-right-to-bracket"></i>
-                          SIGN UP
-                        </NavLink>
-                      </li>
-                    </ul>
-                </div>
+
+              <div style={{ display: "none" }} className="user-profile">
+                <ul>
+                  <li className="first-child">
+                    <NavLink to={"/login"}>
+                      <i className="fa-solid fa-right-to-bracket"></i>
+                      LOGIN
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/signup"}>
+                      <i className="fa-solid fa-right-to-bracket"></i>
+                      SIGN UP
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -4,13 +4,15 @@ import { Helmet } from "react-helmet";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { RightOutlined } from "@ant-design/icons";
 import "./index.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist } from "../../../redux/slice/addRemoveWishlist";
 const DoctorDetailsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [doctor, setDoctor] = useState({});
+  const wishlist = useSelector((state) => state.wishlist);
+
   const getDataByName = async () => {
     const response = await axios.get(`http://localhost:8080/doctors/${id}`);
     setDoctor(response.data);
@@ -22,7 +24,7 @@ const DoctorDetailsPage = () => {
   return (
     <div id="details-page">
       <Helmet>
-        <title>{`Doctris - ${doctor.doctorName}`}</title>
+        <title>{`Doctris - ${doctor.firstName} ${doctor.lastName}`}</title>
         <meta name="description" content="test on react-helmet" />
         <meta name="theme-color" content="#ccc" />
       </Helmet>
@@ -60,7 +62,7 @@ const DoctorDetailsPage = () => {
             </div>
             <div className="about-doctor">
               <div className="about">
-                <h3>{doctor.doctorName}</h3>
+                <h3>{`${doctor.firstName} ${doctor.lastName}`}</h3>
               </div>
               <div className="star">
                 <div className="star-icon">
@@ -87,8 +89,17 @@ const DoctorDetailsPage = () => {
               </div>
               <div className="btn">
                 <button onClick={() => navigate("/")}>Go Back Home</button>
-                <button onClick={() => dispatch(addToWishlist(doctor))}>
-                  Add To Wishlist
+                <button
+                  disabled={
+                    wishlist.data.find((elem) => elem._id === doctor._id)
+                      ? true
+                      : false
+                  }
+                  onClick={() => dispatch(addToWishlist(doctor))}
+                >
+                  {wishlist.data.find((elem) => elem._id === doctor._id)
+                    ? "Already Added"
+                    : "Add To Wishlist"}
                 </button>
               </div>
             </div>
