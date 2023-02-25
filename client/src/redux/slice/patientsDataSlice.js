@@ -6,25 +6,25 @@ const initialState = {
   error: "",
 };
 
-export const getPatientsData = createAsyncThunk(
-  "getPatientsData",
-  async (values) => {
-    const response = await axios.get("http://localhost:8080/patients");
-    if (values) {
-      return response.data.some(
-        (element) =>
-          element.email == values.email && element.password == values.password
-      );
-    } else {
-      return response.data;
-    }
-  }
-);
+export const getPatientsData = createAsyncThunk("getPatientsData", async () => {
+  // const response = await axios.get("http://localhost:8080/login");
+  // return response.data;
+});
 
 export const postPatientsData = createAsyncThunk(
   "postPatientsData",
   async (values) => {
-    await axios.post("http://localhost:8080/patients", values);
+    await axios.post("http://localhost:8080/register", values);
+    console.log("added");
+  }
+);
+
+export const postPatientsDataLogin = createAsyncThunk(
+  "postPatientsDataLogin",
+  async (values) => {
+    const response = axios.post("http://localhost:8080/login", values);
+    console.log("check");
+    return response;
   }
 );
 

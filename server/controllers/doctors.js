@@ -9,6 +9,7 @@ module.exports.getDoctorsData = async (req, res) => {
     console.log("get");
   } catch (error) {
     res.status(500).json({ message: error.message });
+    console.log(err);
   }
 };
 

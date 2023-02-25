@@ -1,0 +1,92 @@
+#change-passord {
+    padding: 100px;
+    background-image: url("../../../assets/images/bg-not-found.png");
+    .change-passord {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .form {
+        padding: 30px;
+        box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+        border-radius: 5px;
+        background-color: #fff;
+        width: 450px;
+        h2 {
+          text-align: center;
+          letter-spacing: 0.5px;
+          font-size: 24px;
+          line-height: 1.5;
+          font-weight: 600;
+        }
+        form {
+          .error{
+            margin-top: 10px;
+            .ant-alert-error{
+              background-color: #fde5e2;
+              color: rgb(240, 9, 9);
+              border-radius: 5px;
+            }
+          }
+          .btn {
+            margin-top: 20px;
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              color: #fff;
+              background-color: #396cf0;
+              box-shadow: 0 2px 0 rgb(5 145 255 / 10%);
+              font-size: 14px;
+              height: 32px;
+              padding: 20px 15px;
+              border-radius: 6px;
+              outline: 0;
+              border: 0;
+              cursor: pointer;
+              transition: all 0.4s;
+              &:hover {
+                background-color: #305ccc;
+              }
+            }
+          }
+          .input-control {
+            margin-top: 20px;
+            p {
+              margin: 8px 0;
+              label {
+                font-size: 14px;
+                .required {
+                  color: #f0735a;
+                  font-size: 15px;
+                  font-weight: 600;
+                  margin: 2px 5px;
+                }
+              }
+            }
+            input {
+              height: 20px;
+              border: 1px solid #d9d9d9;
+              width: 100%;
+              padding: 18px 11px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+  
+              &:hover {
+                border: 1px solid #396cf0;
+              }
+              &:focus {
+                border: 1px solid #396cf0;
+              }
+              &::placeholder {
+                color: rgba(0, 0, 0, 0.28);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

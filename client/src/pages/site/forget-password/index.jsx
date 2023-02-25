@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
-import { patientsSchema } from "./schema";
-import { Link, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import { Alert } from "antd";
+import React from "react";
+import { patientsSchema } from "../sign-in/schema";
 import "./index.scss";
-import axios from "axios";
-const LoginPage = () => {
-  const [userError, setUserError] = useState(false);
-  const navigate = useNavigate();
-
+const ChanePassword = () => {
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -18,27 +11,20 @@ const LoginPage = () => {
       },
       validationSchema: patientsSchema,
       onSubmit: async (values) => {
-        const chechUser = await axios
-          .post("http://localhost:8080/login", values)
-          .catch(() => setUserError(true));
-        console.log(chechUser);
-        if (chechUser.status === 200) {
-          navigate("/");
-        }
+        const chechUser = await axios.patch(
+          `http://localhost:8080/password/`,
+          values
+        );
       },
     });
   return (
-    <div id="login-page">
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Doctris - Login</title>
-      </Helmet>
+    <div id="change-passord">
       <div className="container">
-        <div className="login">
+        <div className="change-passord">
           <div className="form">
-            <h2>Sign In</h2>
+            <h2>Change Password</h2>
             <form onSubmit={handleSubmit}>
-              {userError && (
+              {/* {userError && (
                 <div className="error">
                   <Alert
                     type="error"
@@ -46,8 +32,7 @@ const LoginPage = () => {
                     banner
                   />
                 </div>
-              )}
-
+              )} */}
               <div className="input-control">
                 <p>
                   <label htmlFor="username" className="m-2">
@@ -78,7 +63,7 @@ const LoginPage = () => {
               <div className="input-control">
                 <p>
                   <label htmlFor="password" className="m-2">
-                    Password
+                    Current Password
                     <span className="required">*</span>
                   </label>
                 </p>
@@ -102,23 +87,37 @@ const LoginPage = () => {
                   </div>
                 )}
               </div>
-
+              <div className="input-control">
+                <p>
+                  <label htmlFor="password" className="m-2">
+                    New Password
+                    <span className="required">*</span>
+                  </label>
+                </p>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  onChange={handleChange}
+                  value={values.password}
+                  placeholder="Password"
+                />
+                {errors.password && touched.password && (
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      margin: "5px 0 5px 3px",
+                    }}
+                  >
+                    {errors.password}
+                  </div>
+                )}
+              </div>
               <div className="btn">
                 <button type="submit" className="btn btn-success mt-2">
                   Sign In
                 </button>
-              </div>
-              <p className="or">Or</p>
-              <div className="btns">
-                <button>Facebook</button>
-                <button>Google</button>
-              </div>
-              <div className="forget-password">
-                <Link to={`/forget-password`}>Forget Password ?</Link>
-              </div>
-              <div className="new-account">
-                <p>Don't have an account ?</p>
-                <Link to={"/signup"}>Sign Up</Link>
               </div>
             </form>
           </div>
@@ -128,4 +127,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ChanePassword;

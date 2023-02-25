@@ -11,14 +11,14 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 dotenv.config();
 
-useRouter(app)
-
+useRouter(app);
 
 const PORT = process.env.PORT || 8000;
+// const HOST = "192.168.2.12";
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
 
 mongoose.set("strictQuery", true);
@@ -37,5 +37,5 @@ mongoose
   .catch((err) => {
     console.log("error");
     console.log(err);
-    process.exit()
+    process.exit();
   });

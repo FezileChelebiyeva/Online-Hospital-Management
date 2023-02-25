@@ -12,7 +12,7 @@ const SignupPage = () => {
   const doctors = useSelector((state) => state.doctors);
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getData(""));
   }, []);
 
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
@@ -25,7 +25,6 @@ const SignupPage = () => {
         doctor: "",
         job: "",
         birthday: "",
-        // gender: "",
         address: "",
         phone: "",
       },
@@ -33,6 +32,7 @@ const SignupPage = () => {
       onSubmit: (values) => {
         console.log(values);
         dispatch(postPatientsData(values));
+        resetForm()
       },
     });
 
@@ -243,39 +243,6 @@ const SignupPage = () => {
                   )}
                 </div>
               </div>
-              {/* <div className="input-checkbox">
-                <div className="chechbox">
-                  <label htmlFor="man">Man</label>
-                  <input
-                    id="gender"
-                    name="gender"
-                    type="checkbox"
-                    onChange={handleChange}
-                    value="man"
-                  />
-                </div>
-                <div className="chechbox">
-                  <label htmlFor="woman">Woman</label>
-                  <input
-                    id="gender"
-                    name="gender"
-                    type="checkbox"
-                    onChange={handleChange}
-                    value="woman"
-                  />
-                </div>
-                {errors.gender && touched.gender && (
-                  <div
-                    style={{
-                      color: "red",
-                      fontSize: "12px",
-                      margin: "5px 0 5px 3px",
-                    }}
-                  >
-                    {errors.gender}
-                  </div>
-                )} 
-              </div> */}
               <div className="for-select">
                 <div className="select">
                   <select
@@ -290,7 +257,7 @@ const SignupPage = () => {
                     {doctors.data.map((element) => {
                       return (
                         <option key={element._id} value={element.doctorName}>
-                          {element.doctorName}
+                          {`${element.firstName} ${element.lastName}`}
                         </option>
                       );
                     })}
@@ -309,8 +276,8 @@ const SignupPage = () => {
                 </div>
                 <div className="select">
                   <select
-                    id="doctorJob"
-                    name="doctorJob"
+                    id="job"
+                    name="job"
                     onChange={handleChange}
                     value={values.job}
                   >
@@ -318,7 +285,7 @@ const SignupPage = () => {
                       Departments
                     </option>
                     {doctors.data?.map((element) => {
-                      if (values.doctor === element.doctorName) {
+                      if (values.doctor === `${element.firstName} ${element.lastName}`) {
                         values.job = element?.doctorJob;
                       }
                       return (

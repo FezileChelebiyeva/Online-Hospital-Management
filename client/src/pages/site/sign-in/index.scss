@@ -20,6 +20,14 @@
         font-weight: 600;
       }
       form {
+        .error{
+          margin-top: 10px;
+          .ant-alert-error{
+            background-color: #fde5e2;
+            color: rgb(240, 9, 9);
+            border-radius: 5px;
+          }
+        }
         .btn {
           margin-top: 20px;
           button {
@@ -116,7 +124,7 @@
           justify-content: center;
           align-items: center;
           column-gap: 6px;
-          margin-top: 40px;
+          margin-top: 20px;
           p {
             font-size: 15px;
           }
@@ -124,6 +132,18 @@
             font-size: 15px;
             color: black;
             font-weight: 700;
+          }
+        }
+        .forget-password {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 6px;
+          margin-top: 40px;
+          a {
+            font-size: 14px;
+            color: #305ccc;
+            font-weight: 600;
           }
         }
       }

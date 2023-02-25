@@ -13,6 +13,7 @@ import DepartmentsPage from "../pages/site/departments";
 import DoctorDetailsPage from "../pages/site/details-page";
 import DoctorsTeam from "../pages/site/doctors-team";
 import FaqsPage from "../pages/site/faqs";
+import ChanePassword from "../pages/site/forget-password";
 import HomePage from "../pages/site/home";
 import NotFoundPage from "../pages/site/not-found-page";
 import PrivacyPolicy from "../pages/site/privacy-policy";
@@ -73,6 +74,10 @@ const ROUTES = [
       {
         path: "/signup",
         element: <SignupPage />,
+      },
+      {
+        path: "/forget-password",
+        element: <ChanePassword />,
       },
       {
         path: "/wishlist",

@@ -169,23 +169,24 @@ const Header = () => {
               <div onClick={() => setUser(!user)} className="user">
                 <i className="fa-solid fa-user"></i>
               </div>
-
-              <div style={{ display: "none" }} className="user-profile">
-                <ul>
-                  <li className="first-child">
-                    <NavLink to={"/login"}>
-                      <i className="fa-solid fa-right-to-bracket"></i>
-                      LOGIN
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to={"/signup"}>
-                      <i className="fa-solid fa-right-to-bracket"></i>
-                      SIGN UP
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+              {user && (
+                <div  className="user-profile">
+                  <ul>
+                    <li className="first-child">
+                      <NavLink to={"/login"}>
+                        <i className="fa-solid fa-right-to-bracket"></i>
+                        LOGIN
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to={"/signup"}>
+                        <i className="fa-solid fa-right-to-bracket"></i>
+                        SIGN UP
+                      </NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </div>
