@@ -51,7 +51,7 @@ const LoginPage = () => {
             }
             await dispatch(patientData(data?.patient));
             navigate("/");
-          });
+          }).catch(() => setUserError(true));
         });
 
         // const getUserData = await chechUser.then((res) => res.json());

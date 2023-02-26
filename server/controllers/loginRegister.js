@@ -37,7 +37,7 @@ module.exports.register = async (req, res) => {
       withCredentials: true,
       maxAge: maxAge * 1000,
     });
-    res.status(201).json({ patient: newPatient._id, created: true });
+    res.status(201).json({ patient: newPatient, created: true });
   } catch (err) {
     console.log(err);
     res.status(404).json(err);
@@ -46,7 +46,6 @@ module.exports.register = async (req, res) => {
 
 module.exports.login = async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   try {
     if (!email || !password) {
       return res.status(400).send("Please provide username and password");

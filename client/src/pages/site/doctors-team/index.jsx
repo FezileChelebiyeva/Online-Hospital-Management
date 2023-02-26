@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { addToWishlist, removeToWishlist } from "../../../redux/slice/addRemoveWishlist";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DoctorsTeam = () => {
@@ -11,7 +12,7 @@ const DoctorsTeam = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
   const [sortBy, setSortBy] = useState(false);
-
+  const wishlist = useSelector((state) => state.wishlist);
   useEffect(() => {
     dispatch(getData(""));
   }, []);
@@ -107,6 +108,25 @@ const DoctorsTeam = () => {
                 return (
                   <div key={element._id} className="card">
                     <div className="image">
+                    {wishlist.data.find(
+                        (elem) => elem._id === element._id
+                      ) ? (
+                        <div
+                          onClick={() =>
+                            dispatch(removeToWishlist(element._id))
+                          }
+                          className="icon"
+                        >
+                          <i className="fa-solid fa-heart"></i>
+                        </div>
+                      ) : (
+                        <div
+                          onClick={() => dispatch(addToWishlist(element))}
+                          className="icon"
+                        >
+                          <i className="fa-regular fa-heart"></i>
+                        </div>
+                      )}
                       <img src={element.image} alt="" />
                     </div>{" "}
                     <div className="about-doctor">

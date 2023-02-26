@@ -16,6 +16,7 @@ export const patientsSchema = Yup.object({
   email: Yup.string().required("Please enter a email").email("must be email!"),
   doctor: Yup.string().required("Please select a doctor"),
   phone: Yup.string().required("Please enter a phone"),
+  image: Yup.string().required("Please enter a image"),
   address: Yup.string().required("Please enter a address"),
   job: Yup.string().required("Please select a doctor's job"),
   birthday: Yup.string().required("Please select a your birthday"),

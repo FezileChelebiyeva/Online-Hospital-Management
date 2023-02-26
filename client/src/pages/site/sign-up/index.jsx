@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./index.scss";
 import { patientsSchema } from "./schema";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
-import { postPatientsData } from "../../../redux/slice/patientsDataSlice";
+import { patientData } from "../../../redux/slice/patientsDataSlice";
+import axios from "axios";
 const SignupPage = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getData(""));
   }, []);
@@ -27,12 +28,19 @@ const SignupPage = () => {
         birthday: "",
         address: "",
         phone: "",
+        image: "",
       },
       validationSchema: patientsSchema,
-      onSubmit: (values) => {
-        console.log(values);
-        dispatch(postPatientsData(values));
-        resetForm()
+      onSubmit: async (values) => {
+        const checkUser = await axios
+          .create({
+            withCredentials: true,
+          })
+          .post("http://localhost:8080/register", values);
+        dispatch(patientData(checkUser.data.patient));
+        checkUser.status === 201 && navigate("/");
+        // console.log(checkUser);
+        resetForm();
       },
     });
 
@@ -52,7 +60,7 @@ const SignupPage = () => {
                   <div className="input-control">
                     <p>
                       <label htmlFor="firstName" className="m-2">
-                        First name
+                        First Name
                         <span className="required">*</span>
                       </label>
                     </p>
@@ -79,7 +87,7 @@ const SignupPage = () => {
                   <div className="input-control">
                     <p>
                       <label htmlFor="lastName" className="m-2">
-                        Last name
+                        Last Name
                         <span className="required">*</span>
                       </label>
                     </p>
@@ -161,32 +169,62 @@ const SignupPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="input-control">
-                <p>
-                  <label htmlFor="birthday" className="m-2">
-                    Birthday
-                    <span className="required">*</span>
-                  </label>
-                </p>
-                <input
-                  id="birthday"
-                  name="birthday"
-                  type="date"
-                  onChange={handleChange}
-                  value={values.birthday}
-                />
-                {errors.birthday && touched.birthday && (
-                  <div
-                    style={{
-                      color: "red",
-                      fontSize: "12px",
-                      margin: "5px 0 5px 3px",
-                    }}
-                  >
-                    {errors.birthday}
-                  </div>
-                )}
+              <div className="left">
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="image" className="m-2">
+                      Image
+                      <span className="required">*</span>
+                    </label>
+                  </p>
+                  <input
+                    id="image"
+                    name="image"
+                    type="text"
+                    placeholder="Image"
+                    onChange={handleChange}
+                    value={values.image}
+                  />
+                  {errors.image && touched.image && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.image}
+                    </div>
+                  )}
+                </div>
+                <div className="input-control">
+                  <p>
+                    <label htmlFor="birthday" className="m-2">
+                      Birthday
+                      <span className="required">*</span>
+                    </label>
+                  </p>
+                  <input
+                    id="birthday"
+                    name="birthday"
+                    type="date"
+                    onChange={handleChange}
+                    value={values.birthday}
+                  />
+                  {errors.birthday && touched.birthday && (
+                    <div
+                      style={{
+                        color: "red",
+                        fontSize: "12px",
+                        margin: "5px 0 5px 3px",
+                      }}
+                    >
+                      {errors.birthday}
+                    </div>
+                  )}
+                </div>
               </div>
+
               <div className="left">
                 <div className="input-control">
                   <p>
@@ -285,7 +323,10 @@ const SignupPage = () => {
                       Departments
                     </option>
                     {doctors.data?.map((element) => {
-                      if (values.doctor === `${element.firstName} ${element.lastName}`) {
+                      if (
+                        values.doctor ===
+                        `${element.firstName} ${element.lastName}`
+                      ) {
                         values.job = element?.doctorJob;
                       }
                       return (

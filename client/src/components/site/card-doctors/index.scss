@@ -178,5 +178,30 @@
         }
       }
     }
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      button {
+        padding: 10px 20px;
+        outline: 0;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        border-radius: 5px;
+        background-color: rgba(57, 108, 240, 0.1);
+        border: 1px solid rgba(57, 108, 240, 0.1);
+        color: #396cf0;
+        -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+        box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+        font-size: 15px;
+        &:hover {
+          background-color: #305ccc;
+          color: #fff;
+        }
+      }
+    }
   }
 }

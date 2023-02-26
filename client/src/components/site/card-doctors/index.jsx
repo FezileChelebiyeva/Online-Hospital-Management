@@ -1,16 +1,18 @@
 import { Space, Spin } from "antd";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { addToWishlist, removeToWishlist } from "../../../redux/slice/addRemoveWishlist";
-// import { uid } from "uid";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  addToWishlist,
+  removeToWishlist,
+} from "../../../redux/slice/addRemoveWishlist";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DoctorsCard = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
   const wishlist = useSelector((state) => state.wishlist);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -40,7 +42,7 @@ const DoctorsCard = () => {
             </div>
           ) : (
             <div className="cards-doctor">
-              {doctors.data?.map((element) => {
+              {doctors.data?.slice(0, 8).map((element) => {
                 return (
                   <div key={element._id} className="card">
                     <div className="image">
@@ -112,6 +114,9 @@ const DoctorsCard = () => {
               })}
             </div>
           )}
+          <div className="btn">
+            <button onClick={() => navigate("/doctors-team")}>Viev More</button>
+          </div>
         </div>
       </div>
     </section>

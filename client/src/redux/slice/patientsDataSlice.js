@@ -4,27 +4,25 @@ const initialState = {
   loading: false,
   data: [],
   error: "",
-  patient: {}
+  patient: {},
 };
 
 export const getPatientsData = createAsyncThunk("getPatientsData", async () => {
   const response = await axios.get("http://localhost:8080/patients");
-  console.log(response.data);
   return response.data;
 });
-
-export const postPatientsData = createAsyncThunk(
-  "postPatientsData",
-  async (values) => {
-    await axios.post("http://localhost:8080/register", values);
-    console.log("added");
-  }
-);
 
 export const deletePatientsData = createAsyncThunk(
   "deletePatientData",
   async (id) => {
     await axios.delete(`http://localhost:8080/patients/${id}`);
+  }
+);
+
+export const updatePatientsData = createAsyncThunk(
+  "updatePatientsData",
+  async (obj) => {
+    await axios.put(`http://localhost:8080/patients/${obj.id}`, obj);
   }
 );
 
@@ -52,6 +50,5 @@ export const getDataSliceForUser = createSlice({
 });
 
 export const { patientData } = getDataSliceForUser.actions;
-
 
 export default getDataSliceForUser.reducer;

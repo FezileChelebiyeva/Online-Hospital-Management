@@ -116,6 +116,34 @@
           justify-content: center;
           width: 50%;
           padding: 10px;
+          position: relative;
+          .icon {
+            position: absolute;
+            right: 10px;
+            z-index: 3;
+            margin: 20px 0;
+            height: 36px;
+            width: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(240, 115, 90, 0.1);
+            border: 1px solid rgba(240, 115, 90, 0.1);
+            color: #f0735a;
+            transition: all 0.4s;
+            cursor: pointer;
+            .fa-solid {
+              color: #f0735a;
+            }
+            .fa-regular {
+              color: #f0735a;
+            }
+            &:hover {
+              background-color: #f0735a;
+              color: #fff;
+            }
+          }
           img {
             max-width: 100%;
             height: auto;
