@@ -6,10 +6,12 @@ import { Helmet } from "react-helmet";
 import { Alert } from "antd";
 import "./index.scss";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { patientData } from "../../../redux/slice/patientsDataSlice";
 const LoginPage = () => {
   const [userError, setUserError] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -18,13 +20,47 @@ const LoginPage = () => {
       },
       validationSchema: patientsSchema,
       onSubmit: async (values) => {
-        const chechUser = await axios
-          .post("http://localhost:8080/login", values)
-          .catch(() => setUserError(true));
-        console.log(chechUser);
-        if (chechUser.status === 200) {
-          navigate("/");
-        }
+        // const chechUser = await axios
+        //   .post("http://localhost:8080/login", values)
+        //   .catch(() => setUserError(true));
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          email: values.email,
+          password: values.password,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          credentials: "include",
+          body: raw,
+          redirect: "follow",
+        };
+
+        const chechUser = await fetch(
+          "http://localhost:8080/login",
+          requestOptions
+        ).then((res) => {
+          return res.text().then(async (text) => {
+            const data = text && JSON.parse(text);
+            if (!res.ok) {
+              return;
+            }
+            await dispatch(patientData(data?.patient));
+            navigate("/");
+          });
+        });
+
+        // const getUserData = await chechUser.then((res) => res.json());
+
+        // console.log(chechUser);
+
+        // if (chechUser.status === 200) {
+        // navigate("/");
+        // }
       },
     });
   return (

@@ -1,0 +1,446 @@
+#wishlist-page .wishlist-page {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team {
+  display: flex;
+  justify-content: center;
+  padding: 130px 0;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .head h1 {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 28px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #212529;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .head p {
+  text-align: center;
+  color: #8492a6;
+  max-width: 600px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links {
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+  margin-top: 40px;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links span {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links span a {
+  color: #212529;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links span a.active {
+  color: #396cf0;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links span a:hover {
+  color: #396cf0;
+}
+#wishlist-page .wishlist-page .wishlist-head .header-team .links span .antd-icon {
+  font-size: 8px;
+  font-weight: 600;
+}
+#wishlist-page .fav-doctors {
+  background-color: #fff;
+  padding: 80px 0;
+}
+#wishlist-page .fav-doctors .cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 60px;
+}
+#wishlist-page .fav-doctors .cards .card {
+  width: 49%;
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+#wishlist-page .fav-doctors .cards .card .image {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 10px;
+}
+#wishlist-page .fav-doctors .cards .card .image img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#wishlist-page .fav-doctors .cards .card .image img:hover {
+  transform: scale(1.05);
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor {
+  padding: 20px;
+  width: 50%;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor h4 a {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: black;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .job {
+  color: #8492a6;
+  font-size: 13.5px;
+  margin-top: 10px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .star {
+  margin-top: 10px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .star .star-icon .fa-sharp {
+  color: #f1b561;
+  margin-right: 8px;
+  font-size: 11px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .btn {
+  margin-top: 20px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .btn button {
+  border-radius: 5px;
+  padding: 8px 10px;
+  border: 0;
+  outline: 0;
+  background-color: #fa6262;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .btn button .fa-solid {
+  margin-right: 8px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .btn button:hover {
+  background-color: #c70202;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .card-icons {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 5px;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .card-icons .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(57, 108, 240, 0.1019607843);
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .card-icons .circle .fa-brands {
+  color: #396cf0;
+  font-size: 13px;
+  transition: all 0.4s;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .card-icons .circle:hover {
+  background-color: #396cf0;
+}
+#wishlist-page .fav-doctors .cards .card .about-doctor .card-icons .circle:hover .fa-brands {
+  color: #fff;
+}/*# sourceMappingURL=index.css.map */pt:hover {
+  background-color: #305ccc;
+}
+#terms-policy-page #introduction .introduction-body .introduction .btn .decline {
+  padding: 10px 20px;
+  outline: 0;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  color: #396cf0;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  font-size: 15px;
+}
+#terms-policy-page #introduction .introduction-body .introduction .btn .decline:hover {
+  background-color: #305ccc;
+  color: #fff;
+}/*# sourceMappingURL=index.css.map */px;
+  padding: 4px 8px;
+  font-weight: 600;
+  text-align: center;
+}
+#home-sections #about .about h1 {
+  margin: 16px 0;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 600;
+  font-size: 24px;
+}
+#home-sections #about .about p {
+  margin-bottom: 16px;
+  color: #8492a6;
+  line-height: 1.6;
+  font-size: 15px;
+}
+#home-sections #about .about button {
+  padding: 10px 20px;
+  outline: 0;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  color: #396cf0;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  font-size: 15px;
+}
+#home-sections #about .about button:hover {
+  background-color: #305ccc;
+  color: #fff;
+}
+#home-sections #about .video .img {
+  position: relative;
+}
+#home-sections #about .video .img img {
+  width: 460px;
+}
+#home-sections #about .video .img .play-video {
+  position: absolute;
+  bottom: 50%;
+  z-index: 2;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+#home-sections #about .video .img .play-video a {
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #396cf0;
+  width: 75px;
+  height: 75px;
+  font-size: 25px;
+  border-radius: 50%;
+  line-height: 70px;
+  display: inline-block;
+  background-color: #fff;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+#home-sections #about .video .img .play-video a:hover {
+  -webkit-text-fill-color: #396cf0;
+}
+#home-sections #about .video .img .play-video a .fa-solid {
+  font-size: 18px;
+}
+#home-sections #about .youtube-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 33, 48, 0.937254902);
+}
+#home-sections #about .youtube-video iframe {
+  border: 0;
+  box-shadow: 0 0 1px 0 rgba(194, 207, 240, 0.3);
+}
+#home-sections #about .youtube-video .close {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  font-size: 36px;
+  color: #e9ecef;
+  cursor: pointer;
+}
+#home-sections #our-work {
+  background-image: linear-gradient(to bottom, rgba(99, 113, 133, 0.325), rgba(99, 113, 133, 0.325)), url("../../../assets/images/background2.jpg");
+  background-position: center;
+}
+#home-sections #our-work .our-work {
+  padding: 80px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#home-sections #our-work .our-work .cards {
+  margin-top: 20px;
+}
+#home-sections #our-work .our-work .cards .card {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 3px rgba(60, 72, 88, 0.15);
+  border: 0;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+#home-sections #our-work .our-work .cards .card .icon {
+  margin-top: 8px;
+}
+#home-sections #our-work .our-work .cards .card .icon .fa-solid {
+  font-size: 30px;
+  font-weight: 600;
+  color: #305ccc;
+  transition: all 0.5s ease;
+}
+#home-sections #our-work .our-work .cards .card .text {
+  width: 320px;
+}
+#home-sections #our-work .our-work .cards .card .text h4 {
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+#home-sections #our-work .our-work .cards .card .text p {
+  font-size: 14px;
+  color: #8492a6;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+#home-sections #our-work .our-work .cards .card:hover {
+  background-color: #305ccc;
+}
+#home-sections #our-work .our-work .cards .card:hover .fa-solid {
+  color: #fff;
+}
+#home-sections #our-work .our-work .cards .card:hover .text h4 {
+  color: #fff;
+}
+#home-sections #question-answer {
+  padding: 80px 0;
+}
+#home-sections #question-answer .question-answer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home-sections #question-answer .question-answer .img img {
+  width: 480px;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse {
+  margin-top: 40px;
+  position: relative;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .antd-icon {
+  color: #000;
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  flex-direction: column;
+  width: 1em;
+  height: 0.8em;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .antd-icon.blue {
+  color: #305ccc;
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  flex-direction: column;
+  width: 1em;
+  height: 0.8em;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .ant-collapse-item {
+  width: 540px;
+  background-color: #f8f9fa;
+  border-radius: 5px !important;
+  border: 1px solid #e9ecef;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .ant-collapse-item .ant-collapse-header {
+  padding: 16px 0;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .ant-collapse-item .ant-collapse-header .ant-collapse-header-text {
+  color: #000;
+  font-weight: 600;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse .ant-collapse-item.blue .ant-collapse-header .ant-collapse-header-text {
+  color: #305ccc;
+}
+#home-sections #question-answer .question-answer .accordion .ant-collapse-content-box {
+  padding: 16px 20px;
+  background-color: #fff;
+  color: #8492a6;
+}
+#home-sections #contact {
+  padding-bottom: 100px;
+}
+#home-sections #contact .contact h1 {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+#home-sections #contact .contact .head-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#home-sections #contact .contact .head-title p {
+  width: 600px;
+  text-align: center;
+  margin-top: 25px;
+  color: #8492a6;
+  line-height: 1.6;
+  font-size: 15px;
+}
+#home-sections #contact .contact .btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+#home-sections #contact .contact .btn button {
+  padding: 10px 20px;
+  outline: 0;
+  border: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  background-color: #396cf0;
+  color: #fff;
+  font-size: 15px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#home-sections #contact .contact .btn button .fa-solid {
+  color: #fff;
+  font-size: 13px;
+  margin-right: 4px;
+}
+#home-sections #contact .contact .btn button:hover {
+  background-color: #305ccc;
+}/*# sourceMappingURL=index.css.map */

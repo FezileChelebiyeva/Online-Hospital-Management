@@ -13,7 +13,7 @@ const createToken = (id) => {
 
 module.exports.register = async (req, res) => {
   const { password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 16);
+  const hashedPassword = await bcrypt.hash(password, 8);
   try {
     console.log(req.body);
     const newPatient = new Patients({
@@ -26,6 +26,7 @@ module.exports.register = async (req, res) => {
       birthday: req.body.birthday,
       address: req.body.address,
       phone: req.body.phone,
+      isAdmin: req.body.isAdmin,
     });
 
     const result = await newPatient.save();
@@ -75,4 +76,45 @@ module.exports.login = async (req, res) => {
     console.log(err);
     res.status(404).json(err);
   }
+};
+
+module.exports.changePassword = async (req, res) => {
+  const { currentPassword, newPassword, confrimPassword } = req.body;
+
+  const patient = await Patients.findOne({ email: req.body.email });
+
+  if (!patient) {
+    return res.status(404).send("Patient not found");
+  }
+  const isCurrentPasswordValid = await bcrypt.compare(
+    currentPassword,
+    patient.password
+  );
+  if (!isCurrentPasswordValid) {
+    return res.status(400).send("Invalid current password");
+  }
+  if (newPassword !== confrimPassword) {
+    return res.status(400).send("New password do not match");
+  }
+  // if (newPassword.length < 8) {
+  //   return res.status(400).send("New password do not match");
+  // }
+  const salt = await bcrypt.genSalt(8);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  patient.password = hashedPassword;
+  await patient.save();
+
+  res.send("Password updated");
+};
+
+module.exports.logout = async (req, res) => {
+  const cookies = req.cookies;
+  console.log(cookies);
+  console.log("======1");
+  if (!cookies?.jwt) {
+    return res.status(403).send();
+  }
+  res.clearCookie("jwt", { httpOnly: true, someSite: "None", secure: true });
+  return res.status(200).json({ message: "Cookie cleared" }).send();
 };

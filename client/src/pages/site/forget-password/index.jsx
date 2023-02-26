@@ -1,24 +1,33 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
-import { patientsSchema } from "../sign-in/schema";
+import { Helmet } from "react-helmet";
 import "./index.scss";
+import { changePasswordSchema } from "./schema";
 const ChanePassword = () => {
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
         email: "",
-        password: "",
+        currentPassword: "",
+        newPassword: "",
+        confrimPassword: "",
       },
-      validationSchema: patientsSchema,
+      validationSchema: changePasswordSchema,
       onSubmit: async (values) => {
-        const chechUser = await axios.patch(
-          `http://localhost:8080/password/`,
+        const chechUser = await axios.post(
+          "http://localhost:8080/password",
           values
         );
+        console.log(values);
       },
     });
   return (
     <div id="change-passord">
+       <Helmet>
+        <meta charSet="utf-8" />
+        <title>Doctris - Change Password</title>
+      </Helmet>
       <div className="container">
         <div className="change-passord">
           <div className="form">
@@ -62,20 +71,20 @@ const ChanePassword = () => {
               </div>
               <div className="input-control">
                 <p>
-                  <label htmlFor="password" className="m-2">
+                  <label htmlFor="currentPassword" className="m-2">
                     Current Password
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="password"
-                  name="password"
+                  id="currentPassword"
+                  name="currentPassword"
                   type="password"
                   onChange={handleChange}
-                  value={values.password}
+                  value={values.currentPassword}
                   placeholder="Password"
                 />
-                {errors.password && touched.password && (
+                {errors.currentPassword && touched.currentPassword && (
                   <div
                     style={{
                       color: "red",
@@ -83,26 +92,26 @@ const ChanePassword = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.password}
+                    {errors.currentPassword}
                   </div>
                 )}
               </div>
               <div className="input-control">
                 <p>
-                  <label htmlFor="password" className="m-2">
+                  <label htmlFor="newPassword" className="m-2">
                     New Password
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="password"
-                  name="password"
+                  id="newPassword"
+                  name="newPassword"
                   type="password"
                   onChange={handleChange}
-                  value={values.password}
+                  value={values.newPassword}
                   placeholder="Password"
                 />
-                {errors.password && touched.password && (
+                {errors.newPassword && touched.newPassword && (
                   <div
                     style={{
                       color: "red",
@@ -110,14 +119,39 @@ const ChanePassword = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.password}
+                    {errors.newPassword}
+                  </div>
+                )}
+              </div>
+              <div className="input-control">
+                <p>
+                  <label htmlFor="confrimPassword" className="m-2">
+                    Confrim Password
+                    <span className="required">*</span>
+                  </label>
+                </p>
+                <input
+                  id="confrimPassword"
+                  name="confrimPassword"
+                  type="password"
+                  onChange={handleChange}
+                  value={values.confrimPassword}
+                  placeholder="Password"
+                />
+                {errors.confrimPassword && touched.confrimPassword && (
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: "12px",
+                      margin: "5px 0 5px 3px",
+                    }}
+                  >
+                    {errors.confrimPassword}
                   </div>
                 )}
               </div>
               <div className="btn">
-                <button type="submit" className="btn btn-success mt-2">
-                  Sign In
-                </button>
+                <button type="submit">Sign In</button>
               </div>
             </form>
           </div>

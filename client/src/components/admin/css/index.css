@@ -1,0 +1,61 @@
+.admin-navbar {
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid #e9ecef;
+  position: fixed;
+  top: 0;
+}
+.admin-navbar .nav {
+  width: 100%;
+  padding: 20px 40px;
+}
+.admin-navbar nav {
+  padding: 30px 40px;
+}
+.admin-navbar nav ul .nav-menu {
+  margin-top: 15px;
+}
+.admin-navbar nav ul .nav-menu .icon {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(126, 152, 216, 0.1);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.admin-navbar nav ul .nav-menu .icon .fa-solid {
+  font-size: 13px;
+}
+.admin-navbar nav ul .nav-menu a {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.4s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.admin-navbar nav ul .nav-menu a:hover {
+  color: #396cf0;
+}
+.admin-navbar nav ul .nav-menu a.active {
+  color: #396cf0;
+}
+.admin-navbar nav ul .nav-menu ul {
+  padding: 10px 35px;
+}
+.admin-navbar nav ul .nav-menu ul .menu-item {
+  margin-top: 8px;
+}
+.admin-navbar nav ul .nav-menu ul .menu-item a {
+  display: flex;
+  align-items: center;
+}
+.admin-navbar nav ul .nav-menu ul .menu-item a .fa-solid {
+  font-size: 12px;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,340 @@
+#patients-list {
+  padding: 60px 0;
+}/*# sourceMappingURL=index.css.map */t: 290px;
+  padding: 0 20px;
+}
+#doctors-list .doctors h1 {
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+#doctors-list .doctors .links {
+  padding: 8px 5px;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  column-gap: 15px;
+  margin-top: 10px;
+}
+#doctors-list .doctors .links span {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+#doctors-list .doctors .links span a {
+  color: #212529;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.5s;
+}
+#doctors-list .doctors .links span a.active {
+  color: #396cf0;
+}
+#doctors-list .doctors .links span a:hover {
+  color: #396cf0;
+}
+#doctors-list .doctors .links span .antd-icon {
+  font-size: 8px;
+  font-weight: 600;
+}
+#doctors-list .doctors .doctors-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+#doctors-list .doctors .doctors-list .doctor {
+  width: 18%;
+  height: auto;
+  transition: all 0.5s;
+}
+#doctors-list .doctors .doctors-list .doctor .card {
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image .card-icons {
+  display: none;
+  margin-top: 20px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  transition: all 0.5s;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image .card-icons .circle {
+  margin-top: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(57, 108, 240, 0.1019607843);
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image .card-icons .circle .fa-brands {
+  color: #396cf0;
+  font-size: 13px;
+  transition: all 0.4s;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image .card-icons .circle:hover {
+  background-color: #396cf0;
+}
+#doctors-list .doctors .doctors-list .doctor .card .image .card-icons .circle:hover .fa-brands {
+  color: #fff;
+}
+#doctors-list .doctors .doctors-list .doctor .card .about-doctor {
+  padding: 30px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#doctors-list .doctors .doctors-list .doctor .card .about-doctor h4 {
+  text-align: center;
+}
+#doctors-list .doctors .doctors-list .doctor .card .about-doctor h4 a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  color: black;
+}
+#doctors-list .doctors .doctors-list .doctor .card .about-doctor .job {
+  text-align: center;
+  color: #8492a6;
+  font-size: 12px;
+  margin-top: 10px;
+}
+#doctors-list .doctors .doctors-list .doctor .card:hover .about-doctor {
+  background-color: #305ccc;
+}
+#doctors-list .doctors .doctors-list .doctor .card:hover .about-doctor h4 a {
+  color: #fff;
+}
+#doctors-list .doctors .doctors-list .doctor .card:hover .about-doctor .job {
+  color: #9bacc4;
+}
+#doctors-list .doctors .doctors-list .doctor .card:hover .card-icons {
+  display: block;
+}
+#doctors-list .doctors .doctors-list .doctor .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+#doctors-list .doctors .doctors-list .doctor .btn .deleteBtn {
+  padding: 10px 20px;
+  outline: 0;
+  width: 45%;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  background-color: rgba(219, 33, 33, 0.5);
+  border: 1px solid rgba(240, 93, 57, 0.1);
+  color: #330202;
+  font-weight: 600;
+  box-shadow: 0 1px 3px 0 rgba(235, 75, 75, 0.3);
+  font-size: 15px;
+}
+#doctors-list .doctors .doctors-list .doctor .btn .deleteBtn:hover {
+  background-color: rgba(212, 16, 16, 0.8823529412);
+  color: #fff;
+}
+#doctors-list .doctors .doctors-list .doctor .btn .editBtn {
+  padding: 10px 20px;
+  outline: 0;
+  width: 45%;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  border-radius: 5px;
+  background-color: rgba(32, 173, 72, 0.493);
+  border: 1px solid rgba(57, 240, 139, 0.1);
+  color: #01290e;
+  box-shadow: 0 1px 3px 0 rgba(145, 247, 199, 0.253);
+  font-weight: 600;
+  font-size: 15px;
+}
+#doctors-list .doctors .doctors-list .doctor .btn .editBtn:hover {
+  background-color: rgba(8, 87, 38, 0.8823529412);
+  color: #fff;
+}
+#doctors-list #update-doctor {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.397);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#doctors-list #update-doctor form {
+  box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 30px 50px;
+  width: 600px;
+}
+#doctors-list #update-doctor form .close {
+  text-align: end;
+  font-size: 26px;
+  color: #000000;
+  cursor: pointer;
+}
+#doctors-list #update-doctor form .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
+#doctors-list #update-doctor form .form .left,
+#doctors-list #update-doctor form .form .right {
+  width: 50%;
+}
+#doctors-list #update-doctor form .form .left .input-control,
+#doctors-list #update-doctor form .form .right .input-control {
+  margin-top: 20px;
+}
+#doctors-list #update-doctor form .form .left .input-control p,
+#doctors-list #update-doctor form .form .right .input-control p {
+  margin: 8px 0;
+}
+#doctors-list #update-doctor form .form .left .input-control p label,
+#doctors-list #update-doctor form .form .right .input-control p label {
+  font-size: 14px;
+}
+#doctors-list #update-doctor form .form .left .input-control input,
+#doctors-list #update-doctor form .form .right .input-control input {
+  height: 20px;
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  padding: 18px 11px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: 0;
+}
+#doctors-list #update-doctor form .form .left .input-control input:hover,
+#doctors-list #update-doctor form .form .right .input-control input:hover {
+  border: 1px solid #396cf0;
+}
+#doctors-list #update-doctor form .form .left .input-control input:focus,
+#doctors-list #update-doctor form .form .right .input-control input:focus {
+  border: 1px solid #396cf0;
+}
+#doctors-list #update-doctor form .form .left .input-control input::placeholder,
+#doctors-list #update-doctor form .form .right .input-control input::placeholder {
+  color: rgba(0, 0, 0, 0.623);
+}
+#doctors-list #update-doctor form .form .left .input-control select,
+#doctors-list #update-doctor form .form .right .input-control select {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  padding: 10px 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: 0;
+}
+#doctors-list #update-doctor form .form .left .input-control select:hover,
+#doctors-list #update-doctor form .form .right .input-control select:hover {
+  border: 1px solid #396cf0;
+}
+#doctors-list #update-doctor form .form .left .input-control select:focus,
+#doctors-list #update-doctor form .form .right .input-control select:focus {
+  border: 1px solid #396cf0;
+}
+#doctors-list #update-doctor form .form .left .input-control select::placeholder,
+#doctors-list #update-doctor form .form .right .input-control select::placeholder {
+  color: rgba(0, 0, 0, 0.623);
+}
+#doctors-list #update-doctor form .form .left .input-image,
+#doctors-list #update-doctor form .form .right .input-image {
+  margin-top: 20px;
+}
+#doctors-list #update-doctor form .form .left .input-image p,
+#doctors-list #update-doctor form .form .right .input-image p {
+  margin: 8px 0;
+}
+#doctors-list #update-doctor form .form .left .input-image p label,
+#doctors-list #update-doctor form .form .right .input-image p label {
+  font-size: 14px;
+}
+#doctors-list #update-doctor form .form .left .input-image input,
+#doctors-list #update-doctor form .form .right .input-image input {
+  color: transparent;
+  width: 100%;
+  height: 20px;
+  border: 1px solid #d9d9d9;
+  padding: 18px 11px;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: 0;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+#doctors-list #update-doctor form .form .left .input-image input::-webkit-file-upload-button,
+#doctors-list #update-doctor form .form .right .input-image input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#doctors-list #update-doctor form .form .left .input-image input::before,
+#doctors-list #update-doctor form .form .right .input-image input::before {
+  content: "Select some files";
+  color: rgba(0, 0, 0, 0.726);
+  cursor: pointer;
+  white-space: nowrap;
+  text-shadow: 1px 1px #fff;
+  font-weight: 600;
+  margin-top: -8px;
+}
+#doctors-list #update-doctor form .btn {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#doctors-list #update-doctor form .btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  background-color: #396cf0;
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+  font-size: 14px;
+  height: 32px;
+  padding: 20px 15px;
+  border-radius: 6px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#doctors-list #update-doctor form .btn button:hover {
+  background-color: #305ccc;
+}/*# sourceMappingURL=index.css.map */

@@ -11,7 +11,7 @@ export const getData = createAsyncThunk("getData", async (value) => {
   if (value === 1) {
     return response.data.sort((a, b) => a.money - b.money);
   } else if (value === 2) {
-    return response.data.sort((a, b) => a.firstName > b.firstName ? 1 : -1);
+    return response.data.sort((a, b) => (a.firstName > b.firstName ? 1 : -1));
   } else if (value) {
     return response.data.filter((elem) =>
       `${elem.firstName} ${elem.lastName}`
@@ -54,5 +54,6 @@ export const getDataSlice = createSlice({
     });
   },
 });
+
 
 export default getDataSlice.reducer;

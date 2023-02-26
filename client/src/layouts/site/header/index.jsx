@@ -9,9 +9,10 @@ import { Menu, Dropdown } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { darkModeState } from "../../../redux/slice/darkMode";
 import { getPatientsData } from "../../../redux/slice/patientsDataSlice";
+import axios from "axios";
 
 const Header = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [blog, setBlog] = useState(false);
   const [navbar, setNavbar] = useState(true);
   const [search, setSearch] = useState(false);
@@ -26,10 +27,18 @@ const Header = () => {
   window.addEventListener("scroll", () => {
     window.scrollY > 60 ? setNavbar(false) : setNavbar(true);
   });
-
+  const handleLogout = async () => {
+    console.log("lkjhbgvfc");
+    const response = await axios.post("http://localhost:8080/logout", {
+      withCredentials: true,
+    });
+    navigate("/login");
+    console.log(response);
+  };
   return (
     <div id={navbar ? "header" : "fixed-header"}>
       <div className="container">
+        {console.log(patients.patient)}
         <div className="header">
           <div className="navbar">
             <div className="logo">
@@ -155,6 +164,20 @@ const Header = () => {
                     ADMIN
                   </NavLink>
                 </li>
+                <div className="btns">
+                  <button className="first-child">
+                    <NavLink to={"/login"}>
+                      <i className="fa-solid fa-right-to-bracket"></i>
+                      LOGIN
+                    </NavLink>
+                  </button>
+                  <button>
+                    <NavLink to={"/signup"}>
+                      <i className="fa-solid fa-right-to-bracket"></i>
+                      SIGN UP
+                    </NavLink>
+                  </button>
+                </div>
               </ul>
             </nav>
           </div>
@@ -170,21 +193,22 @@ const Header = () => {
                 <i className="fa-solid fa-user"></i>
               </div>
               {user && (
-                <div  className="user-profile">
-                  <ul>
-                    <li className="first-child">
-                      <NavLink to={"/login"}>
-                        <i className="fa-solid fa-right-to-bracket"></i>
-                        LOGIN
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink to={"/signup"}>
-                        <i className="fa-solid fa-right-to-bracket"></i>
-                        SIGN UP
-                      </NavLink>
-                    </li>
-                  </ul>
+                <div className="user-profile">
+                  {patients.patient ? (
+                    <div className="patient-profile">
+                      <h4>
+                        {`${patients.patient.firstName} ${patients.patient.lastName}`}
+                      </h4>
+                      <div className="btn">
+                        <button onClick={() => handleLogout()}>
+                          {/* <NavLink to={"/log-out"}> */}
+                          <i className="fa-solid fa-right-to-bracket"></i>
+                          LOGOUT
+                          {/* </NavLink> */}
+                        </button>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               )}
             </div>

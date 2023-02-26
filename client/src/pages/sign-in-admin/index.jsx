@@ -7,26 +7,30 @@ import "./index.scss";
 import { getPatientsData } from "../../redux/slice/patientsDataSlice.js";
 import { Alert, Space } from "antd";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 const SignInForAdmin = () => {
   const dispatch = useDispatch();
   const patients = useSelector((state) => state.patients);
   const navigate = useNavigate();
   const [alert, setAlert] = useState(false);
+  const [userError, setUserError] = useState(false);
   useEffect(() => {
     dispatch(getPatientsData(""));
   }, []);
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
-        name: "",
-        adminPassword: "",
+        email: "",
+        password: "",
       },
       validationSchema: adminSchema,
-      onSubmit: (values) => {
-        values.name === "admin" &&
-        values.adminPassword === "doctrisadmin001"
-          ? navigate("/admin")
-          : setAlert(true);
+      onSubmit: async (values) => {
+        const chechUser = await axios
+          .post("http://localhost:8080/login", values)
+          .then(
+            (response) => response.data.patient.isAdmin && navigate("/admin/")
+          )
+          .catch(() => setAlert(true));
         resetForm();
       },
     });
@@ -51,19 +55,19 @@ const SignInForAdmin = () => {
               <div className="input-control">
                 <p>
                   <label htmlFor="name" className="m-2">
-                    Name
+                    Email
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="name"
-                  name="name"
-                  type="text"
+                  id="email"
+                  name="email"
+                  type="email"
                   onChange={handleChange}
                   value={values.name}
-                  placeholder="Name"
+                  placeholder="Email"
                 />
-                {errors.name && touched.name && (
+                {errors.email && touched.email && (
                   <div
                     style={{
                       color: "red",
@@ -71,26 +75,26 @@ const SignInForAdmin = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.name}
+                    {errors.email}
                   </div>
                 )}
               </div>
               <div className="input-control">
                 <p>
-                  <label htmlFor="adminPassword" className="m-2">
+                  <label htmlFor="password" className="m-2">
                     Password
                     <span className="required">*</span>
                   </label>
                 </p>
                 <input
-                  id="adminPassword"
-                  name="adminPassword"
+                  id="password"
+                  name="password"
                   type="password"
                   onChange={handleChange}
-                  value={values.adminPassword}
+                  value={values.password}
                   placeholder="Password"
                 />
-                {errors.adminPassword && touched.adminPassword && (
+                {errors.password && touched.password && (
                   <div
                     style={{
                       color: "red",
@@ -98,7 +102,7 @@ const SignInForAdmin = () => {
                       margin: "5px 0 5px 3px",
                     }}
                   >
-                    {errors.adminPassword}
+                    {errors.password}
                   </div>
                 )}
               </div>

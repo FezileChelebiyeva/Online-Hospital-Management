@@ -1,0 +1,175 @@
+#our-specialists {
+  padding-top: 80px;
+}
+#our-specialists .our-specialists .cards-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#our-specialists .our-specialists .cards-head .head {
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  border-radius: 50rem;
+  color: #396cf0;
+  font-size: 11px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  font-weight: 600;
+  text-align: center;
+}
+#our-specialists .our-specialists .spinner {
+  margin-top: 80px;
+}
+#our-specialists .our-specialists h1 {
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+#our-specialists .our-specialists .head-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#our-specialists .our-specialists .head-title p {
+  width: 600px;
+  text-align: center;
+  margin-top: 25px;
+  color: #8492a6;
+  line-height: 1.6;
+  font-size: 15px;
+}
+#our-specialists .our-specialists .cards-doctor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-top: 60px;
+}
+#our-specialists .our-specialists .cards-doctor .card {
+  width: 23.6%;
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+#our-specialists .our-specialists .cards-doctor .card .image {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#our-specialists .our-specialists .cards-doctor .card .image .icon {
+  position: absolute;
+  right: 10px;
+  z-index: 3;
+  margin: 20px 0;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(240, 115, 90, 0.1);
+  border: 1px solid rgba(240, 115, 90, 0.1);
+  color: #f0735a;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+#our-specialists .our-specialists .cards-doctor .card .image .icon .fa-solid {
+  color: #f0735a;
+}
+#our-specialists .our-specialists .cards-doctor .card .image .icon .fa-regular {
+  color: #f0735a;
+}
+#our-specialists .our-specialists .cards-doctor .card .image .icon:hover {
+  background-color: #f0735a;
+  color: #fff;
+}
+#our-specialists .our-specialists .cards-doctor .card .image img {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#our-specialists .our-specialists .cards-doctor .card .image img:hover {
+  transform: scale(1.05);
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor {
+  padding: 20px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor h4 a {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: black;
+  transition: all 0.4s;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor h4 a:hover {
+  color: #396cf0;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .job {
+  color: #8492a6;
+  font-size: 13.5px;
+  margin-top: 10px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .star .star-icon .fa-sharp {
+  color: #f1b561;
+  margin-right: 8px;
+  font-size: 11px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .star .star-count {
+  font-size: 15px;
+  color: #8492a6;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .about-work {
+  margin-top: 10px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .about-work .icon {
+  color: #396cf0;
+  font-size: 12px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .about-work span {
+  font-size: 13.5px;
+  color: #8492a6;
+  padding-left: 8px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .card-icons {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 5px;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .card-icons .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(57, 108, 240, 0.1019607843);
+  background-color: rgba(57, 108, 240, 0.1);
+  border: 1px solid rgba(57, 108, 240, 0.1);
+  -webkit-box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  box-shadow: 0 3px 5px 0 rgba(57, 108, 240, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .card-icons .circle .fa-brands {
+  color: #396cf0;
+  font-size: 13px;
+  transition: all 0.4s;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .card-icons .circle:hover {
+  background-color: #396cf0;
+}
+#our-specialists .our-specialists .cards-doctor .card .about-doctor .card-icons .circle:hover .fa-brands {
+  color: #fff;
+}/*# sourceMappingURL=index.css.map */

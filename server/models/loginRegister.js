@@ -19,6 +19,7 @@ const joiPatientsSchema = Joi.object({
   birthday: Joi.string().required("this input is required"),
   address: Joi.string().required("this input is required"),
   phone: Joi.string().required("this input is required"),
+  isAdmin: Joi.boolean().default(false)
 });
 
 const { Schema } = mongoose;

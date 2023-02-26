@@ -10,12 +10,52 @@
     .navbar {
       display: flex;
       align-items: center;
-      column-gap: 60px;
+      column-gap: 50px;
       nav {
         ul {
           display: flex;
           align-items: center;
-          column-gap: 50px;
+          column-gap: 35px;
+          .btns {
+            display: flex;
+            column-gap: 15px;
+            button {
+              padding: 9px 8px;
+              outline: 0;
+              cursor: pointer;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+              border-radius: 5px;
+              background-color: rgba(57, 108, 240, 0.1);
+              border: 1px solid rgba(57, 108, 240, 0.1);
+              color: #396cf0;
+              -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              font-size: 15px;
+              .fa-solid {
+                margin-right: 4px;
+              }
+              &:hover {
+                background-color: #416cd8;
+                a {
+                  color: #fff;
+                  .fa-solid {
+                    color: #fff;
+                  }
+                }
+              }
+              a {
+                color: black;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: all 0.5s;
+              }
+            }
+          }
+
           li {
             position: relative;
             a {
@@ -117,36 +157,47 @@
           top: 57px;
           box-shadow: 0px 0px 3px 0px rgb(219, 219, 219);
           border-radius: 5px;
-          padding: 20px;
-          ul {
-            li {
+          padding: 15px 20px;
+          .patient-profile {
+            .btn {
               margin-top: 10px;
-              a {
-                color: #212529;
-                font-size: 13px;
+              button {
+                padding: 5px 5px;
+                outline: 0;
+                cursor: pointer;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+                -webkit-transition: all 0.4s;
+                transition: all 0.4s;
+                border-radius: 5px;
+                background-color: rgba(57, 108, 240, 0.1);
+                border: 1px solid rgba(57, 108, 240, 0.1);
+                color: #396cf0;
+                -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+                box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+                font-size: 11px;
                 font-weight: 600;
-                letter-spacing: 1px;
-                transition: all 0.5s;
                 .fa-solid {
-                  color: #212529;
-                  margin-right: 8px;
-                }
-                &.active {
-                  color: #396cf0;
-                  .fa-solid {
-                    color: #396cf0;
-                  }
+                  margin-right: 4px;
                 }
                 &:hover {
-                  color: #396cf0;
-                  .fa-solid {
-                    color: #396cf0;
+                  background-color: #416cd8;
+                  color: #fff;
+                  a {
+                    color: #fff;
+                    .fa-solid {
+                      color: #fff;
+                    }
                   }
                 }
+                a {
+                  color: black;
+                  font-size: 13px;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  transition: all 0.5s;
+                }
               }
-            }
-            .first-child {
-              margin: 0;
             }
           }
         }
@@ -283,12 +334,51 @@
     .navbar {
       display: flex;
       align-items: center;
-      column-gap: 60px;
+      column-gap: 50px;
       nav {
         ul {
           display: flex;
           align-items: center;
-          column-gap: 50px;
+          column-gap: 35px;
+          .btns {
+            display: flex;
+            column-gap: 15px;
+            button {
+              padding: 9px 8px;
+              outline: 0;
+              cursor: pointer;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              -webkit-transition: all 0.4s;
+              transition: all 0.4s;
+              border-radius: 5px;
+              background-color: rgba(57, 108, 240, 0.1);
+              border: 1px solid rgba(57, 108, 240, 0.1);
+              color: #396cf0;
+              -webkit-box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              box-shadow: 0 3px 5px 0 rgb(57 108 240 / 30%);
+              font-size: 15px;
+              .fa-solid {
+                margin-right: 4px;
+              }
+              &:hover {
+                background-color: #416cd8;
+                a {
+                  color: #fff;
+                  .fa-solid {
+                    color: #fff;
+                  }
+                }
+              }
+              a {
+                color: black;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                transition: all 0.5s;
+              }
+            }
+          }
           li {
             position: relative;
             a {

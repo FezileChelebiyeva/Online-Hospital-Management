@@ -4,11 +4,13 @@ const initialState = {
   loading: false,
   data: [],
   error: "",
+  patient: {}
 };
 
 export const getPatientsData = createAsyncThunk("getPatientsData", async () => {
-  // const response = await axios.get("http://localhost:8080/login");
-  // return response.data;
+  const response = await axios.get("http://localhost:8080/patients");
+  console.log(response.data);
+  return response.data;
 });
 
 export const postPatientsData = createAsyncThunk(
@@ -16,15 +18,6 @@ export const postPatientsData = createAsyncThunk(
   async (values) => {
     await axios.post("http://localhost:8080/register", values);
     console.log("added");
-  }
-);
-
-export const postPatientsDataLogin = createAsyncThunk(
-  "postPatientsDataLogin",
-  async (values) => {
-    const response = axios.post("http://localhost:8080/login", values);
-    console.log("check");
-    return response;
   }
 );
 
@@ -38,7 +31,11 @@ export const deletePatientsData = createAsyncThunk(
 export const getDataSliceForUser = createSlice({
   name: "patients",
   initialState,
-  reducers: {},
+  reducers: {
+    patientData: (state, action) => {
+      state.patient = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getPatientsData.pending, (state, action) => {
       state.loading = true;
@@ -53,5 +50,8 @@ export const getDataSliceForUser = createSlice({
     });
   },
 });
+
+export const { patientData } = getDataSliceForUser.actions;
+
 
 export default getDataSliceForUser.reducer;
