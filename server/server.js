@@ -7,11 +7,11 @@ const dotenv = require("dotenv");
 const useRouter = require("./routes/doctors.js");
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(express.json());
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "50mb" }));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var whitelist = ["http://localhost:5173" /** other domains if any */];

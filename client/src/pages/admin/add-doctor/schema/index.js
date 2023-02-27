@@ -21,5 +21,5 @@ export const doctorsSchema = Yup.object({
   hour: Yup.string().required("Please enter a working hour"),
   doctorJob: Yup.string().required("Please select a departments"),
   star: Yup.string().required("Please select a doctor's point"),
-  image: Yup.string().required("Please select a doctor's image"),
+  // image: Yup.string().required("Please select a doctor's image"),
 });
