@@ -11,13 +11,15 @@ import {
   getPatientsData,
   updatePatientsData,
 } from "../../../redux/slice/patientsDataSlice";
-import { doctorsSchema } from "../add-doctor/schema";
+import { patientsSchema } from "../add-patient/schema";
 import "./index.scss";
 const PatientsList = () => {
   const [editData, setEditData] = useState(false);
   const dispatch = useDispatch();
   const patients = useSelector((state) => state.patients);
   const doctors = useSelector((state) => state.doctors);
+  const [postImage, setPostImage] = useState("");
+
   useEffect(() => {
     dispatch(getPatientsData());
     dispatch(getData(""));
@@ -36,17 +38,39 @@ const PatientsList = () => {
         phone: "",
         image: "",
       },
-      // validationSchema: doctorsSchema,
+      validationSchema: patientsSchema,
       onSubmit: (values) => {
+        postImage ? (values.image = postImage) : "";
         dispatch(updatePatientsData(values)).then(() =>
           dispatch(getPatientsData())
         );
       },
     });
+
+// for image
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setPostImage(base64);
+  };
+
   const handleEdit = async (id) => {
     setEditData(true);
     patients.data?.map((element) => {
-      if (element._id === id) {
+      if (element._id === id && !element.isAdmin) {
         values.id = element._id;
         values.firstName = element.firstName;
         values.lastName = element.lastName;
@@ -387,7 +411,7 @@ const PatientsList = () => {
                     </div>
                   )}
                 </div>
-                <div className="input-control">
+                <div className="input-image">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image
@@ -396,27 +420,17 @@ const PatientsList = () => {
                   <input
                     id="image"
                     name="image"
-                    type="text"
-                    onChange={handleChange}
-                    value={values.image}
+                    type="file"
+                    onChange={(e) => {
+                      handleFileUpload(e);
+                    }}
                     placeholder="Image"
                   />
-                  {errors.image && touched.image && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.image}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
             <div className="btn">
-              <button type="submit" className="btn btn-success mt-2">
+              <button type="submit">
                 Update
               </button>
             </div>

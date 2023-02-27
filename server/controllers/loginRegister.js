@@ -24,6 +24,7 @@ module.exports.register = async (req, res) => {
       doctor: req.body.doctor,
       job: req.body.job,
       birthday: req.body.birthday,
+      image: req.body.image,
       address: req.body.address,
       phone: req.body.phone,
       isAdmin: req.body.isAdmin,

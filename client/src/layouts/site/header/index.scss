@@ -109,6 +109,11 @@
             color: #2b51b4;
             font-size: 15px;
           }
+          img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+          }
         }
         .user-profile {
           width: 140px;
@@ -150,6 +155,12 @@
             }
           }
           .patient-profile {
+            h4 {
+              color: #2b51b4;
+              font-size: 14px;
+              line-height: 1.5;
+              margin: 10px 0;
+            }
             .btn {
               margin-top: 10px;
               button {
@@ -411,6 +422,11 @@
             color: #2b51b4;
             font-size: 15px;
           }
+          img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+          }
         }
         .user-profile {
           width: 140px;
@@ -422,8 +438,14 @@
           border-radius: 5px;
           padding: 10px 20px;
           .patient-profile {
+            h4 {
+              color: #2b51b4;
+              font-size: 14px;
+              line-height: 1.5;
+              margin: 10px 0;
+            }
             .btn {
-              margin-top: 10px;
+              margin: 10px 0;
               button {
                 padding: 5px 5px;
                 outline: 0;

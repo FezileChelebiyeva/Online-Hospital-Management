@@ -1,5 +1,4 @@
 import { RightOutlined } from "@ant-design/icons";
-import axios from "axios";
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -17,7 +16,8 @@ const DoctorsList = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
   const [editData, setEditData] = useState(false);
-  const [doctor, setDoctor] = useState([]);
+  const [postImage, setPostImage] = useState("");
+
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -41,9 +41,29 @@ const DoctorsList = () => {
       },
       validationSchema: doctorsSchema,
       onSubmit: (values) => {
+        postImage ? (values.image = postImage) : "";
         dispatch(updateData(values)).then(() => dispatch(getData("")));
       },
     });
+// for image
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setPostImage(base64);
+  };
   const handleEdit = async (id) => {
     setEditData(true);
     doctors.data?.map((element) => {
@@ -444,7 +464,7 @@ const DoctorsList = () => {
                     </div>
                   )}
                 </div>
-                <div className="input-control">
+                <div className="input-image">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image
@@ -453,22 +473,12 @@ const DoctorsList = () => {
                   <input
                     id="image"
                     name="image"
-                    type="text"
-                    onChange={handleChange}
-                    value={values.image}
+                    type="file"
+                    onChange={(e) => {
+                      handleFileUpload(e);
+                    }}
                     placeholder="Image"
                   />
-                  {errors.image && touched.image && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.image}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>

@@ -20,5 +20,4 @@ export const patientsSchema = Yup.object({
   address: Yup.string().required("Please enter a address"),
   job: Yup.string().required("Please select a doctor's job"),
   birthday: Yup.string().required("Please select a your birthday"),
-  // gender: Yup.array().of(Yup.string().required("Provide at least one tag")),
 });

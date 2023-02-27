@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -9,6 +9,7 @@ import { getData } from "../../../redux/slice/doctorsDataSlice";
 import { patientData } from "../../../redux/slice/patientsDataSlice";
 import axios from "axios";
 const SignupPage = () => {
+  const [postImage, setPostImage] = useState("");
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
   const navigate = useNavigate();
@@ -32,17 +33,37 @@ const SignupPage = () => {
       },
       validationSchema: patientsSchema,
       onSubmit: async (values) => {
+        values.image = postImage
         const checkUser = await axios
           .create({
-            withCredentials: true,
+            withCredentials: "include",
           })
           .post("http://localhost:8080/register", values);
         dispatch(patientData(checkUser.data.patient));
         checkUser.status === 201 && navigate("/");
-        // console.log(checkUser);
         resetForm();
       },
     });
+
+  // image
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setPostImage(base64);
+  };
 
   return (
     <div id="sign-up-page">
@@ -170,7 +191,7 @@ const SignupPage = () => {
                 </div>
               </div>
               <div className="left">
-                <div className="input-control">
+                <div className="input-image">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image
@@ -180,22 +201,12 @@ const SignupPage = () => {
                   <input
                     id="image"
                     name="image"
-                    type="text"
+                    type="file"
                     placeholder="Image"
-                    onChange={handleChange}
-                    value={values.image}
+                    onChange={(e) => {
+                      handleFileUpload(e);
+                    }}
                   />
-                  {errors.image && touched.image && (
-                    <div
-                      style={{
-                        color: "red",
-                        fontSize: "12px",
-                        margin: "5px 0 5px 3px",
-                      }}
-                    >
-                      {errors.image}
-                    </div>
-                  )}
                 </div>
                 <div className="input-control">
                   <p>

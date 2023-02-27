@@ -6,17 +6,84 @@
     display: flex;
     .body-admin {
       width: 70%;
-      margin-left: 380px;
+      margin-left: 340px;
       h1 {
-        margin-top: 20px;
+        margin-top: 40px;
         letter-spacing: 0.5px;
-        font-size: 30px;
+        font-size: 25px;
         line-height: 1.5;
         font-weight: 600;
         color: rgb(10, 32, 129);
       }
+      .admin-panel {
+        display: flex;
+        column-gap: 150px;
+        align-items: center;
+        #admin {
+          .admin {
+            margin-top: 40px;
+            .img {
+              img {
+                width: 200px;
+              }
+            }
+            p {
+              margin-top: 20px;
+              color: rgb(15, 113, 224);
+              margin-left: 25px;
+              font-weight: 600;
+            }
+          }
+        }
+        #patients {
+          display: flex;
+          column-gap: 50px;
+          margin-top: 20px;
+          h3{
+            font-size: 16px;
+            color: rgb(13, 42, 168);
+          }
+          .patient {
+            .img {
+              img {
+                width: 60px;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+        #doctors {
+          display: flex;
+          margin-top: 80px;
+          column-gap: 50px;
+          h3{
+            font-size: 16px;
+            color: rgb(13, 42, 168);
+          }
+          .doctor {
+            .img {
+              img {
+                width: 60px;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+        button{
+          background-color: #3b7bdb;
+          border: 0;
+          outline: 0;
+          color: #fff;
+          width: 60px;
+          height: 25px;
+          margin-top: 30px;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover{
+          background-color: #2762bb;
+          }
+        }
+      }
     }
   }
 }
-
-

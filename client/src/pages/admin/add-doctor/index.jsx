@@ -8,9 +8,7 @@ import { useDispatch } from "react-redux";
 import { postData } from "../../../redux/slice/doctorsDataSlice";
 const AddDoctor = () => {
   const dispatch = useDispatch();
-
   const [postImage, setPostImage] = useState("");
-
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -35,6 +33,7 @@ const AddDoctor = () => {
       },
     });
 
+    // image
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -369,7 +368,7 @@ const AddDoctor = () => {
                     </div>
                   )}
                 </div>
-                <div className="input-control">
+                <div className="input-image">
                   <p>
                     <label htmlFor="image" className="m-2">
                       Image

@@ -182,9 +182,16 @@ const Header = () => {
               <i className="fa-solid fa-magnifying-glass"></i>
             </div>
             <div className="user-setting">
-              <div onClick={() => setUser(!user)} className="user">
-                <i className="fa-solid fa-user"></i>
-              </div>
+              {patients?.patient?.firstName == undefined ? (
+                <div onClick={() => setUser(!user)} className="user">
+                  <i className="fa-solid fa-user"></i>
+                </div>
+              ) : (
+                <div onClick={() => setUser(!user)} className="user">
+                  <img src={patients?.patient?.image} alt="" />
+                </div>
+              )}
+
               {user && (
                 <div className="user-profile">
                   {patients?.patient?.firstName == undefined ? (

@@ -5,7 +5,11 @@ const { options } = require("joi");
 const joigoose = require("joigoose")((mongoose, { convert: false }));
 
 const joiDoctorsSchema = Joi.object({
-  image: Joi.string().required("this input is required"),
+  image: Joi.string()
+    .required("this input is required")
+    .default(
+      "https://cdn.landesa.org/wp-content/uploads/default-user-image.png"
+    ),
   doctorJob: Joi.string()
     .required("this input is required")
     .regex(/^([A-Za-z]*)$/, "job can only contain letters."),
@@ -28,7 +32,6 @@ const joiDoctorsSchema = Joi.object({
 const { Schema } = mongoose;
 
 const doctorsSchema = new Schema(joigoose.convert(joiDoctorsSchema, options));
-
 
 const Doctors = mongoose.model("doctors", doctorsSchema);
 

@@ -1,3 +1,138 @@
-#add-patient{
-    padding: 60px 0;
+#add-patient {
+  padding: 60px 0;
+  .add-patient {
+    margin-left: 320px;
+    margin-top: 20px;
+    margin-top: 30px;
+    form {
+      padding: 30px 60px;
+      box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+      border-radius: 5px;
+      background-color: #fff;
+      width: 700px;
+      .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+        .left,
+        .right {
+          width: 50%;
+          .input-control {
+            margin-top: 20px;
+            p {
+              margin: 8px 0;
+              label {
+                font-size: 14px;
+              }
+            }
+            input {
+              height: 20px;
+              border: 1px solid #d9d9d9;
+              width: 100%;
+              padding: 18px 11px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+
+              &:hover {
+                border: 1px solid #396cf0;
+              }
+              &:focus {
+                border: 1px solid #396cf0;
+              }
+              &::placeholder {
+                color: rgba(0, 0, 0, 0.623);
+              }
+            }
+            select {
+              width: 100%;
+              border: 1px solid #d9d9d9;
+              padding: 10px 5px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+              &:hover {
+                border: 1px solid #396cf0;
+              }
+              &:focus {
+                border: 1px solid #396cf0;
+              }
+              &::placeholder {
+                color: rgba(0, 0, 0, 0.623);
+              }
+            }
+          }
+          .input-image {
+            margin-top: 20px;
+            p {
+              margin: 8px 0;
+              label {
+                font-size: 14px;
+              }
+            }
+            input {
+              color: transparent;
+              width: 100%;
+              height: 20px;
+              border: 1px solid #d9d9d9;
+              padding: 18px 11px;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: 0;
+              display: flex;
+              justify-self: center;
+              align-items: center;
+              &::-webkit-file-upload-button {
+                visibility: hidden;
+              }
+              &::before {
+                content: "Select some files";
+                color: rgba(0, 0, 0, 0.726);
+                cursor: pointer;
+                white-space: nowrap;
+                text-shadow: 1px 1px #fff;
+                font-weight: 600;
+                margin-top: -8px;
+              }
+            }
+          }
+        }
+      }
+
+      h2 {
+        text-align: center;
+        letter-spacing: 0.5px;
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+      .btn {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          color: #fff;
+          background-color: #396cf0;
+          box-shadow: 0 2px 0 rgb(5 145 255 / 10%);
+          font-size: 14px;
+          height: 32px;
+          padding: 20px 15px;
+          border-radius: 6px;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          transition: all 0.4s;
+          &:hover {
+            background-color: #305ccc;
+          }
+        }
+      }
+    }
+  }
 }
