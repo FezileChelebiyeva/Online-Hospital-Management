@@ -14,7 +14,7 @@
       display: flex;
       column-gap: 8px;
       align-items: center;
-      margin-left: 275px;
+      margin-left: 310px;
       .settings {
         .setting {
           width: 36px;
@@ -55,6 +55,7 @@
           }
         }
       }
+
       .btn {
         button {
           padding: 8px 10px;
@@ -79,6 +80,25 @@
             background-color: #305cccb0;
             color: #fff;
           }
+        }
+      }
+    }
+    .user-item {
+      background-color: #fff;
+      padding: 15px 0;
+      padding-right: 110px;
+      .admin {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+        h4 {
+          color: #305ccc;
+        }
+        img {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1px solid #4273ec;
         }
       }
     }

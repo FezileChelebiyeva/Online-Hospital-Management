@@ -81,13 +81,13 @@
         margin-top: 40px;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         flex-wrap: wrap;
-        width: 100%;
         .card {
-          width: 24%;
           border-radius: 8px;
           padding: 20px;
+          width: 260px;
           h4 {
             font-size: 18px;
             font-weight: 600;

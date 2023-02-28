@@ -1,10 +1,14 @@
+import { Alert } from "antd";
 import axios from "axios";
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import { changePasswordSchema } from "./schema";
 const ChanePassword = () => {
+  const navihate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(false);
   const { handleSubmit, handleChange, values, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -15,16 +19,21 @@ const ChanePassword = () => {
       },
       validationSchema: changePasswordSchema,
       onSubmit: async (values) => {
-        const chechUser = await axios.post(
-          "http://localhost:8080/password",
-          values
-        );
-        console.log(values);
+        values.newPassword !== values.confrimPassword
+          ? setErrorMessage(true)
+          : setErrorMessage(false);
+        const chechUser = await axios
+          .create({
+            withCredentials: true,
+          })
+          .post("http://localhost:8080/password", values)
+          .then(() => navihate("/login"));
+        resetForm();
       },
     });
   return (
     <div id="change-passord">
-       <Helmet>
+      <Helmet>
         <meta charSet="utf-8" />
         <title>Doctris - Change Password</title>
       </Helmet>
@@ -33,15 +42,6 @@ const ChanePassword = () => {
           <div className="form">
             <h2>Change Password</h2>
             <form onSubmit={handleSubmit}>
-              {/* {userError && (
-                <div className="error">
-                  <Alert
-                    type="error"
-                    message="Invalid email or password"
-                    banner
-                  />
-                </div>
-              )} */}
               <div className="input-control">
                 <p>
                   <label htmlFor="username" className="m-2">
@@ -150,6 +150,11 @@ const ChanePassword = () => {
                   </div>
                 )}
               </div>
+              {errorMessage && (
+                <div className="error">
+                  <Alert type="error" message="Invalid password" banner />
+                </div>
+              )}
               <div className="btn">
                 <button type="submit">Sign In</button>
               </div>

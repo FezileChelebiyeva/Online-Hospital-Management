@@ -5,18 +5,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+      }
       .search {
         width: 49%;
         h1 {
           font-size: 42px;
           letter-spacing: 1px;
           font-weight: 600;
+          @media only screen and (max-width: 768px) {
+            font-size: 35px;
+          }
         }
         p {
           color: #8492a6;
           font-size: 17px;
           line-height: 1.6;
           margin-top: 16px;
+          @media only screen and (max-width: 768px) {
+            font-size: 15px;
+          }
         }
         .input-control {
           margin-top: 20px;
@@ -33,6 +43,9 @@
             border: 0;
             padding: 16px 30px;
             border-radius: 50px;
+            @media only screen and (max-width: 990px) {
+              padding: 10px 30px;
+            }
           }
           button {
             border-radius: 50px;
@@ -44,8 +57,14 @@
             color: #fff;
             cursor: pointer;
             transition: all 0.5s;
+            display: flex;
+            align-items: center;
+            @media only screen and (max-width: 990px) {
+              padding: 10px 20px;
+            }
             .fa-solid {
               margin-right: 8px;
+              font-size: 10px;
             }
             &:hover {
               background-color: #305ccc;
@@ -61,6 +80,9 @@
             color: #8492a6;
             font-size: 15px;
             line-height: 1.6;
+            @media only screen and (max-width: 768px) {
+              font-size: 13px;
+            }
             span {
               font-weight: bolder;
             }
@@ -122,12 +144,17 @@
     background-color: #f8f9fa;
     .logos {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      column-gap: 50px;
       align-items: center;
       padding: 50px 0;
+      flex-wrap: wrap;
       .logo {
         img {
           width: 125px;
+          @media only screen and (max-width: 990px) {
+            width: 130px;
+          }
         }
       }
     }
@@ -159,11 +186,13 @@
         margin-top: 60px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        gap: 25px;
         flex-wrap: wrap;
-        width: 100%;
+        // width: 100%;
         .card {
-          width: 18%;
+          // width: 18%;
+          width: 195px;
           box-shadow: 0px 0px 3px 0px #e6e4e4;
           border-radius: 8px;
           padding: 25px 30px;
@@ -203,6 +232,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+      }
       .head {
         background-color: rgba(57, 108, 240, 0.1);
         border: 1px solid rgba(57, 108, 240, 0.1);
@@ -228,6 +262,9 @@
         color: #8492a6;
         line-height: 1.6;
         font-size: 15px;
+        @media only screen and (max-width: 768px) {
+          font-size: 13px;
+        }
       }
       button {
         padding: 10px 20px;
@@ -386,6 +423,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+      }
       .img {
         img {
           width: 480px;
@@ -415,6 +455,12 @@
           }
           .ant-collapse-item {
             width: 540px;
+            @media only screen and (max-width: 990px) {
+              width: 450px;
+            }
+            @media only screen and (max-width: 768px) {
+              width: 400px;
+            }
             background-color: #f8f9fa;
             border-radius: 5px !important;
             border: 1px solid #e9ecef;

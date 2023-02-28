@@ -33,14 +33,18 @@ const SignupPage = () => {
       },
       validationSchema: patientsSchema,
       onSubmit: async (values) => {
-        values.image = postImage
+        values.image = postImage;
         const checkUser = await axios
           .create({
-            withCredentials: "include",
+            withCredentials: true,
           })
-          .post("http://localhost:8080/register", values);
-        dispatch(patientData(checkUser.data.patient));
-        checkUser.status === 201 && navigate("/");
+          .post("http://localhost:8080/register", values)
+          .then((res) => {
+            dispatch(patientData(res.data.patient));
+            navigate("/");
+          });
+        // dispatch(patientData(checkUser.data.patient));
+        // checkUser.status === 201 && navigate("/");
         resetForm();
       },
     });

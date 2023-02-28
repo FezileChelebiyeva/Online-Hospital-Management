@@ -9,6 +9,7 @@ import darkdash from "../../../assets/images/dark-dash.png";
 import { darkModeState } from "../../../redux/slice/darkMode";
 const AdminHeader = () => {
   const darkMode = useSelector((state) => state.darkMode);
+  const patients = useSelector((state) => state.patients);
   const navigate = useNavigate();
   const [settings, setSettings] = useState(false);
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const AdminHeader = () => {
               <i className="fa-solid fa-bars"></i>{" "}
             </div>
           </div>
+
           <div className="settings">
             <div onClick={() => setSettings(true)} className="setting">
               <i className="fa-solid fa-gear"></i>
@@ -32,6 +34,16 @@ const AdminHeader = () => {
               GO TO SITE
             </button>
           </div>
+        </div>
+        <div className="user-item">
+          {patients?.data?.map((elem) => {
+            return elem.isAdmin ? (
+              <div className="admin">
+                <h4>{elem.firstName}</h4>
+                <img src={elem.image} alt="" />
+              </div>
+            ) : null;
+          })}
         </div>
       </div>
       {settings && (

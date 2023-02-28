@@ -84,9 +84,14 @@
     position: relative;
     .about-with-video {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      column-gap: 50px;
+      column-gap: 80px;
+      @media only screen and (max-width: 990px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
       .head {
         background-color: rgba(57, 108, 240, 0.1);
         border: 1px solid rgba(57, 108, 240, 0.1);
@@ -242,11 +247,11 @@
         margin-top: 40px;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         flex-wrap: wrap;
-        width: 100%;
         .card {
-          width: 24%;
+          width: 260px;
           border-radius: 8px;
           padding: 20px;
           h4 {
@@ -305,11 +310,10 @@
       .cards-doctor {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
-        width: 100%;
         margin-top: 60px;
         .card {
-          width: 23.6%;
           box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
           border-radius: 5px;
           -webkit-transition: all 0.5s;
@@ -319,6 +323,7 @@
             display: flex;
             justify-content: center;
             position: relative;
+            width: 253px;
             img {
               width: 100%;
               border-top-left-radius: 5px;

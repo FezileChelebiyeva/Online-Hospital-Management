@@ -41,13 +41,11 @@
       }
     }
     .patients-list {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       margin-top: 10px;
       .patient {
-        width: 23.5%;
         height: auto;
         transition: all 0.5s;
         .card {
@@ -58,6 +56,7 @@
             display: flex;
             justify-content: center;
             position: relative;
+            width: 200px;
             img {
               width: 100%;
               height: 100%;
@@ -204,7 +203,6 @@
       background-color: #fff;
       padding: 30px 50px;
       width: 600px;
-
       .close {
         text-align: end;
         font-size: 26px;

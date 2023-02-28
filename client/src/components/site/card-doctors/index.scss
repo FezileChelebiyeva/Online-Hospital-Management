@@ -43,13 +43,14 @@
       }
     }
     .cards-doctor {
-      display: flex;
       flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
       gap: 20px;
-      width: 100%;
+      // width: 100%;
       margin-top: 60px;
       .card {
-        width: 23.6%;
+        // width: 23.6%;
         box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.15);
         border-radius: 5px;
         .image {
@@ -57,6 +58,7 @@
           display: flex;
           justify-content: center;
           position: relative;
+          width: 253px;
           .icon {
             position: absolute;
             right: 10px;

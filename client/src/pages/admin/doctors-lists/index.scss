@@ -41,13 +41,11 @@
       }
     }
     .doctors-list {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       margin-top: 10px;
       .doctor {
-        width: 18%;
         height: auto;
         transition: all 0.5s;
         .card {
@@ -58,6 +56,7 @@
             display: flex;
             justify-content: center;
             position: relative;
+            width: 180px;
             img {
               width: 100%;
               border-top-left-radius: 5px;
@@ -216,7 +215,6 @@
         align-items: center;
         justify-content: center;
         column-gap: 30px;
-       
         .left,
         .right {
           width: 50%;

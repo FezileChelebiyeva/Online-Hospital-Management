@@ -18,6 +18,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [blog, setBlog] = useState(false);
   const [navbar, setNavbar] = useState(true);
+  const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
   const [user, setUser] = useState(false);
   const [settings, setSettings] = useState(false);
@@ -37,17 +38,18 @@ const Header = () => {
       })
       .post("http://localhost:8080/logout")
       .then((res) => {
-        res.status == 200 && dispatch(patientData(undefined));
-        setUser(false);
+        if (res.status === 200) {
+          dispatch(patientData(undefined));
+          navigate("/login");
+          setUser(false);
+        }
       });
-    navigate("/login");
   };
   return (
     <div id={navbar ? "header" : "fixed-header"}>
       <div className="container">
-        {/* {console.log(patients.patient)} */}
         <div className="header">
-          <div className="navbar">
+          <div className={menu ? "active-menu" : "navbar"}>
             <div className="logo">
               {darkMode.value ? (
                 <Link to={"/"}>
@@ -224,6 +226,15 @@ const Header = () => {
                   )}
                 </div>
               )}
+            </div>
+            <div onClick={() => setMenu(!menu)} className="menu-item">
+              <div className="menu">
+                {menu ? (
+                  <i className="fa-solid fa-x"></i>
+                ) : (
+                  <i className="fa-solid fa-bars"></i>
+                )}
+              </div>
             </div>
           </div>
         </div>

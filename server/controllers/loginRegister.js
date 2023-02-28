@@ -79,9 +79,9 @@ module.exports.login = async (req, res) => {
 };
 
 module.exports.changePassword = async (req, res) => {
-  const { currentPassword, newPassword, confrimPassword } = req.body;
+  const { currentPassword, newPassword, confrimPassword, email } = req.body;
 
-  const patient = await Patients.findOne({ email: req.body.email });
+  const patient = await Patients.findOne({ email: email });
 
   if (!patient) {
     return res.status(404).send("Patient not found");

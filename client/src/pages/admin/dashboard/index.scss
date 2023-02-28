@@ -16,21 +16,18 @@
         color: rgb(10, 32, 129);
       }
       .admin-panel {
-        display: flex;
-        column-gap: 150px;
-        align-items: center;
         #admin {
+          display: flex;
+          align-items: center;
+          column-gap: 20px;
+          margin-top: 50px;
+          h3 {
+            font-size: 16px;
+            color: rgb(13, 42, 168);
+          }
           .admin {
-            margin-top: 40px;
-            .img {
-              img {
-                width: 200px;
-              }
-            }
             p {
-              margin-top: 20px;
               color: rgb(15, 113, 224);
-              margin-left: 25px;
               font-weight: 600;
             }
           }
@@ -38,8 +35,8 @@
         #patients {
           display: flex;
           column-gap: 50px;
-          margin-top: 20px;
-          h3{
+          margin-top: 100px;
+          h3 {
             font-size: 16px;
             color: rgb(13, 42, 168);
           }
@@ -56,7 +53,7 @@
           display: flex;
           margin-top: 80px;
           column-gap: 50px;
-          h3{
+          h3 {
             font-size: 16px;
             color: rgb(13, 42, 168);
           }
@@ -69,7 +66,7 @@
             }
           }
         }
-        button{
+        button {
           background-color: #3b7bdb;
           border: 0;
           outline: 0;
@@ -79,8 +76,8 @@
           margin-top: 30px;
           border-radius: 5px;
           cursor: pointer;
-          &:hover{
-          background-color: #2762bb;
+          &:hover {
+            background-color: #2762bb;
           }
         }
       }

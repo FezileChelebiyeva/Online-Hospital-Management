@@ -30,12 +30,10 @@ const DashBoard = () => {
           <h1> Admin panel</h1>
           <div className="admin-panel">
             <div id="admin">
+            <h3>Admin: </h3>
               {patients.data?.map((elem) => {
                 return elem.isAdmin ? (
                   <div className="admin">
-                    <div className="img">
-                      <img src={elem.image} alt="" />
-                    </div>
                     <p>{`${elem.firstName} ${elem.lastName}`}</p>
                   </div>
                 ) : null;

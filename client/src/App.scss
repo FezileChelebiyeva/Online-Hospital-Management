@@ -76,6 +76,25 @@
             color: #fff;
           }
         }
+        .user-setting {
+          position: relative;
+          .user-profile {
+            box-shadow: 0px 0px 5px 0px #4a5f7ce7 !important;
+            background-color: #1c2836;
+            ul {
+              li {
+                a {
+                  color: #fff;
+                }
+              }
+            }
+            .patient-profile {
+              h4 {
+                color: #4c76e2;
+              }
+            }
+          }
+        }
       }
     }
     .background {
@@ -175,6 +194,25 @@
           }
           .fa-solid {
             color: #fff;
+          }
+        }
+        .user-setting {
+          position: relative;
+          .user-profile {
+            box-shadow: 0px 0px 5px 0px #4a5f7ce7 !important;
+            background-color: #1c2836;
+            ul {
+              li {
+                a {
+                  color: #fff;
+                }
+              }
+            }
+            .patient-profile {
+              h4 {
+                color: #4c76e2;
+              }
+            }
           }
         }
       }
@@ -673,6 +711,133 @@
       }
     }
   }
+  #login-page {
+    .login {
+      .form {
+        background-color: #1c2836;
+        h2 {
+          color: #fff;
+        }
+        form {
+          .input-control {
+            p {
+              label {
+                color: #fff;
+              }
+            }
+            input {
+              border: 1px solid #384558e7;
+              background-color: transparent;
+              &::placeholder {
+                color: rgba(243, 243, 243, 0.795);
+              }
+            }
+            select {
+              border: 1px solid #384558e7;
+              background-color: transparent;
+              &:optional {
+                color: rgba(243, 243, 243, 0.795);
+                background-color: #1c2836;
+              }
+            }
+          }
+          .input-image {
+            p {
+              label {
+                color: #fff;
+              }
+            }
+            input {
+              border: 1px solid #384558e7;
+              &::-webkit-file-upload-button {
+                visibility: hidden;
+              }
+              &::before {
+                font-weight: 300;
+                color: rgba(190, 190, 190, 0.726);
+              }
+            }
+          }
+          .new-account {
+            p {
+              color: #c4c2c2;
+            }
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  #sign-up-page {
+    .signup {
+      form {
+        background-color: #1c2836;
+        h2 {
+          color: #fff;
+        }
+        .input-control {
+          p {
+            label {
+              color: #fff;
+            }
+          }
+          input {
+            border: 1px solid #384558e7;
+            background-color: transparent;
+            &::placeholder {
+              color: rgba(243, 243, 243, 0.795);
+            }
+          }
+          select {
+            border: 1px solid #384558e7;
+            background-color: transparent;
+            &:optional {
+              color: rgba(243, 243, 243, 0.795);
+              background-color: #1c2836;
+            }
+          }
+        }
+        .input-image {
+          p {
+            label {
+              color: #fff;
+            }
+          }
+          input {
+            border: 1px solid #384558e7;
+            &::-webkit-file-upload-button {
+              visibility: hidden;
+            }
+            &::before {
+              font-weight: 300;
+              color: rgba(190, 190, 190, 0.726);
+            }
+          }
+        }
+        .for-select {
+          .select {
+            select {
+              background-color: #1c2836;
+              border: 1px solid #3e4c61e7;
+              &:optional {
+                color: #fff;
+              }
+            }
+          }
+        }
+        .have-account {
+          p {
+            color: #c4c2c2;
+          }
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
   #footer {
     background-color: #212f40;
   }
@@ -739,6 +904,9 @@
     border-bottom: 1px solid #343f4ee7;
     .header {
       .header-body {
+        background-color: #1c2836;
+      }
+      .user-item {
         background-color: #1c2836;
       }
     }
@@ -856,8 +1024,13 @@
               }
               input {
                 border: 1px solid #384558e7;
-                background-color: transparent;
-                color: #fff;
+                &::-webkit-file-upload-button {
+                  visibility: hidden;
+                }
+                &::before {
+                  font-weight: 300;
+                  color: rgba(190, 190, 190, 0.726);
+                }
               }
             }
           }
@@ -908,8 +1081,155 @@
               }
               input {
                 border: 1px solid #384558e7;
+                &::-webkit-file-upload-button {
+                  visibility: hidden;
+                }
+                &::before {
+                  font-weight: 300;
+                  color: rgba(190, 190, 190, 0.726);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #patients-list {
+    .patients {
+      h1 {
+        color: #fff;
+      }
+      .links {
+        a {
+          color: #fff;
+        }
+      }
+      .antd-icon {
+        color: #fff;
+      }
+      .patients-list {
+        .patient {
+          .card {
+            box-shadow: 0 0 2px 0px rgba(221, 221, 221, 0.15);
+            .about-patient {
+              h4 {
+                a {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #update-patient {
+      form {
+        box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+        background-color: #1c2836;
+        .close {
+          color: #fff;
+        }
+        .form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 30px;
+          .left,
+          .right {
+            width: 50%;
+            .input-control {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
                 background-color: transparent;
                 color: #fff;
+              }
+              select {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                color: #fff;
+                &:optional {
+                  background-color: #1c2836;
+                }
+              }
+            }
+            .input-image {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                &::-webkit-file-upload-button {
+                  visibility: hidden;
+                }
+                &::before {
+                  font-weight: 300;
+                  color: rgba(190, 190, 190, 0.726);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #add-patient {
+    .add-patient {
+      form {
+        box-shadow: 0px 0px 3px 0px rgba(60, 72, 88, 0.15);
+        background-color: #1c2836;
+        .form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 30px;
+          .left,
+          .right {
+            width: 50%;
+            .input-control {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &::placeholder {
+                  color: rgba(243, 243, 243, 0.795);
+                }
+              }
+              select {
+                border: 1px solid #384558e7;
+                background-color: transparent;
+                &:optional {
+                  color: rgba(243, 243, 243, 0.795);
+                  background-color: #1c2836;
+                }
+              }
+            }
+            .input-image {
+              p {
+                label {
+                  color: #fff;
+                }
+              }
+              input {
+                border: 1px solid #384558e7;
+                &::-webkit-file-upload-button {
+                  visibility: hidden;
+                }
+                &::before {
+                  font-weight: 300;
+                  color: rgba(190, 190, 190, 0.726);
+                }
               }
             }
           }

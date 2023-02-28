@@ -78,6 +78,11 @@
     .contact-us {
       display: flex;
       align-items: center;
+      justify-content: center;
+      @media only screen and (max-width: 990px) {
+        flex-direction: column;
+        row-gap: 60px;
+      }
       width: 100%;
       .img {
         width: 50%;

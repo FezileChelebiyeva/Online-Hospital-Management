@@ -14,8 +14,8 @@ app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var whitelist = ["http://localhost:5173" /** other domains if any */];
-var corsOptions = {
+let whitelist = ["http://localhost:5173" /** other domains if any */];
+let corsOptions = {
   credentials: true,
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -26,9 +26,9 @@ var corsOptions = {
   },
 };
 
+// app.use(cors());
 app.use(cors(corsOptions));
 
-// app.use(cors());
 dotenv.config();
 
 useRouter(app);
@@ -38,7 +38,7 @@ const PORT = process.env.PORT || 8000;
 const DB = process.env.DB_URL.replace("<password>", process.env.PASSWORD);
 
 // function requireAdmin(req, res, next) {
-//   if (req.patient && req.patient.isAdmin) {
+//   if (req.body && req.body.isAdmin) {
 //     next();
 //   } else {
 //     res.redirect('/');

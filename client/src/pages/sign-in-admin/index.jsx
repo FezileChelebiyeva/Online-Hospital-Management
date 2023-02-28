@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { adminSchema } from "./schema";
 import "./index.scss";
-import { getPatientsData } from "../../redux/slice/patientsDataSlice.js";
+import { getPatientsData, patientData } from "../../redux/slice/patientsDataSlice.js";
 import { Alert, Space } from "antd";
 import { Helmet } from "react-helmet";
 import axios from "axios";
@@ -26,11 +26,15 @@ const SignInForAdmin = () => {
       validationSchema: adminSchema,
       onSubmit: async (values) => {
         const chechUser = await axios
+          .create({
+            withCredentials: "include",
+          })
           .post("http://localhost:8080/login", values)
           .then(
             (response) => response.data.patient.isAdmin && navigate("/admin/")
           )
           .catch(() => setAlert(true));
+          dispatch(patientData(checkUser.data.patient))
         resetForm();
       },
     });

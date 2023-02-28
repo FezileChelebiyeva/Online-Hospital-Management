@@ -5,6 +5,7 @@ import AddPatient from "../pages/admin/add-patient";
 import DashBoard from "../pages/admin/dashboard";
 import DoctorsList from "../pages/admin/doctors-lists";
 import PatientsList from "../pages/admin/patients-list";
+import PatientProfile from "../pages/patient-profile";
 import SignInForAdmin from "../pages/sign-in-admin";
 import AboutPage from "../pages/site/about";
 import BlogsPage from "../pages/site/blogs";
@@ -82,6 +83,10 @@ const ROUTES = [
       {
         path: "/wishlist",
         element: <WishListPage />,
+      },
+      {
+        path: "/patient-profile",
+        element: <PatientProfile />,
       },
       {
         path: "*",

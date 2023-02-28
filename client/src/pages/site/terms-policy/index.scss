@@ -114,6 +114,12 @@
             }
             .ant-collapse-item {
               width: 740px;
+              @media only screen and (max-width: 990px) {
+                width: 660px;
+              }
+              @media only screen and (max-width: 768px) {
+                width: 450px;
+              }
               background-color: #f8f9fa;
               border-radius: 5px !important;
               border: 1px solid #e9ecef;
