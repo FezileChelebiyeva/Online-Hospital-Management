@@ -1,4 +1,5 @@
 import { RightOutlined } from "@ant-design/icons";
+import { Space, Spin } from "antd";
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -45,7 +46,7 @@ const DoctorsList = () => {
         dispatch(updateData(values)).then(() => dispatch(getData("")));
       },
     });
-// for image
+  // for image
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -103,57 +104,67 @@ const DoctorsList = () => {
             <NavLink to={"/admin/doctors-list"}>DOCTORS</NavLink>
           </span>
         </div>
-        <div className="doctors-list">
-          {doctors.data?.map((element) => {
-            return (
-              <div key={element._id} className="doctor">
-                <div className="card">
-                  <div className="image">
-                    <img src={element.image} alt="" />
-                    <div className="card-icons">
-                      <div className="circle">
-                        <i className="fa-brands fa-facebook-f"></i>
+        {doctors.loading ? (
+          <div style={{ marginTop: "40px" }} className="spinner">
+            <Space direction="vertical" style={{ width: "100%" }}>
+              <Spin tip="Loading" size="large">
+                <div className="content" />
+              </Spin>
+            </Space>
+          </div>
+        ) : (
+          <div className="doctors-list">
+            {doctors.data?.map((element) => {
+              return (
+                <div key={element._id} className="doctor">
+                  <div className="card">
+                    <div className="image">
+                      <img src={element.image} alt="" />
+                      <div className="card-icons">
+                        <div className="circle">
+                          <i className="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div className="circle">
+                          <i className="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div className="circle">
+                          <i className="fa-brands fa-github"></i>
+                        </div>
+                        <div className="circle">
+                          <i className="fa-brands fa-twitter"></i>
+                        </div>
                       </div>
-                      <div className="circle">
-                        <i className="fa-brands fa-linkedin-in"></i>
-                      </div>
-                      <div className="circle">
-                        <i className="fa-brands fa-github"></i>
-                      </div>
-                      <div className="circle">
-                        <i className="fa-brands fa-twitter"></i>
-                      </div>
+                    </div>{" "}
+                    <div className="about-doctor">
+                      <h4>
+                        <Link>{`${element.firstName} ${element.lastName}`}</Link>
+                      </h4>
+                      <p className="job">{element.doctorJob}</p>
                     </div>
-                  </div>{" "}
-                  <div className="about-doctor">
-                    <h4>
-                      <Link>{`${element.firstName} ${element.lastName}`}</Link>
-                    </h4>
-                    <p className="job">{element.doctorJob}</p>
+                  </div>
+                  <div className="btn">
+                    <button
+                      onClick={() =>
+                        dispatch(deleteData(element._id)).then(() =>
+                          dispatch(getData())
+                        )
+                      }
+                      className="deleteBtn"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => handleEdit(element._id)}
+                      className="editBtn"
+                    >
+                      Edit
+                    </button>
                   </div>
                 </div>
-                <div className="btn">
-                  <button
-                    onClick={() =>
-                      dispatch(deleteData(element._id)).then(() =>
-                        dispatch(getData())
-                      )
-                    }
-                    className="deleteBtn"
-                  >
-                    Delete
-                  </button>
-                  <button
-                    onClick={() => handleEdit(element._id)}
-                    className="editBtn"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
       {editData && (
         <div id="update-doctor">

@@ -1,4 +1,5 @@
 import { RightOutlined } from "@ant-design/icons";
+import { Space, Spin } from "antd";
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -47,7 +48,7 @@ const PatientsList = () => {
       },
     });
 
-// for image
+  // for image
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -104,44 +105,54 @@ const PatientsList = () => {
             <NavLink to={"/admin/patients-list"}>PATIENTS</NavLink>
           </span>
         </div>
-        <div className="patients-list">
-          {patients.data?.map((element) => {
-            return element.isAdmin ? null : (
-              <div key={element._id} className="patient">
-                <div className="card">
-                  <div className="image">
-                    <img src={element.image} alt="" />
+        {doctors.loading ? (
+          <div style={{ marginTop: "40px" }} className="spinner">
+            <Space direction="vertical" style={{ width: "100%" }}>
+              <Spin tip="Loading" size="large">
+                <div className="content" />
+              </Spin>
+            </Space>
+          </div>
+        ) : (
+          <div className="patients-list">
+            {patients.data?.map((element) => {
+              return element.isAdmin ? null : (
+                <div key={element._id} className="patient">
+                  <div className="card">
+                    <div className="image">
+                      <img src={element.image} alt="" />
+                    </div>
+                    <div className="about-patient">
+                      <h4>
+                        <Link>{`${element.firstName} ${element.lastName}`}</Link>
+                      </h4>
+                      <a href={`mailto:${element.email}`}>{element.email}</a>
+                      <a href={`tel:${element.phone}`}>{element.phone}</a>
+                    </div>
                   </div>
-                  <div className="about-patient">
-                    <h4>
-                      <Link>{`${element.firstName} ${element.lastName}`}</Link>
-                    </h4>
-                    <a href={`mailto:${element.email}`}>{element.email}</a>
-                    <a href={`tel:${element.phone}`}>{element.phone}</a>
+                  <div className="btn">
+                    <button
+                      onClick={() =>
+                        dispatch(deletePatientsData(element._id)).then(() =>
+                          dispatch(getPatientsData())
+                        )
+                      }
+                      className="deleteBtn"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      onClick={() => handleEdit(element._id)}
+                      className="editBtn"
+                    >
+                      Edit
+                    </button>
                   </div>
                 </div>
-                <div className="btn">
-                  <button
-                    onClick={() =>
-                      dispatch(deletePatientsData(element._id)).then(() =>
-                        dispatch(getPatientsData())
-                      )
-                    }
-                    className="deleteBtn"
-                  >
-                    Delete
-                  </button>
-                  <button
-                    onClick={() => handleEdit(element._id)}
-                    className="editBtn"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
       {editData && (
         <div id="update-patient">
@@ -430,9 +441,7 @@ const PatientsList = () => {
               </div>
             </div>
             <div className="btn">
-              <button type="submit">
-                Update
-              </button>
+              <button type="submit">Update</button>
             </div>
           </form>
         </div>
