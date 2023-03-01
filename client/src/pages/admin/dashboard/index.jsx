@@ -1,3 +1,4 @@
+import { Space, Spin } from "antd";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,7 +15,7 @@ const DashBoard = () => {
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(getPatientsData());
-    dispatch(getData(""))
+    dispatch(getData(""));
   }, []);
   return (
     <div id="admin-page">
@@ -30,7 +31,7 @@ const DashBoard = () => {
           <h1> Admin panel</h1>
           <div className="admin-panel">
             <div id="admin">
-            <h3>Admin: </h3>
+              <h3>Admin: </h3>
               {patients.data?.map((elem) => {
                 return elem.isAdmin ? (
                   <div className="admin">
@@ -42,29 +43,55 @@ const DashBoard = () => {
             <div className="users">
               <div id="patients">
                 <h3>Patients: </h3>
-                {patients.data?.slice(0, 5).map((elem) => {
-                  return !elem.isAdmin ? (
-                    <div className="patient">
-                      <div className="img">
-                        <img src={elem.image} alt="" />
+                {patients.loading ? (
+                  <div style={{ margin: "20px" }} className="spinner">
+                    <Space direction="vertical" style={{ width: "100%" }}>
+                      <Spin size="large">
+                        <div className="content" />
+                      </Spin>
+                    </Space>
+                  </div>
+                ) : (
+                  patients.data?.slice(0, 5).map((elem) => {
+                    return !elem.isAdmin ? (
+                      <div className="patient">
+                        <div className="img">
+                          <img src={elem.image} alt="" />
+                        </div>
                       </div>
-                    </div>
-                  ) : null;
-                })}
-                <button onClick={() => navigate("/admin/patients-list")}>More</button>
+                    ) : null;
+                  })
+                )}
+
+                <button onClick={() => navigate("/admin/patients-list")}>
+                  More
+                </button>
               </div>
               <div id="doctors">
                 <h3>Doctors: </h3>
-                {doctors.data?.slice(0, 4).map((elem) => {
-                  return (
-                    <div className="doctor">
-                      <div className="img">
-                        <img src={elem.image} alt="" />
+                {doctors.loading ? (
+                  <div style={{ margin: "20px" }} className="spinner">
+                    <Space direction="vertical" style={{ width: "100%" }}>
+                      <Spin size="large">
+                        <div className="content" />
+                      </Spin>
+                    </Space>
+                  </div>
+                ) : (
+                  doctors.data?.slice(0, 4).map((elem) => {
+                    return (
+                      <div className="doctor">
+                        <div className="img">
+                          <img src={elem.image} alt="" />
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-                <button onClick={() => navigate("/admin/doctors-list")}>More</button>
+                    );
+                  })
+                )}
+
+                <button onClick={() => navigate("/admin/doctors-list")}>
+                  More
+                </button>
               </div>
             </div>
           </div>
