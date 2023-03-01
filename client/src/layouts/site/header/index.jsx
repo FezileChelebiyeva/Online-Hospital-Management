@@ -13,6 +13,8 @@ import {
   patientData,
 } from "../../../redux/slice/patientsDataSlice";
 import axios from "axios";
+import { getData } from "../../../redux/slice/doctorsDataSlice";
+import { removeAll } from "../../../redux/slice/addRemoveWishlist";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -20,13 +22,19 @@ const Header = () => {
   const [navbar, setNavbar] = useState(true);
   const [menu, setMenu] = useState(false);
   const [search, setSearch] = useState(false);
+  const [searchDoctor, setSearchDoctor] = useState(false);
   const [user, setUser] = useState(false);
   const [settings, setSettings] = useState(false);
+  const [input, setInput] = useState("");
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.darkMode);
   const patients = useSelector((state) => state.patients);
+  const doctors = useSelector((state) => state.doctors);
+  const [filtredProducts, setFiltredProducts] = useState(doctors.data);
+
   useEffect(() => {
     dispatch(getPatientsData(""));
+    dispatch(getData(""));
   }, []);
   window.addEventListener("scroll", () => {
     window.scrollY > 60 ? setNavbar(false) : setNavbar(true);
@@ -40,10 +48,27 @@ const Header = () => {
       .then((res) => {
         if (res.status === 200) {
           dispatch(patientData(undefined));
+          dispatch(removeAll([]))
           navigate("/login");
           setUser(false);
         }
       });
+  };
+  const handleSearch = (e) => {
+    setInput(e.target.value);
+    e.target.value ? setSearchDoctor(true) : setSearchDoctor(false);
+    e.target.value &&
+      setFiltredProducts(
+        doctors.data?.filter(
+          (elem) =>
+            `${elem.firstName} ${elem.lastName}`
+              .toLocaleLowerCase()
+              .includes(e.target.value.toLocaleLowerCase()) ||
+            elem.doctorJob
+              .toLocaleLowerCase()
+              .includes(e.target.value.toLocaleLowerCase())
+        )
+      );
   };
   return (
     <div id={navbar ? "header" : "fixed-header"}>
@@ -69,34 +94,33 @@ const Header = () => {
                 <li>
                   <NavLink to={"/doctors-team"}>DOCTORS</NavLink>
                 </li>
-                <li>
-                  <Dropdown
-                    overlay={
-                      <Menu>
-                        <Menu.Item key="0">
-                          <NavLink to={"/patient-profile"}>PROFILE</NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="1">
-                          <NavLink to={"/booking-appointment"}>
-                            BOOK APPOINTMENT
-                          </NavLink>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                          <NavLink to={"/patient-invoice"}>INVOICE</NavLink>
-                        </Menu.Item>
-                      </Menu>
-                    }
-                    trigger={["hover"]}
-                  >
-                    <NavLink
-                      className="ant-dropdown-link"
-                      onClick={(e) => e.preventDefault()}
-                      to={"/patients"}
+                {patients?.patient?.firstName == undefined ? null : (
+                  <li>
+                    <Dropdown
+                      overlay={
+                        <Menu>
+                          <Menu.Item key="0">
+                            <NavLink to={"/patient-profile"}>PROFILE</NavLink>
+                          </Menu.Item>
+                          <Menu.Item key="1">
+                            <NavLink to={"/booking-appointment"}>
+                              BOOK APPOINTMENT
+                            </NavLink>
+                          </Menu.Item>
+                        </Menu>
+                      }
+                      trigger={["hover"]}
                     >
-                      PATIENTS <span className="menu-arrow"></span>
-                    </NavLink>
-                  </Dropdown>
-                </li>
+                      <NavLink
+                        className="ant-dropdown-link"
+                        onClick={(e) => e.preventDefault()}
+                        to={"/patients"}
+                      >
+                        PATIENTS <span className="menu-arrow"></span>
+                      </NavLink>
+                    </Dropdown>
+                  </li>
+                )}
                 {/* <li>
                   <Dropdown
                     overlay={
@@ -168,11 +192,13 @@ const Header = () => {
                 <li>
                   <NavLink to={"/wishlist"}>WISHLIST</NavLink>
                 </li>
-                <li>
-                  <NavLink target={"_blank"} to={"/sign-in-admin/"}>
-                    ADMIN
-                  </NavLink>
-                </li>
+                {patients?.patient?.isAdmin == true ? (
+                  <li>
+                    <NavLink target={"_blank"} to={"/admin/"}>
+                      ADMIN
+                    </NavLink>
+                  </li>
+                ) : null}
               </ul>
             </nav>
           </div>
@@ -246,15 +272,49 @@ const Header = () => {
               <h1>Search now.....</h1>
               <div className="search">
                 <div className="input-control">
-                  <input type="text" placeholder="Search..." />
+                  <input
+                    value={input}
+                    onChange={(e) => handleSearch(e)}
+                    type="text"
+                    placeholder="Search..."
+                  />
                   <button>Search</button>
                 </div>
               </div>
+              {searchDoctor && (
+                <div id="doctors">
+                  <div className="doctors">
+                    <ul>
+                      {filtredProducts?.map((element) => {
+                        return (
+                          <li key={element._id}>
+                            <div className="img">
+                              <img src={element.image} alt="" />
+                            </div>
+                            <div className="name">
+                              <Link
+                                onClick={() => {
+                                  setInput("");
+                                  setSearchDoctor(false);
+                                }}
+                                to={`/details-doctor/${element._id}`}
+                              >
+                                {`${element.firstName} ${element.lastName}`}
+                              </Link>
+                              <p>{element.doctorJob}</p>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              )}
+              <div
+                onClick={() => setSearch(false)}
+                className="close-search"
+              ></div>
             </div>
-            <div
-              onClick={() => setSearch(false)}
-              className="close-search"
-            ></div>
           </div>
         </div>
       )}

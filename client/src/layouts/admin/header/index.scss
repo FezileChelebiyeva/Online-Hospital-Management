@@ -38,23 +38,6 @@
           }
         }
       }
-      .menu-item {
-        .menu {
-          width: 36px;
-          height: 36px;
-          background-color: #305ccc;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: all 0.4s;
-          .fa-solid {
-            color: #fff;
-            font-size: 12px;
-          }
-        }
-      }
 
       .btn {
         button {

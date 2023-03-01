@@ -12,6 +12,7 @@ const DoctorsCard = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctors);
   const wishlist = useSelector((state) => state.wishlist);
+  const patients = useSelector((state) => state.patients);
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(getData());
@@ -59,7 +60,11 @@ const DoctorsCard = () => {
                         </div>
                       ) : (
                         <div
-                          onClick={() => dispatch(addToWishlist(element))}
+                          onClick={() => {
+                            patients?.patient?.firstName == undefined
+                              ? navigate("/login")
+                              : dispatch(addToWishlist(element));
+                          }}
                           className="icon"
                         >
                           <i className="fa-regular fa-heart"></i>

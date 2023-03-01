@@ -295,7 +295,7 @@
       width: 100%;
       background-color: #fff;
       padding: 45px 0;
-      height: 200px;
+      height: 300px;
       position: fixed;
       top: 0;
 
@@ -339,6 +339,49 @@
             transition: all 0.5s;
             &:hover {
               background-color: #305ccc;
+            }
+          }
+        }
+      }
+      #doctors {
+        display: flex;
+        justify-content: center;
+        .doctors {
+          position: absolute;
+          z-index: 444;
+          display: flex;
+          justify-content: center;
+          ul {
+            li {
+              width: 280px;
+              display: flex;
+              align-items: center;
+              column-gap: 30px;
+              margin-top: 5px;
+              .img {
+                img {
+                  width: 60px;
+                  border-radius: 5px;
+                }
+              }
+              .name {
+                a {
+                  font-size: 18px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  color: #212529;
+                  transition: all 0.4s;
+                  &:hover {
+                    color: #305ccc;
+                  }
+                }
+                p {
+                  font-size: 11px;
+                  font-weight: 600;
+                  color: #8492a6;
+                  margin: 0;
+                }
+              }
             }
           }
         }
@@ -742,6 +785,49 @@
             transition: all 0.5s;
             &:hover {
               background-color: #305ccc;
+            }
+          }
+        }
+      }
+      #doctors {
+        display: flex;
+        justify-content: center;
+        .doctors {
+          position: absolute;
+          z-index: 444;
+          display: flex;
+          justify-content: center;
+          ul {
+            li {
+              width: 280px;
+              display: flex;
+              align-items: center;
+              column-gap: 30px;
+              margin-top: 5px;
+              .img {
+                img {
+                  width: 60px;
+                  border-radius: 5px;
+                }
+              }
+              .name {
+                a {
+                  font-size: 18px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  color: #212529;
+                  transition: all 0.4s;
+                  &:hover {
+                    color: #305ccc;
+                  }
+                }
+                p {
+                  font-size: 11px;
+                  font-weight: 600;
+                  color: #8492a6;
+                  margin: 0;
+                }
+              }
             }
           }
         }

@@ -76,7 +76,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="firstName" className="m-2">
                     First Name
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -103,7 +102,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="email" className="m-2">
                     Your Email
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -130,7 +128,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="image" className="m-2">
                     Image
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -158,7 +155,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="phone" className="m-2">
                     Phone
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -218,7 +214,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="lastName" className="m-2">
                     Last Name
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -245,7 +240,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="password" className="m-2">
                     Password
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -272,7 +266,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="birthday" className="m-2">
                     Birthday
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input
@@ -298,7 +291,6 @@ const AddPatient = () => {
                 <p>
                   <label htmlFor="address" className="m-2">
                     Address
-                    <span className="required">*</span>
                   </label>
                 </p>
                 <input

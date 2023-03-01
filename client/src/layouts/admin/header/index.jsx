@@ -17,12 +17,6 @@ const AdminHeader = () => {
     <div id="admin-header">
       <div className="header">
         <div className="header-body">
-          <div className="menu-item">
-            <div className="menu">
-              <i className="fa-solid fa-bars"></i>{" "}
-            </div>
-          </div>
-
           <div className="settings">
             <div onClick={() => setSettings(true)} className="setting">
               <i className="fa-solid fa-gear"></i>

@@ -82,8 +82,13 @@
               color: #f0735a;
             }
             &:hover {
-              background-color: #f0735a;
-              color: #fff;
+              background-color: #fd9681;
+              .fa-solid {
+                color: #fff;
+              }
+              .fa-regular {
+                color: #fff;
+              }
             }
           }
           img {

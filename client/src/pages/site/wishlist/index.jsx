@@ -3,7 +3,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { removeToWishlist } from "../../../redux/slice/addRemoveWishlist";
+import {
+  removeAll,
+  removeToWishlist,
+} from "../../../redux/slice/addRemoveWishlist";
 import "./index.scss";
 const WishListPage = () => {
   const wishlist = useSelector((state) => state.wishlist);
@@ -86,6 +89,9 @@ const WishListPage = () => {
                 </div>
               );
             })}
+          </div>
+          <div className="btn">
+            <button onClick={() => dispatch(removeAll([]))}>Remove All</button>
           </div>
         </div>
       </div>

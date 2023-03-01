@@ -64,6 +64,56 @@
           }
         }
       }
+      .active-menu {
+        nav {
+          ul {
+            background-color: #1c2836;
+            li {
+              a {
+                color: #fff;
+                .menu-arrow {
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  padding: 2px;
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  -webkit-transition: all 0.5s;
+                  transition: all 0.5s;
+                  margin-left: 20px;
+                  position: absolute;
+                  top: 5px;
+                }
+                &.active {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 2px;
+                    margin-left: 10px;
+                    position: absolute;
+                    top: 5px;
+                  }
+                }
+                &:hover {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0px 2px 2px 0px;
+                    padding: 2px;
+                    -webkit-transform: rotate(225deg);
+                    transform: rotate(225deg);
+                    position: absolute;
+                    top: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       .settings-profil {
         .user {
           border: 1px solid #3e4c61e7 !important;
@@ -150,6 +200,56 @@
                   -webkit-transition: all 0.5s;
                   transition: all 0.5s;
                   margin-left: 10px;
+                  position: absolute;
+                  top: 5px;
+                }
+                &.active {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0 2px 2px 0;
+                    display: inline-block;
+                    padding: 2px;
+                    margin-left: 10px;
+                    position: absolute;
+                    top: 5px;
+                  }
+                }
+                &:hover {
+                  color: #396cf0;
+                  .menu-arrow {
+                    border: solid #396cf0;
+                    border-radius: 0.5px;
+                    border-width: 0px 2px 2px 0px;
+                    padding: 2px;
+                    -webkit-transform: rotate(225deg);
+                    transform: rotate(225deg);
+                    position: absolute;
+                    top: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .active-menu {
+        nav {
+          ul {
+            background-color: #1c2836;
+            li {
+              a {
+                color: #fff;
+                .menu-arrow {
+                  border: solid #fff;
+                  border-width: 0 2px 2px 0;
+                  padding: 2px;
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  -webkit-transition: all 0.5s;
+                  transition: all 0.5s;
+                  margin-left: 20px;
                   position: absolute;
                   top: 5px;
                 }

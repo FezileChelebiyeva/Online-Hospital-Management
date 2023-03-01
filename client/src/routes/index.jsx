@@ -8,6 +8,7 @@ import PatientsList from "../pages/admin/patients-list";
 import PatientProfile from "../pages/patient-profile";
 import SignInForAdmin from "../pages/sign-in-admin";
 import AboutPage from "../pages/site/about";
+import BookingAppointment from "../pages/site/appointment";
 import BlogsPage from "../pages/site/blogs";
 import ContactPage from "../pages/site/contact";
 import DepartmentsPage from "../pages/site/departments";
@@ -87,6 +88,10 @@ const ROUTES = [
       {
         path: "/patient-profile",
         element: <PatientProfile />,
+      },
+      {
+        path: "/booking-appointment",
+        element: <BookingAppointment />,
       },
       {
         path: "*",

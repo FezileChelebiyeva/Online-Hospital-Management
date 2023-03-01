@@ -15,9 +15,7 @@ const PatientProfile = () => {
 
   return (
     <div id="patient-profile-page">
-        {
-            console.log(patients.patient)
-        }
+      {console.log(patients.patient)}
       <div id="profile-header">
         <div className="container">
           <div className="profile-head">
@@ -54,19 +52,33 @@ const PatientProfile = () => {
               <img src={patients?.patient.image} alt="" />
             </div>
             <div className="about-patient">
-              <div className="about">
-                <h3>{`${patients?.patient.firstName} ${patients?.patient.lastName}`}</h3>
-              </div>
-              <div className="about">
-                <span>Doctor: </span>
-                <p>{patients?.patient.doctor}</p>
-              </div>
-              <div className="about">
-                <span>Department: </span>
-                <p>{patients?.patient.job}</p>
-              </div>
-              <div className="btn">
-                <button onClick={() => navigate("/")}>Go Back Home</button>
+              <div>
+                <div className="about">
+                  <h3>{`${patients?.patient.firstName} ${patients?.patient.lastName}`}</h3>
+                </div>
+                <div className="about">
+                  <span>Doctor: </span>
+                  <p>{patients?.patient.doctor}</p>
+                </div>
+                <div className="about">
+                  <span>Department: </span>
+                  <p>{patients?.patient.job}</p>
+                </div>
+                <div className="about">
+                  <span>Email: </span>
+                  <p>{patients?.patient.email}</p>
+                </div>
+                <div className="about">
+                  <span>Phone: </span>
+                  <p>{patients?.patient.phone}</p>
+                </div>
+                <div className="about">
+                  <span>Birthday: </span>
+                  <p>{patients?.patient.birthday}</p>
+                </div>
+                <div className="btn">
+                  <button onClick={() => navigate("/")}>Go Back Home</button>
+                </div>
               </div>
             </div>
           </div>

@@ -3,14 +3,19 @@ import { Button, Input, Space, Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
-import { addToWishlist, removeToWishlist } from "../../../redux/slice/addRemoveWishlist";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import {
+  addToWishlist,
+  removeToWishlist,
+} from "../../../redux/slice/addRemoveWishlist";
 import { getData } from "../../../redux/slice/doctorsDataSlice";
 import "./index.scss";
 const DoctorsTeam = () => {
   const [sort, setSort] = useState(true);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const doctors = useSelector((state) => state.doctors);
+  const patients = useSelector((state) => state.patients);
   const [sortBy, setSortBy] = useState(false);
   const wishlist = useSelector((state) => state.wishlist);
   useEffect(() => {
@@ -108,7 +113,7 @@ const DoctorsTeam = () => {
                 return (
                   <div key={element._id} className="card">
                     <div className="image">
-                    {wishlist.data.find(
+                      {wishlist.data.find(
                         (elem) => elem._id === element._id
                       ) ? (
                         <div
@@ -121,7 +126,11 @@ const DoctorsTeam = () => {
                         </div>
                       ) : (
                         <div
-                          onClick={() => dispatch(addToWishlist(element))}
+                          onClick={() => {
+                            patients?.patient?.firstName == undefined
+                              ? navigate("/login")
+                              : dispatch(addToWishlist(element));
+                          }}
                           className="icon"
                         >
                           <i className="fa-regular fa-heart"></i>
